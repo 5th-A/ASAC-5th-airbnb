@@ -8,8 +8,8 @@ export default function RoomList() {
   }
   return (
     <>
-      <div className='flex justify-center'>
-        <div className='justify-center  px-20 grid grid-cols-4 box-border w-9/10 gap-2 grid-auto-rows-100px'>
+      <div className='flex justify-center pt-5 px-20'>
+        <div className='box-border justify-center grid grid-cols-5 grid-rows-3 w-9/10 gap-3 auto-rows-fr'>
           {/* 임시로 때려박은 RoomCard 20개 */}
           {roomCards}
         </div>
