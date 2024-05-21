@@ -43,10 +43,12 @@
 }
 
 .swiper-button-prev::after {
+  font-size: 40px;
   content: '<'; /* 이전 버튼 화살표 모양 */
 }
 
 .swiper-button-next::after {
+  font-size: 40px;
   content: '>'; /* 다음 버튼 화살표 모양 */
 }
 

@@ -16,11 +16,12 @@ export default function RoomCard() {
   return (
     <>
       {/*Image slider*/}
-      <div className='max-w-sm overflow-hidden'>
+      <div className='flex flex-col'>
         <div className='relative'>
           <Swiper
             className='swiper'
             modules={[Pagination, Navigation]}
+            // 슬라이더 다음, 이전 버튼 설정
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
@@ -28,23 +29,53 @@ export default function RoomCard() {
             }}
             spaceBetween={50}
             slidesPerView={1}
-            pagination
+            // 슬라이더 하단 도트설정
+            pagination={{
+              dynamicBullets: true,
+            }}
             watchSlidesProgress
           >
             {/*더미데이터 생기면 map으로 불러오게 수정*/}
             <SwiperSlide>
-              <img className='rounded-2xl' src='http://placehold.it/110x145' alt='Room view 1' />
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='rounded-2xl' src='http://placehold.it/110x145' alt='Room view 2' />
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='rounded-2xl' src='http://placehold.it/110x145' alt='Room view 3' />
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
             </SwiperSlide>
-            <div className='swiper-button-prev'></div>
-            <div className='swiper-button-next'></div>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='rounded-2xl' src='http://placehold.it/110x110' />
+            </SwiperSlide>
+            <div className='swiper-button-prev w-7 h-7'></div>
+            <div className='swiper-button-next w-7 h-7'></div>
           </Swiper>
-          <button className='absolute top-6 right-5 p-2 z-10'>
+          <button className='absolute top-2 right-2 p-2 z-10'>
             <img
               src={isLike}
               onClick={() => {
@@ -55,7 +86,7 @@ export default function RoomCard() {
                   setIsLike(emptyHeart)
                 }
               }}
-              className='w-7 h-7'
+              className='w-5 h-5'
             ></img>
           </button>
         </div>
@@ -71,7 +102,9 @@ export default function RoomCard() {
 
         {/*Room cost*/}
         <div className='px-5 pb-2 flex justify-between items-center'>
-          <div className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>₩999,999/박</div>
+          <div className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>
+            ₩999,999/박
+          </div>
         </div>
       </div>
     </>
