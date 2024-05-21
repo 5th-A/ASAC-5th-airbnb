@@ -1,5 +1,3 @@
-import SearchButtonArea from "./SearchButton.jsx";
-
 const Line = () => (
     <div className="Line11 w-[25px] h-[0px] rotate-90 border border-neutral-300 border-solid"></div>
   );
@@ -34,6 +32,16 @@ const Line = () => (
       <Line />
     </>
   );
+
+  const SearchButtonArea = () => (
+    <div className="pt-1.5 px-2.5">
+      <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle  cx="24" cy="24.5" r="24" fill="#FF385C"/>
+        <circle cx="22.5" cy="23" r="5.98611" stroke="white" />
+        <line x1="31.9492" y1="33.0508" x2="25.5852" y2="26.6869" stroke="white" />
+      </svg>
+      </div>
+  );
   
   const GuestArea = () => (
     <>
@@ -48,7 +56,7 @@ const Line = () => (
   );
   
   const SearchBarWrap = ({ children }) => (
-    <div className="SearchBarWrap w-8/12 h-[63px] rounded-[500px] border border-neutral-300 justify-start items-center gap-px inline-flex border-solid">
+    <div className="SearchBarWrap w-8/12 h-[63px] rounded-[500px] border border-neutral-300 justify-start items-center gap-px inline-flex border-solid whitespace-nowrap">
       {children}
     </div>
   );
