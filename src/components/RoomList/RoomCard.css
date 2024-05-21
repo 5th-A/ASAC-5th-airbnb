@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px; /* 버튼 크기 */
+  height: 40px;
+  border-radius: 50%; /* 원형 모양 */
+  background-color: rgba(255, 255, 255, 0.5); /* 반투명한 하얀색 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* 화살표 크기 */
+  color: #333; /* 화살표 색상 */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-button-disabled {
+  opacity: 0 !important; /* 비활성화된 버튼은 완전히 숨김 */
+}
+
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  opacity: 1;
+}
+
+.swiper-button-prev::after {
+  content: '<'; /* 이전 버튼 화살표 모양 */
+}
+
+.swiper-button-next::after {
+  content: '>'; /* 다음 버튼 화살표 모양 */
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  opacity: 0.5;
+  background: #969696; /* 도트 색상 */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff; /* 활성화된 도트 색상 */
+}

@@ -1,10 +1,13 @@
 import './App.css'
-import SearchBar from './components/SearchBar/SearchBar'
-function App() {
 
+import RoomList from './components/RoomList/RoomList.jsx'
+import SearchBar from './components/SearchBar/SearchBar'
+
+function App() {
   return (
     <>
     <SearchBar />
+    <RoomList></RoomList>
     </>
   )
 }
