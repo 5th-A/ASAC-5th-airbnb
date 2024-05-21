@@ -1,5 +1,13 @@
 import { useState } from 'react'
 import example from './category.json'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 
 function ButtonComponent({ button }) {
   return (
@@ -29,20 +37,26 @@ export default function Category() {
   const [buttonInfo, setButtonInfo] = useState(example)
 
   return (
-    <div style={{ width: '1440', height: '90' }}>
-      <div style={{ display: 'flex', width: '80%', height: '78' }}>
-        <ul
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            padding: 0,
-          }}
+    <div style={{ width: '100%', height: '90px', padding: '0 80px', border: '2px solid red' }}>
+      <div style={{ display: 'flex', height: '78px' }}>
+        <Swiper
+          cssMode={true}
+          navigation={true}
+          pagination={{ clickable: true }}
+          mousewheel={true}
+          keyboard={true}
+          slidesPerView={12}
+          spaceBetween={10}
+          modules={[Navigation, Mousewheel, Keyboard]}
+          className='mySwiper'
         >
           {buttonInfo.map((button, idx) => (
-            <ButtonComponent key={idx} button={button} />
+            <SwiperSlide key={idx}>
+              <ButtonComponent button={button} />
+            </SwiperSlide>
           ))}
-        </ul>
-        <div style={{ width: '20%' }}>
+        </Swiper>
+        <div>
           <button>filter</button>
         </div>
       </div>
