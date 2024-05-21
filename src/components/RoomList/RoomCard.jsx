@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
-import emptyHeart from '../image/LikeButton/heart.png'
-import fullHeart from '../image/LikeButton/fullheart.png'
+import emptyHeart from '../../image/LikeButton/heart.png'
+import fullHeart from '../../image/LikeButton/fullheart.png'
 
 import 'swiper/css'
 import 'swiper/css/navigation'

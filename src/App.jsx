@@ -1,5 +1,5 @@
 import './App.css'
-import RoomCard from './components/RoomCard'
+import RoomCard from './components/RoomList/RoomCard.jsx'
 
 function App() {
   return (
