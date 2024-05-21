@@ -2,6 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
+import emptyHeart from '../image/LikeButton/heart.png'
+import fullHeart from '../image/LikeButton/fullheart.png'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -9,10 +12,11 @@ import 'swiper/css/pagination'
 import './RoomCard.css'
 
 export default function RoomCard() {
+  const [isLike, setIsLike] = useState(emptyHeart)
   return (
     <>
       {/*Image slider*/}
-      <div className='max-w-sm overflow-hidden shadow-lg '>
+      <div className='max-w-sm overflow-hidden'>
         <div className='relative px-2 py-2'>
           <Swiper
             className='swiper'
@@ -20,12 +24,14 @@ export default function RoomCard() {
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
+              disabledClass: 'swiper-button-disabled',
             }}
             spaceBetween={50}
             slidesPerView={1}
             pagination
+            watchSlidesProgress
           >
-            {/*더미데이터 생기면 map으로 불러오기*/}
+            {/*더미데이터 생기면 map으로 불러오게 수정*/}
             <SwiperSlide>
               <img className='rounded-2xl' src='http://placehold.it/110x145' alt='Room view 1' />
             </SwiperSlide>
@@ -38,6 +44,20 @@ export default function RoomCard() {
             <div className='swiper-button-prev'></div>
             <div className='swiper-button-next'></div>
           </Swiper>
+          <button className='absolute top-6 right-5 p-2 z-10'>
+            <img
+              src={isLike}
+              onClick={() => {
+                const isLiked = isLike
+                if (isLiked === emptyHeart) {
+                  setIsLike(fullHeart)
+                } else {
+                  setIsLike(emptyHeart)
+                }
+              }}
+              className='w-7 h-7'
+            ></img>
+          </button>
         </div>
         {/*Room Info*/}
         <div className='px-6 py-4'>
