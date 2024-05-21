@@ -1,10 +1,10 @@
 import './App.css'
-import RoomCard from './components/RoomList/RoomCard.jsx'
+import RoomList from './components/RoomList/RoomList.jsx'
 
 function App() {
   return (
     <>
-      <RoomCard></RoomCard>
+      <RoomList></RoomList>
     </>
   )
 }
