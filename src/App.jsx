@@ -8,11 +8,11 @@ import SmallSearchBar from './components/SearchBar/SmallSearchBar.jsx'
 function App() {
   return (
     <>
-      {/* <Container /> */}
+      <Container />
+      <RoomList></RoomList>
       <SearchBar />
-      {/* <SmallSearchBar></SmallSearchBar> */}
-      {/* <RoomList></RoomList>
-      <Footer /> */}
+      <SmallSearchBar/>
+      <Footer />
     </>
   )
 }
