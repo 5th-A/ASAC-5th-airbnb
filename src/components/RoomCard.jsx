@@ -17,7 +17,7 @@ export default function RoomCard() {
     <>
       {/*Image slider*/}
       <div className='max-w-sm overflow-hidden'>
-        <div className='relative px-2 py-2'>
+        <div className='relative'>
           <Swiper
             className='swiper'
             modules={[Pagination, Navigation]}
@@ -70,7 +70,7 @@ export default function RoomCard() {
         </div>
 
         {/*Room cost*/}
-        <div className='px-5 pt-4 pb-2 flex justify-between items-center'>
+        <div className='px-5 pb-2 flex justify-between items-center'>
           <div className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>₩999,999/박</div>
         </div>
       </div>
