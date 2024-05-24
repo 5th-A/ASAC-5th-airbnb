@@ -98,11 +98,17 @@ export default function DetailRoomInfo() {
                     </div>
                   </div>
 
-                  {/* 구분선 */}
-                  <div className='py-6 border-t border-b border-gray-300 border-solid'>
-                    호스트 프로필
+                  <div
+                    key={each.host.id}
+                    className='flex items-center py-6 border-t border-b border-gray-300 border-solid'
+                  >
+                    <div>여기에 프사</div>
+                    <div>
+                      <div>호스트: {each.host.name} 님</div>
+                      <div>호스트정보</div>
+                    </div>
                   </div>
-                  {/* 구분선 */}
+
                   <div className='pt-8 pb-12 border-b border-gray-300 border-solid'>
                     숙소 상세정보
                   </div>
