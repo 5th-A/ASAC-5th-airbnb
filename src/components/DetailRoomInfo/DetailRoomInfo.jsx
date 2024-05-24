@@ -40,13 +40,23 @@ export default function DetailRoomInfo() {
                   </h2>
                   <div>{filterInfo}</div>
                 </div>
-                <div>게스트선호표시</div>
-                <div>카테고리나 슈퍼호스트 여부 아이콘들 표시</div>
+                {each.guestPrefer && (
+                  <div className='flex guestPrefer '>
+                    <div>게스트 선호</div>
+                    <div>평점</div>
+                    <div>별점</div>
+                  </div>
+                )}
+                <div className='pt-5 pb-8'>카테고리나 슈퍼호스트 여부 아이콘들 표시</div>
                 {/* 구분선 */}
-                <div>호스트 프로필</div>
-                <div>숙소 상세정보</div>
-                <div>숙박 장소</div>
+                <div className='py-6 border-t border-b border-gray-300 border-solid'>
+                  호스트 프로필
+                </div>
                 {/* 구분선 */}
+                <div className='pt-8 pb-12 border-b border-gray-300 border-solid'>
+                  숙소 상세정보
+                </div>
+                <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>숙박 장소</div>
               </div>
             </div>
           )
@@ -54,7 +64,9 @@ export default function DetailRoomInfo() {
 
       {/* 오른쪽 계산기 영역 (40%) */}
       <div className='w-3/12'>
-        <div>이쪽에는 결제 계산기</div>
+        <div>
+          <div className='sticky'>이쪽에는 결제 계산기</div>
+        </div>
       </div>
     </div>
   )
