@@ -14,7 +14,7 @@ export default function DetailRoomInfo() {
         {roomDetailData
           .filter((each) => each.roomName === initRoomName)
           .map((each) => {
-            // 필요한 정보 뽑아서 문자열 하나에 join
+            /* 필터된 정보 문자열 하나로 */
             const filterInfo = Object.entries(each.filter)
               .filter(([key, value]) => value !== 0)
               .map(([key, value]) => {
@@ -34,16 +34,18 @@ export default function DetailRoomInfo() {
               })
               .join(' · ')
 
+            /* 카테고리 목록 모아둔 배열 */
             const filterCategory = Object.entries(each.categories).map(([key, value]) => {
               return (
                 <div key={value.id}>
-                  <div>
+                  <div className='flex gap-1'>
                     <img src={value.icon} width='20' height='20'></img>
                     <div>{value.name}</div>
                   </div>
                 </div>
               )
             })
+
             return (
               <div key={each.roomName} className='flex-6 box-border'>
                 <div>
@@ -73,6 +75,7 @@ export default function DetailRoomInfo() {
                           에어비앤비 게스트에게 가장 사랑받는 숙소
                         </div>
                       </div>
+                      {/* 별점, 후기는 json 어떻게할지 정하고 구현 */}
                       <div
                         className='justify-center text-center px-4 border-r border-gray-300 border-solid'
                         style={{ minWidth: '81px' }}
@@ -87,7 +90,14 @@ export default function DetailRoomInfo() {
                       </div>
                     </div>
                   )}
-                  <div className='pt-5 pb-8'>{filterCategory}</div>
+                  <div className='flex justify-between pt-5 pb-8'>
+                    <div className='flex-grow'>
+                      <div className='width-[100%] grid grid-cols-2 grid-rows-3 gap-3 auto-rows-fr'>
+                        {filterCategory}
+                      </div>
+                    </div>
+                  </div>
+
                   {/* 구분선 */}
                   <div className='py-6 border-t border-b border-gray-300 border-solid'>
                     호스트 프로필
