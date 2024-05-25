@@ -3,10 +3,11 @@ import guestPrefer_Left from '../../assets/guestPrefer_Left.svg'
 import guestPrefer_Right from '../../assets/guestPrefer_Right.svg'
 import roomDetail from '../../roomDetail.json'
 
-export default function DetailRoomInfo() {
+export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 props로 받아오기*/) {
   const roomDetailData = roomDetail
   const initRoomName = 'NEW 스테이구구(Stay GUGU) 302호'
-  console.log(roomDetailData[0].roomName)
+  const currentYear = new Date().getFullYear()
+
   return (
     <div className='flex w-[100%] justify-center items-center'>
       <div className='flex itemWrapper justify-center w-[70%] px-10'>
@@ -33,7 +34,6 @@ export default function DetailRoomInfo() {
                 }
               })
               .join(' · ')
-
             /* 카테고리 목록 모아둔 배열 */
             const filterCategory = Object.entries(each.categories).map(([key, value]) => {
               return (
@@ -63,7 +63,10 @@ export default function DetailRoomInfo() {
                           style={{ minWidth: '94px', maxHeight: '36px' }}
                         >
                           <img src={guestPrefer_Left} width='23' height='36' />
-                          <div className='font-semibold text-center' style={{ minWidth: '48px' }}>
+                          <div
+                            className='font-semibold text-center px-1 pb-1'
+                            style={{ minWidth: '56px' }}
+                          >
                             게스트 <br /> 선호
                           </div>
                           <img src={guestPrefer_Right} width='23' height='36' />
@@ -100,19 +103,43 @@ export default function DetailRoomInfo() {
 
                   <div
                     key={each.host.id}
-                    className='flex items-center py-6 border-t border-b border-gray-300 border-solid'
+                    className='flex items-center py-6 border-t border-b border-gray-300 border-solid gap-x-6'
                   >
-                    <div>여기에 프사</div>
-                    <div>
-                      <div>호스트: {each.host.name} 님</div>
-                      <div>호스트정보</div>
+                    <div className='overflow-hidden w-10 h-10' style={{ borderRadius: '70%' }}>
+                      <img className='object-cover' src={each.host.profile} />
+                    </div>
+                    <div className='flex flex-col gap-y-1 '>
+                      <div className='font-semibold'>호스트: {each.host.name} 님</div>
+                      <div>
+                        <ol>
+                          {each.host.type === '슈퍼호스트' ? (
+                            <>
+                              <li className='float-left text-gray-500 text-sm'>{each.host.type}</li>
+                              <li className='float-left px-1 text-gray-500 text-sm'>{'·'}</li>
+                              <li className='float-left text-gray-500 text-sm'>
+                                호스팅 경력 {currentYear - each.host.year}년
+                              </li>
+                            </>
+                          ) : (
+                            <li className='text-sm'>
+                              호스팅 경력 {currentYear - each.host.year}년
+                            </li>
+                          )}
+                        </ol>
+                      </div>
                     </div>
                   </div>
 
-                  <div className='pt-8 pb-12 border-b border-gray-300 border-solid'>
-                    숙소 상세정보
+                  <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
+                    {each.introduction}
                   </div>
-                  <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>숙박 장소</div>
+                  <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>
+                    <div>
+                      <div>해당하는 아이콘 자리</div>
+                      <div>침실</div>
+                      <div>침대종류</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )
