@@ -8,6 +8,10 @@ export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 
   const initRoomName = 'NEW 스테이구구(Stay GUGU) 302호'
   const currentYear = new Date().getFullYear()
 
+  function formatPrice(price) {
+    return new Intl.NumberFormat().format(price)
+  }
+
   return (
     <div className='flex w-[100%] justify-center items-center'>
       <div className='flex itemWrapper justify-center w-[70%] px-10'>
@@ -47,110 +51,145 @@ export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 
             })
 
             return (
-              <div key={each.roomName} className='flex-6 box-border'>
-                <div>
-                  <div className='py-2'>
-                    <h2 className='text-xl font-semibold'>
-                      {each.address}, {each.roomType}
-                    </h2>
-                    <div>{filterInfo}</div>
-                  </div>
-                  {each.guestPrefer && (
-                    <div className='flex py-5 px-7 border border-solid rounded-xl border-gray-300'>
-                      <div className='flex justify-center space-x-4'>
-                        <div
-                          className='flex justify-center'
-                          style={{ minWidth: '94px', maxHeight: '36px' }}
-                        >
-                          <img src={guestPrefer_Left} width='23' height='36' />
+              <>
+                <div key={each.roomName} className='flex-6 box-border'>
+                  <div>
+                    <div className='py-2'>
+                      <h2 className='text-xl font-semibold'>
+                        {each.address}, {each.roomType}
+                      </h2>
+                      <div>{filterInfo}</div>
+                    </div>
+                    {each.guestPrefer && (
+                      <div className='flex py-5 px-7 border border-solid rounded-xl border-gray-300'>
+                        <div className='flex justify-center space-x-4'>
                           <div
-                            className='font-semibold text-center px-1 pb-1'
-                            style={{ minWidth: '56px' }}
+                            className='flex justify-center'
+                            style={{ minWidth: '94px', maxHeight: '36px' }}
                           >
-                            게스트 <br /> 선호
+                            <img src={guestPrefer_Left} width='23' height='36' />
+                            <div
+                              className='font-semibold text-center px-1 pb-1'
+                              style={{ minWidth: '56px' }}
+                            >
+                              게스트 <br /> 선호
+                            </div>
+                            <img src={guestPrefer_Right} width='23' height='36' />
                           </div>
-                          <img src={guestPrefer_Right} width='23' height='36' />
+                          <div
+                            className='overflow-hidden whitespace-normal'
+                            style={{ maxHeight: '48px' }}
+                          >
+                            에어비앤비 게스트에게 가장 사랑받는 숙소
+                          </div>
                         </div>
+                        {/* 별점, 후기는 json 어떻게할지 정하고 구현 */}
                         <div
-                          className='overflow-hidden whitespace-normal'
-                          style={{ maxHeight: '48px' }}
+                          className='justify-center text-center px-4 border-r border-gray-300 border-solid'
+                          style={{ minWidth: '81px' }}
                         >
-                          에어비앤비 게스트에게 가장 사랑받는 숙소
+                          <div>별점</div>
+                          <div>별개수</div>
+                        </div>
+                        <div className='mx-2'></div>
+                        <div className='justify-center text-center' style={{ minWidth: '52px' }}>
+                          <div>426개</div>
+                          <div>후기</div>
                         </div>
                       </div>
-                      {/* 별점, 후기는 json 어떻게할지 정하고 구현 */}
-                      <div
-                        className='justify-center text-center px-4 border-r border-gray-300 border-solid'
-                        style={{ minWidth: '81px' }}
-                      >
-                        <div>별점</div>
-                        <div>별개수</div>
-                      </div>
-                      <div className='mx-2'></div>
-                      <div className='justify-center text-center' style={{ minWidth: '52px' }}>
-                        <div>426개</div>
-                        <div>후기</div>
+                    )}
+                    <div className='flex justify-between pt-5 pb-8'>
+                      <div className='flex-grow'>
+                        <div className='width-[100%] grid grid-cols-2 grid-rows-3 gap-3 auto-rows-fr text-sm'>
+                          {filterCategory}
+                        </div>
                       </div>
                     </div>
-                  )}
-                  <div className='flex justify-between pt-5 pb-8'>
-                    <div className='flex-grow'>
-                      <div className='width-[100%] grid grid-cols-2 grid-rows-3 gap-3 auto-rows-fr'>
-                        {filterCategory}
-                      </div>
-                    </div>
-                  </div>
 
-                  <div
-                    key={each.host.id}
-                    className='flex items-center py-6 border-t border-b border-gray-300 border-solid gap-x-6'
-                  >
-                    <div className='overflow-hidden w-10 h-10' style={{ borderRadius: '70%' }}>
-                      <img className='object-cover' src={each.host.profile} />
-                    </div>
-                    <div className='flex flex-col gap-y-1 '>
-                      <div className='font-semibold'>호스트: {each.host.name} 님</div>
-                      <div>
-                        <ol>
-                          {each.host.type === '슈퍼호스트' ? (
-                            <>
-                              <li className='float-left text-gray-500 text-sm'>{each.host.type}</li>
-                              <li className='float-left px-1 text-gray-500 text-sm'>{'·'}</li>
-                              <li className='float-left text-gray-500 text-sm'>
+                    <div
+                      key={each.host.id}
+                      className='flex items-center py-6 border-t border-b border-gray-300 border-solid gap-x-6'
+                    >
+                      <div className='overflow-hidden w-10 h-10' style={{ borderRadius: '70%' }}>
+                        <img className='object-cover' src={each.host.profile} />
+                      </div>
+                      <div className='flex flex-col gap-y-1 '>
+                        <div className='font-semibold'>호스트: {each.host.name} 님</div>
+                        <div>
+                          <ol>
+                            {each.host.type === '슈퍼호스트' ? (
+                              <>
+                                <li className='float-left text-gray-500 text-sm'>
+                                  {each.host.type}
+                                </li>
+                                <li className='float-left px-1 text-gray-500 text-sm'>{'·'}</li>
+                                <li className='float-left text-gray-500 text-sm'>
+                                  호스팅 경력 {currentYear - each.host.year}년
+                                </li>
+                              </>
+                            ) : (
+                              <li className='text-sm'>
                                 호스팅 경력 {currentYear - each.host.year}년
                               </li>
-                            </>
-                          ) : (
-                            <li className='text-sm'>
-                              호스팅 경력 {currentYear - each.host.year}년
-                            </li>
-                          )}
-                        </ol>
+                            )}
+                          </ol>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
-                    {each.introduction}
-                  </div>
-                  <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>
-                    <div>
-                      <div>해당하는 아이콘 자리</div>
-                      <div>침실</div>
-                      <div>침대종류</div>
+                    <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
+                      {each.introduction}
+                    </div>
+                    <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>
+                      <div>
+                        <div>해당하는 아이콘 자리</div>
+                        <div>침실</div>
+                        <div>침대종류</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                {/*계산기 영역*/}
+                <div className='flex w-[40%] '>
+                  <div className='calculator ml-auto'>
+                    <div className='flex flex-col'>
+                      <div className='showPrice'>
+                        <span className='font-semibold text-[22px]'>
+                          ₩{formatPrice(each.price)}
+                        </span>
+                        <span> /박</span>
+                      </div>
+                      <div className='flex flex-col w-full justify-between'>
+                        <button className='flex px-4 py-2 rounded-md w-full border border-solid border-black'>
+                          <div className='w-[50%] border-r border-solid border-black'>
+                            <div>체크인</div>
+                            <div>2024. 6. 9.</div>
+                          </div>
+                          <div className='w-[50%] pl-4'>
+                            <div>체크아웃</div>
+                            <div>2024. 6. 14.</div>
+                          </div>
+                        </button>
+                        <div className='mt-4'>
+                          <div>인원</div>
+                          <div>게스트 1명</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <div>예약하기</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>예약 확정 전에는 요금이 청구되지 않습니다.</div>
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+              </>
             )
           })}
-
-        {/* 오른쪽 계산기 영역 (40%) */}
-        <div className='flex-4'>
-          <div>
-            <div className='sticky'>이쪽에는 결제 계산기</div>
-          </div>
-        </div>
       </div>
     </div>
   )
