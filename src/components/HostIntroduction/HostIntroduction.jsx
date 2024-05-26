@@ -66,3 +66,23 @@ const HostStats = () => {
     </div>
   );
 };
+
+const HostIntroductionText = () => {
+  const { introduction } = useContext(HostContext);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const introductionPreview = introduction.length > 100
+    ? `${introduction.substring(0, 70)}...`
+    : introduction;
+  return (
+    <div className="mt-4 w-[380px]">
+      <p className="text-gray-500">
+        {isExpanded ? introduction : introductionPreview}
+      </p>
+      {introduction.length > 100 && (
+        <button onClick={()=> setIsExpanded(!isExpanded)} className="text-black-500 ml-2">
+          {isExpanded ? '접기' : '더보기'}
+        </button>
+      )}
+    </div>
+  );
+};
