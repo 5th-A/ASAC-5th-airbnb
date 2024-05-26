@@ -86,3 +86,43 @@ const HostIntroductionText = () => {
     </div>
   );
 };
+
+const HostDetails = () => {
+  const { host, isSuperHost } = useContext(HostContext);
+  return (
+    <div className="flex-grow p-6">
+      <div className='flex-col'>
+        <h3 className="text-lg font-medium text-black">{isSuperHost ? `${host.name} 님은 슈퍼호스트입니다.` : ''}</h3>
+        <p className="text-gray-500 mt-2">
+          {isSuperHost ? '슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수 있도록 최선을 다하는 호스트입니다.' : ''}
+        </p>
+        <div className="mt-4 flex-col">
+          <h3 className="text-lg font-medium text-black">호스트 상세 정보</h3>
+          <p className="text-gray-500 mt-2">응답률: 100%</p>
+          <p className="text-gray-500">1시간 이내에 응답</p>
+        </div>
+        <button className="mt-4 px-4 py-2 bg-black text-white rounded w-[207px] h-[48px]">호스트에게 메시지 보내기</button>
+      </div>
+      <div className='flex border-solid border-slate-300 border-t-[1px] mt-10'>
+        <div className='mt-5'><img src={badge} alt="Safety Badge" /></div>
+        <span className='text-xs mt-7 pl-4' >안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요.</span>
+      </div>
+    </div>
+  );
+};
+
+const HostIntroduction = () => {
+  return (
+    <HostProvider>
+      <div className="mx-auto bg-[#f0efe9] rounded-xl shadow-md p-6 flex space-x-6 w-4/5">
+        <div className='flex flex-col p-6'>
+          <HostProfile />
+          <HostIntroductionText />
+        </div>
+        <HostDetails />
+      </div>
+    </HostProvider>
+  );
+};
+
+export default HostIntroduction;
