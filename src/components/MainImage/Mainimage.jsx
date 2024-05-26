@@ -8,7 +8,7 @@ const MainImage = () => {
   const room = roomDetail[0]
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='container mx-auto pt-12'>
       <div className='flex justify-between items-center mb-4'>
         <h1 className='text-2xl font-bold'>{room.roomName}</h1>
         <div className='flex space-x-2 button-container' style={{ width: '140px', height: '28px' }}>
@@ -22,7 +22,7 @@ const MainImage = () => {
           </button>
         </div>
       </div>
-      <div style={{ width: '1120px', height: '324px' }} className='w-full'>
+      <div style={{ width: '1120px', height: '324px' }} className='w-full pt-12'>
         <div className='grid grid-cols-4 grid-rows-2 gap-4 h-full'>
           <div className='col-span-4 lg:col-span-2 row-span-1 lg:row-span-2 image-container'>
             <button className='w-full h-full p-0'>
