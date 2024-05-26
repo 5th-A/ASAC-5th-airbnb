@@ -14,7 +14,7 @@ function App() {
       <Category />
       <RoomList></RoomList>
       <SearchBar />
-      <SmallSearchBar/>
+      <SmallSearchBar />
       <Footer />
     </>
   )

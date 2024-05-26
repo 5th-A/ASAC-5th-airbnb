@@ -17,8 +17,8 @@ function ButtonComponent({ button }) {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center', // 수직 중앙 정렬 추가
-          height: '100%', // 전체 높이 사용
+          justifyContent: 'center',
+          height: '100%',
         }}
       >
         <div
@@ -57,11 +57,21 @@ function ButtonComponent({ button }) {
 export default function Category() {
   const [buttonInfo, setButtonInfo] = useState(example)
 
+  const handleWheel = (swiper, event) => {
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      // 수평 스크롤인 경우 Swiper가 이벤트를 처리하도록 허용
+      swiper.mousewheel.enable()
+    } else {
+      // 수직 스크롤인 경우 이벤트를 막음
+      event.preventDefault()
+      swiper.mousewheel.disable()
+    }
+  }
+
   return (
     <div style={{ width: '100%', height: '90px', padding: '0 80px' }}>
       <div style={{ display: 'flex', height: '90px' }}>
         <Swiper
-          cssMode={true}
           navigation={true}
           pagination={{ clickable: true }}
           mousewheel={true}
@@ -71,7 +81,8 @@ export default function Category() {
           modules={[Navigation, Mousewheel, Keyboard]}
           className='mySwiper'
           autoHeight={true}
-          style={{ height: '90px' }} // Swiper의 height를 부모 div와 일치시키기
+          style={{ height: '90px' }}
+          onWheel={(swiper, event) => handleWheel(swiper, event)}
         >
           <ul style={{ display: 'flex', padding: '0', margin: '0' }}>
             {buttonInfo.map((button, idx) => (
