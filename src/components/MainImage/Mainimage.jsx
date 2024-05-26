@@ -25,39 +25,49 @@ const MainImage = () => {
       <div style={{ width: '1120px', height: '324px' }} className='w-full'>
         <div className='grid grid-cols-4 grid-rows-2 gap-4 h-full'>
           <div className='col-span-4 lg:col-span-2 row-span-1 lg:row-span-2 image-container'>
-            <img
-              src={room.RoomImages[0].url}
-              alt='Building'
-              className='w-full h-full object-cover rounded'
-            />
+            <button className='w-full h-full p-0'>
+              <img
+                src={room.RoomImages[0].url}
+                alt='Building'
+                className='w-full h-full object-cover rounded'
+              />
+            </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <img
-              src={room.RoomImages[1].url}
-              alt='Room 1'
-              className='w-full h-full object-cover rounded'
-            />
+            <button className='w-full h-full p-0'>
+              <img
+                src={room.RoomImages[1].url}
+                alt='Room 1'
+                className='w-full h-full object-cover rounded'
+              />
+            </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <img
-              src={room.RoomImages[2].url}
-              alt='Room 2'
-              className='w-full h-full object-cover rounded'
-            />
+            <button className='w-full h-full p-0'>
+              <img
+                src={room.RoomImages[2].url}
+                alt='Room 2'
+                className='w-full h-full object-cover rounded'
+              />
+            </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <img
-              src={room.RoomImages[3].url}
-              alt='Room 3'
-              className='w-full h-full object-cover rounded'
-            />
+            <button className='w-full h-full p-0'>
+              <img
+                src={room.RoomImages[3].url}
+                alt='Room 3'
+                className='w-full h-full object-cover rounded'
+              />
+            </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <img
-              src={room.RoomImages[4].url}
-              alt='Room 4'
-              className='w-full h-full object-cover rounded'
-            />
+            <button className='w-full h-full p-0'>
+              <img
+                src={room.RoomImages[4].url}
+                alt='Room 4'
+                className='w-full h-full object-cover rounded'
+              />
+            </button>
           </div>
         </div>
       </div>
