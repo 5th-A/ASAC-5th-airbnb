@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar/SearchBar'
 import Footer from './components/Footer/Footer.jsx'
 import SmallSearchBar from './components/SearchBar/SmallSearchBar.jsx'
 import Category from './components/Category/Category.jsx'
+
 function App() {
   return (
     <>
