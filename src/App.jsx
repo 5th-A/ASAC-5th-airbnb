@@ -6,16 +6,20 @@ import SearchBar from './components/SearchBar/SearchBar'
 import Footer from './components/Footer/Footer.jsx'
 import SmallSearchBar from './components/SearchBar/SmallSearchBar.jsx'
 import Category from './components/Category/Category.jsx'
+import DetailPageCalendarDisplay from './components/Calendar/DetailPageCalendarDisplay.jsx'
+import Calendar from './components/Calendar/Calendar.jsx'
 
 function App() {
   return (
     <>
-      <Container />
+      {/* <Container />
       <SearchBar />
       <Category />
       <RoomList></RoomList>
       <SearchBar />
-      <SmallSearchBar />
+      <SmallSearchBar /> */}
+      <Calendar />
+      <DetailPageCalendarDisplay />
       <Footer />
     </>
   )
