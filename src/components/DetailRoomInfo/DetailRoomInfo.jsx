@@ -88,7 +88,7 @@ export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 
                               <img src={guestPrefer_Right} width='23' height='36' />
                             </div>
                             <div
-                              className='overflow-hidden whitespace-normal'
+                              className='overflow-hidden whitespace-normal font-semibold'
                               style={{ maxHeight: '48px' }}
                             >
                               에어비앤비 게스트에게 가장 사랑받는 숙소
@@ -96,16 +96,19 @@ export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 
                           </div>
                           {/* 별점, 후기는 json 어떻게할지 정하고 구현 */}
                           <div
-                            className='justify-center text-center px-4 border-r border-gray-300 border-solid'
+                            className='flex-grow justify-center text-center px-4 border-r border-gray-300 border-solid'
                             style={{ minWidth: '81px' }}
                           >
-                            <div>별점</div>
+                            <div className='font-semibold text-[22px]'>4.89</div>
                             <div>별개수</div>
                           </div>
                           <div className='mx-2'></div>
-                          <div className='justify-center text-center' style={{ minWidth: '52px' }}>
-                            <div>426개</div>
-                            <div>후기</div>
+                          <div
+                            className='flex-grow justify-between items-center text-center'
+                            style={{ minWidth: '52px' }}
+                          >
+                            <div className='font-semibold text-[18px]'>426개</div>
+                            <div className='text-[12px] underline underline-offset-1 '>후기</div>
                           </div>
                         </div>
                       )}
@@ -163,7 +166,7 @@ export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 
                   {/*계산기 영역*/}
                   <div className='flex relative w-[40%] '>
                     <div className='ml-auto mt-8'>
-                      <div className='calculator sticky top-0 bottom-0 p-6 border rounded-md border-solid border-black'>
+                      <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
                         <div className='flex flex-col'>
                           <div className='showPrice mb-6'>
                             <span className='font-semibold text-[22px]'>
@@ -212,7 +215,7 @@ export default function DetailRoomInfo(/*나중에 어떤방인지 식별할거 
                           </div>
                         </div>
                         <div className='pt-2 w-full'>
-                          <div className='text-[14px] w-[100%]'>
+                          <div className=' text-center text-[14px] w-[100%]'>
                             예약 확정 전에는 요금이 청구되지 않습니다.
                           </div>
                         </div>
