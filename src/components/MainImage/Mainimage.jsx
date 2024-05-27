@@ -9,23 +9,23 @@ const MainImage = () => {
 
   return (
     <div className='container mx-auto pt-12'>
-      <div className='flex justify-between items-center mb-4'>
+      <div className='flex justify-between items-center'>
         <h1 className='text-2xl font-bold'>{room.roomName}</h1>
         <div className='flex space-x-2 button-container' style={{ width: '140px', height: '28px' }}>
           <button className='button flex items-center space-x-1'>
             <img src={shareIcon} alt='공유하기 아이콘' className='h-4 w-4' />
-            <span className='text-xs'>공유하기</span>
+            <span className='text-sm'>공유하기</span>
           </button>
           <button className='button flex items-center space-x-1'>
             <img src={heartIcon} alt='저장 아이콘' className='h-4 w-4' />
-            <span className='text-xs'>저장</span>
+            <span className='text-sm'>저장</span>
           </button>
         </div>
       </div>
-      <div style={{ width: '1120px', height: '324px' }} className='w-full pt-12'>
+      <div style={{ width: '1120px', height: '324px' }} className='w-full pt-6'>
         <div className='grid grid-cols-4 grid-rows-2 gap-4 h-full'>
           <div className='col-span-4 lg:col-span-2 row-span-1 lg:row-span-2 image-container'>
-            <button className='w-full h-full p-0'>
+            <button className='w-full h-full p-0 border-none'>
               <img
                 src={room.RoomImages[0].url}
                 alt='Building'
@@ -34,7 +34,7 @@ const MainImage = () => {
             </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <button className='w-full h-full p-0'>
+            <button className='w-full h-full p-0 border-none'>
               <img
                 src={room.RoomImages[1].url}
                 alt='Room 1'
@@ -43,7 +43,7 @@ const MainImage = () => {
             </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <button className='w-full h-full p-0'>
+            <button className='w-full h-full p-0 border-none'>
               <img
                 src={room.RoomImages[2].url}
                 alt='Room 2'
@@ -52,7 +52,7 @@ const MainImage = () => {
             </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <button className='w-full h-full p-0'>
+            <button className='w-full h-full p-0 border-none'>
               <img
                 src={room.RoomImages[3].url}
                 alt='Room 3'
@@ -61,7 +61,7 @@ const MainImage = () => {
             </button>
           </div>
           <div className='col-span-1 lg:col-span-1 row-span-1 lg:row-span-1 image-container'>
-            <button className='w-full h-full p-0'>
+            <button className='w-full h-full p-0 border-none'>
               <img
                 src={room.RoomImages[4].url}
                 alt='Room 4'
