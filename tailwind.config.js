@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         customRed: 'rgb(255,56,92)',
+        customGray: 'rgb(221,221,221)',
       },
       flex: {
         6: '6 6 0%',
