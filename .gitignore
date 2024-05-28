@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# typescript
+next-env.d.ts
+
+# dotenv environment variable files
+.env
