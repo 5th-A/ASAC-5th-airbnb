@@ -1,0 +1,78 @@
+{
+    "id": 1,
+    "roomName": "NEW 스테이구구(Stay GUGU) 302호",
+    "price": 100000,
+    "RoomImages": [
+      {
+        "id": 1,
+        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+      },
+      {
+        "id": 2,
+        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+      },
+      {
+        "id": 3,
+        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+      },
+      {
+        "id": 4,
+        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+      },
+      {
+        "id": 5,
+        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Hwachon-myeon, Hongcheon-gun",
+    "roomType": "전체",
+    "filter": {
+      "maximum": 3,
+      "beds": 1,
+      "bedRooms": 2,
+      "bathRooms": 1,
+      "floor": 0
+    },
+    "guestPrefer": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "한적한시골",
+        "icon": "src/assets/countryside.svg"
+      },
+      {
+        "id": 2,
+        "name": "슈퍼호스트",
+        "icon": "src/assets/superhost.svg"
+      },
+      {
+        "id": 3,
+        "name": "한정 시간 무료 취소",
+        "icon": "src/assets/freecancel.svg"
+      },
+      {
+        "id": 4,
+        "name": "셀프 체크인",
+        "icon": "src/assets/selfCheckIn.svg"
+      },
+      {
+        "id": 5,
+        "name": "무선 인터넷",
+        "icon": "src/assets/wifi.svg"
+      },
+      {
+        "id": 6,
+        "name": "에어컨",
+        "icon": "src/assets/airconditioner.svg"
+      }
+    ],
+    "host": {
+      "id": 1,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-542345413/original/3ea815a5-fa4e-422d-8a08-55e032b5ab94.jpeg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2022,
+      "name": "희경"
+    },
+    "introduction": "강원도 홍천의 산속마을 스테이구구 입니다. 스테이 구구의 모든 공간은 저희가 하나하나 직접 만든 공간입니다 자연의 아름다운 뷰를 보시며 힐링 하시면 좋겠습니다 :) ❌️ NO KIDS / NO PET ❌️ 조리 불가 (로컬 맛집 가이드북 링크 제공)"
+  }
