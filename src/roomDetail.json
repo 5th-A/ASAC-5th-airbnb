@@ -78,60 +78,451 @@
     "introduction": "강원도 홍천의 산속마을 스테이구구 입니다.\n스테이 구구의 모든 공간은 저희가 하나하나 직접 만든 공간입니다\n 자연의 아름다운 뷰를 보시며 힐링 하시면 좋겠습니다 :)\n\n ❌️ NO KIDS / NO PET \n❌️ 조리 불가 (로컬 맛집 가이드북 링크 제공)"
   },
   {
-    "roomName": "지혜원",
-    "price": 260000,
+    "id": 2,
+    "roomName": "양평 독채풀빌라 스테이호은 (프라이빗 수영장, 마운틴뷰, 무료자쿠지, 개울가)",
+    "price": 502918,
     "RoomImages": [
       {
         "id": 6,
-        "url": "https://a0.muscache.com/im/pictures/5722195e-7c6a-4ccf-a243-3509db4d2133.jpg?im_w=1200"
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
       },
       {
         "id": 7,
-        "url": "https://a0.muscache.com/im/pictures/14059ee6-c4d7-4e62-8234-1818e715c600.jpg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
       },
       {
         "id": 8,
-        "url": "https://a0.muscache.com/im/pictures/adcf174b-b1c5-429a-92ee-3ff3f00dc635.jpg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
       },
       {
         "id": 9,
-        "url": "https://a0.muscache.com/im/pictures/a6f13a82-7e53-401e-9f2e-9ee743412db0.jpg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
       },
       {
         "id": 10,
-        "url": "https://a0.muscache.com/im/pictures/458d8f22-0521-4933-a061-25065e0ef86a.jpg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
       }
     ],
     "isLike": false,
-    "address": "Sabuk-myeon, Chuncheon",
-    "roomType": "전체",
+    "address": "양평군",
+    "roomType": "한국의 별장 전체",
     "filter": {
-      "maximum": 4,
-      "beds": 0,
+      "maximum": 6,
+      "beds": 2,
       "bedRooms": 2,
-      "bathRooms": 1,
+      "bathRooms": 2,
       "floor": 0
     },
     "guestPrefer": true,
     "categories": [
       {
-        "id": 1,
-        "name": "농장",
-        "icon": "## asset에 있는 svg 경로로 적으세요"
+        "id": 7,
+        "name": "한적한 시골",
+        "icon": "src/assets/countryside.svg"
       },
       {
-        "id": 2,
+        "id": 8,
         "name": "슈퍼호스트",
-        "icon": "## asset에 있는 svg 경로로 적으세요"
+        "icon": "src/assets/superhost.svg"
+      },
+      {
+        "id": 9,
+        "name": "한정 시간 무료 취소",
+        "icon": "src/assets/freecancel.svg"
+      },
+      {
+        "id": 10,
+        "name": "셀프 체크인",
+        "icon": "src/assets/selfCheckIn.svg"
+      },
+      {
+        "id": 11,
+        "name": "세탁기 및 건조기",
+        "icon": "src/assets/laundryMachine.svg"
+      },
+      {
+        "id": 12,
+        "name": "TV",
+        "icon": "src/assets/TV.svg"
       }
     ],
     "host": {
-      "id": 1,
-      "profile": "https://a0.muscache.com/im/pictures/user/User-542345413/original/3ea815a5-fa4e-422d-8a08-55e032b5ab94.jpeg?im_w=240",
+      "id": 2,
+      "profile": "https://a0.muscache.com/im/pictures/user/e17456f1-732b-4813-8608-bd64776a0cea.jpg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2023,
+      "name": "현아"
+    },
+    "introduction": "예약 전 숙소 이용 안내 및 이용 수칙을 반드시 읽어주세요. \n일상에서 벗어난 단 하루, 나만의 은신처에서 온전한 휴식을… '호젓한 은신처'를 의미하는 '호은'. 양평의 한적한 시골마을에 위치한 자연친화적 독채 스테이입니다. \n거실의 커다란 통창은 아름다운 자연 경관을 한폭의 그림처럼 담아 냅니다. \n통창 앞으로는 온 가족이 둘러앉을 수 있는 넉넉한 라운지 소파가, 거실 중앙에는 사계절 즐길 수 있는 실내 자쿠지가 있습니다. \n침실은 총 2개로 각각의 침실에는 개별 화장실이 딸려 있으며,킹 사이즈 침대도 하나씩 놓여 있습니다."
+  },
+  {
+    "id": 3,
+    "roomName": "나인하우스 #독채",
+    "price": 1320000,
+    "RoomImages": [
+      {
+        "id": 6,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-617784885502078213/original/56b74c47-1dda-4dea-8d86-ac909c1d6961.jpeg?im_w=1200"
+      },
+      {
+        "id": 7,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-617784885502078213/original/cca153d6-555c-4846-be7e-eddf233ad076.jpeg?im_w=720"
+      },
+      {
+        "id": 8,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-617784885502078213/original/19253af6-f8ca-4bbd-99f5-b2882e0111f6.jpeg?im_w=720"
+      },
+      {
+        "id": 9,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-617784885502078213/original/b299e13f-95a1-41f3-b74d-ea3f91544ea2.jpeg?im_w=720"
+      },
+      {
+        "id": 10,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-617784885502078213/original/b400c5d0-907a-40bf-ace4-6188b4e2b96b.jpeg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "가평군",
+    "roomType": "한국의 저택 전체",
+    "filter": {
+      "maximum": 8,
+      "beds": 0,
+      "bedRooms": 3,
+      "bathRooms": 3.5,
+      "floor": 0
+    },
+    "guestPrefer": false,
+    "categories": [
+      {
+        "id": 13,
+        "name": "한적한 시골",
+        "icon": "src/assets/countryside.svg"
+      },
+      {
+        "id": 14,
+        "name": "한정 시간 무료 취소",
+        "icon": "src/assets/freecancel.svg"
+      },
+      {
+        "id": 15,
+        "name": "셀프 체크인",
+        "icon": "src/assets/selfCheckIn.svg"
+      },
+      {
+        "id": 16,
+        "name": "세탁기",
+        "icon": "src/assets/laundryMachine.svg"
+      },
+      {
+        "id": 17,
+        "name": "TV",
+        "icon": "src/assets/TV.svg"
+      },
+      {
+        "id": 18,
+        "name": "무선 인터넷",
+        "icon": "src/assets/wifi.svg"
+      }
+    ],
+    "host": {
+      "id": 3,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-65974611/original/2a048f11-2a58-4d87-acf6-c07bc987da9b.jpeg?im_w=240",
+      "type": "호스트",
+      "year": 2022,
+      "name": "Sahee"
+    },
+    "introduction": "가족여행시 모두가 만족 할 숙소입니다. \n건물 뒤로는 산, 앞으로는 1,200평의 넓은 정원과 계곡이 자리하고 있으며 특색있는 외형의 건물에서 자연과 어울어지는 세련됨을 만끽 하실 수 있습니다. \n#경기도건축대상수상 #방송에소개된그집 #서울엔우리집이없다 #스몰웨딩 \n\n체크인: 오후 3시, 체크아웃: 오전 11시"
+  },
+  {
+    "id": 4,
+    "roomName": "감자수북",
+    "price": 135000,
+    "RoomImages": [
+      {
+        "id": 16,
+        "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
+      },
+      {
+        "id": 17,
+        "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
+      },
+      {
+        "id": 18,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
+      },
+      {
+        "id": 19,
+        "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
+      },
+      {
+        "id": 20,
+        "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "홍천",
+    "roomType": "한국의 집 전체",
+    "filter": {
+      "maximum": 6,
+      "beds": 2,
+      "bedRooms": 2,
+      "bathRooms": 1,
+      "floor": 0
+    },
+    "guestPrefer": false,
+    "categories": [
+      {
+        "id": 19,
+        "name": "한적한 시골",
+        "icon": "src/assets/countryside.svg"
+      },
+      {
+        "id": 20,
+        "name": "한정 시간 무료 취소",
+        "icon": "src/assets/freecancel.svg"
+      },
+      {
+        "id": 21,
+        "name": "세탁기 및 건조기",
+        "icon": "src/assets/laundryMachine.svg"
+      },
+      {
+        "id": 22,
+        "name": "에어컨",
+        "icon": "src/assets/airconditioner.svg"
+      },
+      {
+        "id": 23,
+        "name": "난방",
+        "icon": "src/assets/heater.svg"
+      }
+    ],
+    "host": {
+      "id": 4,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-29065729/original/3a9ba41a-3419-47f8-b459-1ef734103033.jpeg?im_w=240",
+      "type": "호스트",
+      "year": 2024,
+      "name": "지선"
+    },
+    "introduction": "평온한 숙소에서 온 가족이 함께 휴식 시간을 가져보세요. \n작가들이 증정한 책과 그림, 편안한 독서와 작업 공간이 마련된 북스테이 입니다. \n주변이 평화로운 시골마을이라 시골의 정적이 무엇인지 느낄수 있어요. \n냇가 주변이라 강 따라 산책하기 좋고 창가에 아름드리 나무가 보이는 찐 시골마을이에요"
+  },
+  {
+    "id": 5,
+    "roomName": "홍천 대형 단독 주택 (12명 반려동물 방4개 화장실4개 캠프파이어)",
+    "price": 760000,
+    "RoomImages": [
+      {
+        "id": 21,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/4d679ace-8a31-4799-83a1-9a17d68b48e0.jpeg?im_w=1200"
+      },
+      {
+        "id": 22,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/f9f078d2-6e42-4912-ae21-7eca075accb3.jpeg?im_w=720"
+      },
+      {
+        "id": 23,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/3958e054-74da-45da-8cf3-f0ab7c798124.jpeg?im_w=720"
+      },
+      {
+        "id": 24,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/eb85fd0f-d706-4514-95c0-af77924e30b7.jpeg?im_w=720"
+      },
+      {
+        "id": 25,
+        "url": "https://a0.muscache.com/im/pictures/98fec4f9-2cd7-4902-9119-95f090b91996.jpg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "홍천",
+    "roomType": "한국의 집 전체",
+    "filter": {
+      "maximum": 10,
+      "beds": 5,
+      "bedRooms": 4,
+      "bathRooms": 4,
+      "floor": 0
+    },
+    "guestPrefer": false,
+    "categories": [
+      {
+        "id": 24,
+        "name": "한적한 시골",
+        "icon": "src/assets/countryside.svg"
+      },
+      {
+        "id": 25,
+        "name": "한정 시간 무료 취소",
+        "icon": "src/assets/freecancel.svg"
+      },
+      {
+        "id": 26,
+        "name": "TV",
+        "icon": "src/assets/TV.svg"
+      },
+      {
+        "id": 27,
+        "name": "무선 인터넷",
+        "icon": "src/assets/wifi.svg"
+      },
+      {
+        "id": 28,
+        "name": "에어컨",
+        "icon": "src/assets/airconditioner.svg"
+      }
+    ],
+    "host": {
+      "id": 5,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-552570697/original/fdaa859f-f10a-4e8e-a246-9ddbf7ea9ce0.jpeg?im_w=240",
+      "type": "호스트",
+      "year": 2024,
+      "name": "수연"
+    },
+    "introduction": "2.5층으로 이루어진 단독주택입니다. \n멋진 그림들이 전시되어 있어요. \n반려동물과 같이 오셔도 좋아요. \n\n숙소 \n전 객실 화장실 있습니다."
+  },
+  {
+    "id": 6,
+    "roomName": "한강 비내섬과 앙성온천 근처 일출 아름다운 독채",
+    "price": 459000,
+    "RoomImages": [
+      {
+        "id": 26,
+        "url": "https://a0.muscache.com/im/pictures/7fa197a3-abfe-4c5a-8558-0d2208c2011e.jpg?im_w=1200"
+      },
+      {
+        "id": 27,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-558818377788738307/original/ade40aa0-ea7c-4d1a-8c42-436cccb4f5ac.jpeg?im_w=720"
+      },
+      {
+        "id": 28,
+        "url": "https://a0.muscache.com/im/pictures/0ce30d84-5929-406f-909f-d29faa16e0e7.jpg?im_w=720"
+      },
+      {
+        "id": 29,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-558818377788738307/original/db0633d3-7e5f-4088-8a1e-8ba782dc8d19.jpeg?im_w=720"
+      },
+      {
+        "id": 30,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-558818377788738307/original/dee52010-933b-47c3-a04b-58c7a50f0f40.jpeg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Angseong-myeon, Cheongju",
+    "roomType": "한국의 별장 전체",
+    "filter": {
+      "maximum": 10,
+      "beds": 1,
+      "bedRooms": 2,
+      "bathRooms": 2,
+      "floor": 0
+    },
+    "guestPrefer": true,
+    "categories": [
+      {
+        "id": 29,
+        "name": "한적한 시골",
+        "icon": "src/assets/countryside.svg"
+      },
+      {
+        "id": 30,
+        "name": "슈퍼호스트",
+        "icon": "src/assets/superhost.svg"
+      },
+      {
+        "id": 31,
+        "name": "위치 평점 최고",
+        "icon": "src/assets/locationRate.svg"
+      },
+      {
+        "id": 32,
+        "name": "한정 시간 무료 취소",
+        "icon": "src/assets/freecancel.svg"
+      },
+      {
+        "id": 33,
+        "name": "셀프 체크인",
+        "icon": "src/assets/selfCheckIn.svg"
+      },
+      {
+        "id": 34,
+        "name": "세탁기",
+        "icon": "src/assets/laundryMachine.svg"
+      }
+    ],
+    "host": {
+      "id": 6,
+      "profile": "https://a0.muscache.com/im/pictures/user/b0c0feb2-0b04-4854-8351-940aa5e3daba.jpg?im_w=240",
       "type": "슈퍼호스트",
       "year": 2022,
-      "name": "희경"
+      "name": "비내산장"
     },
-    "introduction": "강원도 홍천의 산속마을 스테이구구 입니다. 스테이 구구의 모든 공간은 저희가 하나하나 직접 만든 공간입니다 자연의 아름다운 뷰를 보시며 힐링 하시면 좋겠습니다 :) ❌️ NO KIDS / NO PET ❌️ 조리 불가 (로컬 맛집 가이드북 링크 제공)"
+    "introduction": "서울근교 한강 비내섬과 앙성온천 근처입니다. \n해발고도가 높아 거실에 앉아서 열두굽이 능선과 아름다운 일출을 볼수 있습니다. \n집 뒷길은 벚꽃 산책길이고 근처 계곡과 낚시가능한 저수지가 있습니다. \n2층 독채로 한적한 휴식을 원하는 한두 가족들의 모임에 적합합니다. \n1. 개인 별장으로 주말 한 두가족만 받으려 합니다 \n2. 2박시 1박은 50% 반값 할인 해 드립니다 \n3. 할인은 문의주시면 특별가제안이나 예약변경으로 진행해 드립니다 \n4. 3박 이상은 문의시 최대한 진행해 드리겠습니다 \n5. 성수기인 7월말에서 8월초는 할인이 적용되지 않습니다 \n6. 심어놓은 야채들과 앵두나 대추, 밤 등은 편하게 따드셔도 됩니다 \n7. 바베큐 숯과 그릴은 기본으로 세팅해드립니다 \n8. 한적한 산골이라 저녁시간 고성이나 노래는 삼가해 주시기바랍니다 \n9. 행복한 휴식이 되시길 바랍니다"
+  },
+  {
+    "id": 7,
+    "roomName": "로맨틱한 돔하우스 감성 글램핑(O)",
+    "price": 250200,
+    "RoomImages": [
+      {
+        "id": 31,
+        "url": "https://a0.muscache.com/im/pictures/a0b0c9b4-4273-4f17-8fb6-4592b48501ca.jpg?im_w=1200"
+      },
+      {
+        "id": 32,
+        "url": "https://a0.muscache.com/im/pictures/0db1b372-38c2-402f-8222-32339d4a957a.jpg?im_w=720"
+      },
+      {
+        "id": 33,
+        "url": "https://a0.muscache.com/im/pictures/303f6372-af87-4575-bd23-66e8a971477a.jpg?im_w=720"
+      },
+      {
+        "id": 34,
+        "url": "https://a0.muscache.com/im/pictures/78388324-e228-4369-8ac6-e78b460a26a1.jpg?im_w=720"
+      },
+      {
+        "id": 35,
+        "url": "https://a0.muscache.com/im/pictures/7d39facf-da79-4178-ab49-73eefbf501ac.jpg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Gapyeong-eup, Gapyeong-gun",
+    "roomType": "한국의 돔하우스의 개인실",
+    "filter": {
+      "maximum": 4,
+      "beds": 1,
+      "bedRooms": 1,
+      "bathRooms": 1.5,
+      "floor": 0
+    },
+    "guestPrefer": true,
+    "categories": [
+      {
+        "id": 35,
+        "name": "한적한 시골",
+        "icon": "src/assets/countryside.svg"
+      },
+      {
+        "id": 36,
+        "name": "세탁기 및 건조기",
+        "icon": "src/assets/laundryMachine.svg"
+      },
+      {
+        "id": 37,
+        "name": "무선 인터넷",
+        "icon": "src/assets/wifi.svg"
+      },
+      {
+        "id": 38,
+        "name": "에어컨",
+        "icon": "src/assets/locationRate.svg"
+      }
+    ],
+    "host": {
+      "id": 7,
+      "profile": "https://a0.muscache.com/im/pictures/user/5e2038ab-7e4e-4e5f-adb9-660a1ea6c9d6.jpg?im_w=240",
+      "type": "호스트",
+      "year": 2021,
+      "name": "Youna"
+    },
+    "introduction": "💌\n\n숙소 \n숲속 마을 제일 안쪽에 자리 잡고 있는 \n아기자기한 예쁜 글램핑장 입니다 \n도심을 완전히 벗어난 공간속에서 \n놀며 쉬며 자연을 만끽하세요🌱"
   }
 ]
