@@ -1,8 +1,11 @@
 import RoomCard from './RoomCard'
 
+import roomDetail from '../../roomDetail.json'
+
 export default function RoomList() {
   const roomCount = 25
   const roomCards = []
+
   for (let i = 0; i < roomCount; i++) {
     roomCards.push(<RoomCard key={i} />)
   }
