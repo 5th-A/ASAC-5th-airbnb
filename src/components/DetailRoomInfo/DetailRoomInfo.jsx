@@ -151,8 +151,10 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-    <div className='flex w-[100%] justify-center items-center'>
-      <div className='flex itemWrapper justify-center w-[70%] px-10'>
+    <div className='flex w-full items-center'>
+      {' '}
+      //여기임
+      <div className='flex itemWrapper justify-between'>
         <div className='flex-6 box-border'>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>
