@@ -40,32 +40,32 @@
       {
         "id": 1,
         "name": "한적한시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 2,
         "name": "슈퍼호스트",
-        "icon": "src/assets/superhost.svg"
+        "icon": "/assets/superhost.svg"
       },
       {
         "id": 3,
         "name": "한정 시간 무료 취소",
-        "icon": "src/assets/freecancel.svg"
+        "icon": "/assets/freecancel.svg"
       },
       {
         "id": 4,
         "name": "셀프 체크인",
-        "icon": "src/assets/selfCheckIn.svg"
+        "icon": "/assets/selfCheckIn.svg"
       },
       {
         "id": 5,
         "name": "무선 인터넷",
-        "icon": "src/assets/wifi.svg"
+        "icon": "/assets/wifi.svg"
       },
       {
         "id": 6,
         "name": "에어컨",
-        "icon": "src/assets/airconditioner.svg"
+        "icon": "/assets/airconditioner.svg"
       }
     ],
     "host": {

@@ -1,8 +1,7 @@
 import React from 'react'
-import roomDetail from './roomDetail.json'
-import './style.css'
-import shareIcon from '../../../assets/share.svg'
-import heartIcon from '../../../assets/heart.svg'
+import roomDetail from '@/data/roomDetail.json'
+import shareIcon from '/public/assets/share.svg'
+import heartIcon from '/public/assets/heart.svg'
 
 const MainImage = () => {
   const room = roomDetail[0]
@@ -13,11 +12,11 @@ const MainImage = () => {
         <h1 className='text-2xl font-bold'>{room.roomName}</h1>
         <div className='flex space-x-2 button-container' style={{ width: '140px', height: '28px' }}>
           <button className='button flex items-center space-x-1'>
-            <img src={shareIcon} alt='공유하기 아이콘' className='h-4 w-4' />
+            <img src={shareIcon.src} alt='공유하기 아이콘' className='h-4 w-4' />
             <span className='text-sm'>공유하기</span>
           </button>
           <button className='button flex items-center space-x-1'>
-            <img src={heartIcon} alt='저장 아이콘' className='h-4 w-4' />
+            <img src={heartIcon.src} alt='저장 아이콘' className='h-4 w-4' />
             <span className='text-sm'>저장</span>
           </button>
         </div>

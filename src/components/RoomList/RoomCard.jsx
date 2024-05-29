@@ -1,11 +1,12 @@
+'use client'
 import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
-import emptyHeart from '../../assets/likeButton_empty.svg'
-import fullHeart from '../../assets/likeButton_full.svg'
-import nextArrow from '../../assets/nextArrow.svg'
-import prevArrow from '../../assets/prevArrow.svg'
+import emptyHeart from '/public/assets/likeButton_empty.svg'
+import fullHeart from '/public/assets/likeButton_full.svg'
+import nextArrow from '/public/assets/nextArrow.svg'
+import prevArrow from '/public/assets/prevArrow.svg'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -15,7 +16,7 @@ import './RoomCard.css'
 
 export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
   console.log(roomAddress)
-  const [isLike, setIsLike] = useState(emptyHeart)
+  const [isLike, setIsLike] = useState(emptyHeart.src)
   const imgList = imgSrc.map((img) => {
     return (
       <SwiperSlide key={img.id}>
@@ -51,10 +52,10 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
           >
             {imgList}
             <div className='swiper-button-prev w-7 h-7'>
-              <img src={prevArrow}></img>
+              <img src={prevArrow.src}></img>
             </div>
             <div className='swiper-button-next w-7 h-7'>
-              <img src={nextArrow}></img>
+              <img src={nextArrow.src}></img>
             </div>
           </Swiper>
           {guestPrefer && (
@@ -67,7 +68,7 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
             <img
               src={isLike}
               onClick={() => {
-                setIsLike(isLike === emptyHeart ? fullHeart : emptyHeart)
+                setIsLike(isLike === emptyHeart.src ? fullHeart.src : emptyHeart.src)
               }}
               className='w-5 h-5'
             ></img>
