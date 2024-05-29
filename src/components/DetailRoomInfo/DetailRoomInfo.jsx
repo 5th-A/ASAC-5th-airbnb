@@ -1,8 +1,10 @@
+'use client'
 import { useState } from 'react'
-import guestPrefer_Left from '../../assets/guestPrefer_Left.svg'
-import guestPrefer_Right from '../../assets/guestPrefer_Right.svg'
-import extensionArrow from '../../assets/extensionArrow.svg'
-import roomDetail from '../../roomDetail.json'
+import guestPrefer_Left from '/public/assets/guestPrefer_Left.svg'
+import guestPrefer_Right from '/public/assets/guestPrefer_Right.svg'
+import extensionArrow from '/public/assets/extensionArrow.svg'
+import roomDetail from '@/data/roomDetail.json'
+import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -103,9 +105,9 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
             </div>
             <div>
               {isOpen ? (
-                <img src={extensionArrow}></img>
+                <img src={extensionArrow.src}></img>
               ) : (
-                <img className='scale-y-[-1]' src={extensionArrow}></img>
+                <img className='scale-y-[-1]' src={extensionArrow.src}></img>
               )}
             </div>
           </div>
@@ -165,11 +167,11 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
                   className='flex justify-center'
                   style={{ minWidth: '94px', maxHeight: '36px' }}
                 >
-                  <img src={guestPrefer_Left} width='23' height='36' />
+                  <img src={guestPrefer_Left.src} width='23' height='36' />
                   <div className='font-semibold text-center px-1 pb-1' style={{ minWidth: '56px' }}>
                     게스트 <br /> 선호
                   </div>
-                  <img src={guestPrefer_Right} width='23' height='36' />
+                  <img src={guestPrefer_Right.src} width='23' height='36' />
                 </div>
                 <div
                   className='overflow-hidden whitespace-normal font-semibold'
@@ -207,9 +209,7 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
             {roomDetailData.introduction}
           </div>
           <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>
-            <div>해당하는 아이콘 자리</div>
-            <div>침실</div>
-            <div>침대종류</div>
+            <AccommodationDetails />
           </div>
         </div>
         <div className='flex relative w-[40%]'>

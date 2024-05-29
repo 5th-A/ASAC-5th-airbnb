@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# typescript
+next-env.d.ts
+
+# next js
+.next
+
+# dotenv environment variable files
+.env

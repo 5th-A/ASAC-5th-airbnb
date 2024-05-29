@@ -1,5 +1,5 @@
-import CommentJson from './comment.json'
-import star from '../../assets/star.svg'
+import CommentJson from '@/data/comment.json'
+import star from '/public/assets/star.svg'
 const data = CommentJson
 
 dateCalculate(data[0].comment[0].date)
@@ -81,7 +81,7 @@ const Comment = () => {
 
       {/*<NoReview />*/}
       <div className='flex justify-center items-center'>
-        <div className='fr3 w-full max-w-[960px] h-[566px] -mx-2 flex flex-wrap justify-start '>
+        <div className='fr3 w-full  -mx-2 flex flex-wrap justify-center  grid grid-cols-2  '>
           {data[0].comment.map((each, index) => {
             return (
               <div key={index} className=''>
@@ -98,11 +98,11 @@ const Comment = () => {
 
                   <div className='fr3-2 flex mb-2 w-[400px] h-[18px]'>
                     <div className='flex gap-0.5 justify-center items-center'>
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
                     </div>
                     <div className='px-[5px]'>
                       <span>·</span>

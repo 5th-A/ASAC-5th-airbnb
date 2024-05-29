@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Footer = () => {
   const supportLinks = [
     { text: '도움말 센터', href: '#' },
@@ -32,16 +34,16 @@ const Footer = () => {
     { text: '한국의 변경된 환불정책', href: '#' },
     { text: '회사 세부정보', href: '#' },
   ]
-
+  // public/image/Footer/twitter.png
   const socialMediaLinks = [
     {
-      src: './src/image/Footer/facebook.png',
+      src: '/image/Footer/facebook.png',
       href: 'https://www.facebook.com/AirbnbKorea/?locale=ko_KR',
     },
-    { src: './src/image/Footer/twitter.png', href: '#' },
-    { src: './src/image/Footer/instagram.png', href: '#' },
-    { src: './src/image/Footer/naverblog.png', href: '#' },
-    { src: './src/image/Footer/naverpost.png', href: '#' },
+    { src: '/image/Footer/twitter.png', href: '#' },
+    { src: '/image/Footer/instagram.png', href: '#' },
+    { src: '/image/Footer/naverblog.png', href: '#' },
+    { src: '/image/Footer/naverpost.png', href: '#' },
   ]
 
   return (
@@ -118,9 +120,11 @@ const Footer = () => {
             <div className='flex items-center space-x-2'>
               <div className='flex space-x-1'>
                 {socialMediaLinks.map((link, index) => (
-                  <button key={index} className='p-2 bg-transparent border-none' onClick={() => (window.location.href = link.href)}>
-                    <img src={link.src} className='w-6 h-6' />
-                  </button>
+                  <Link key={index} href={link.href}>
+                    <button className='p-2 bg-transparent border-none'>
+                      <img src={link.src} className='w-6 h-6' alt='link icon' />
+                    </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -128,7 +132,15 @@ const Footer = () => {
         </div>
         <hr className='border-t border-gray-400 my-3 mx-10' />
         <div className='container mx-auto flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-4 text-black text-sm my-4'>
-          <a className='block text-left text-xs'>웹사이트 제공자: Airbnb Ireland UC, private unlimited company, 8 Hanover Quay Dublin 2, D02 DP23 Ireland | 이사: Dermot Clarke, Killian Pattwell, Andrea Finnegan | VAT 번호: IE9827384L | 사업자 등록 번호: IE 511825 | 연락처: terms@airbnb.com, 웹사이트, 080-822-0230 | 호스팅 서비스 제공업체: 아마존 웹서비스 | 에어비앤비는 통신판매 중개자로 에어비앤비 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 에어비앤비 플랫폼을 통하여 예약된 숙소, 체험, 호스트 서비스에 관한 의무와 책임은 해당 서비스를 제공하는 호스트에게 있습니다.</a>
+          <a className='block text-left text-xs'>
+            웹사이트 제공자: Airbnb Ireland UC, private unlimited company, 8 Hanover Quay Dublin 2,
+            D02 DP23 Ireland | 이사: Dermot Clarke, Killian Pattwell, Andrea Finnegan | VAT 번호:
+            IE9827384L | 사업자 등록 번호: IE 511825 | 연락처: terms@airbnb.com, 웹사이트,
+            080-822-0230 | 호스팅 서비스 제공업체: 아마존 웹서비스 | 에어비앤비는 통신판매 중개자로
+            에어비앤비 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가
+            아닙니다. 에어비앤비 플랫폼을 통하여 예약된 숙소, 체험, 호스트 서비스에 관한 의무와
+            책임은 해당 서비스를 제공하는 호스트에게 있습니다.
+          </a>
         </div>
       </footer>
     </>

@@ -1,4 +1,4 @@
-import amenities from './amenities.json'
+import amenities from '@/data/amenities.json'
 
 const Amenities = () => {
   return (
