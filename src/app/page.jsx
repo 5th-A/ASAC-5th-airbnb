@@ -1,11 +1,9 @@
-import Footer from '@/components/Footer/Footer'
+import Header from '@/components/Header/Header'
 
 export default function Home() {
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
-      <div>Hello, World!</div>
-
-      <Footer />
+      <Header />
     </main>
   )
 }
