@@ -1,5 +1,6 @@
+'use client'
 import { useState } from 'react'
-import example from './category.json'
+import example from '@/data/category.json'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -73,10 +74,9 @@ export default function Category() {
       <div style={{ display: 'flex', height: '90px' }}>
         <Swiper
           navigation={true}
-          pagination={{ clickable: true }}
           mousewheel={true}
-          keyboard={true}
           slidesPerView={12}
+          slidesPerGroup={12}
           spaceBetween={10}
           modules={[Navigation, Mousewheel, Keyboard]}
           className='mySwiper'
