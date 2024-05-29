@@ -1,6 +1,6 @@
 import RoomCard from './RoomCard'
 
-import roomDetail from '../../roomDetail.json'
+import roomDetail from '@/data/roomDetail.json'
 
 export default function RoomList() {
   const roomCount = 25

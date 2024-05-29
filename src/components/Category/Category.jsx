@@ -1,6 +1,9 @@
 'use client'
 import { useState } from 'react'
 import example from '@/data/category.json'
+
+import nextArrow from '/public/assets/nextArrow.svg'
+import prevArrow from '/public/assets/prevArrow.svg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -73,7 +76,11 @@ export default function Category() {
     <div style={{ width: '100%', height: '90px', padding: '0 80px' }}>
       <div style={{ display: 'flex', height: '90px' }}>
         <Swiper
-          navigation={true}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'swiper-button-disabled',
+          }}
           mousewheel={true}
           slidesPerView={12}
           slidesPerGroup={12}
@@ -91,6 +98,12 @@ export default function Category() {
               </SwiperSlide>
             ))}
           </ul>
+          <div className='swiper-button-prev w-7 h-7'>
+            <img src={prevArrow.src}></img>
+          </div>
+          <div className='swiper-button-next w-7 h-7'>
+            <img src={nextArrow.src}></img>
+          </div>
         </Swiper>
       </div>
     </div>
