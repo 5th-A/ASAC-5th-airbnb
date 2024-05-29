@@ -1,8 +1,8 @@
-import CommentJson from './comment.json'
-import star from '../../assets/star.svg'
+import CommentJson from '@/data/comment.json'
+import star from '/public/assets/star.svg'
 const data = CommentJson
 
-dateCalculate(data[0].comment[0].date)
+dateCalculate(data[2].comment[0].date)
 
 function dateCalculate(dateString) {
   const nowdate = new Date()
@@ -35,7 +35,7 @@ const GuestPrefer = () => {
           />
         </div>
         <div className='Average w-[194.6px] h-[100px] flex justify-center items-center text-8xl font-bold'>
-          {data[0].average}
+          {data[2].average}
         </div>
         <div className='wingR w-auto'>
           <img
@@ -81,8 +81,8 @@ const Comment = () => {
 
       {/*<NoReview />*/}
       <div className='flex justify-center items-center'>
-        <div className='fr3 w-full max-w-[960px] h-[566px] -mx-2 flex flex-wrap justify-start '>
-          {data[0].comment.map((each, index) => {
+        <div className='fr3 w-full  -mx-2 flex flex-wrap justify-center '>
+          {data[2].comment.map((each, index) => {
             return (
               <div key={index} className=''>
                 <div className=' px-2 w-[400px] h-[190px]  mr-[64px]'>
@@ -98,11 +98,11 @@ const Comment = () => {
 
                   <div className='fr3-2 flex mb-2 w-[400px] h-[18px]'>
                     <div className='flex gap-0.5 justify-center items-center'>
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
-                      <img className='w-[9px] h-[9px]' src={star} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
+                      <img className='w-[9px] h-[9px]' src={star.src} />
                     </div>
                     <div className='px-[5px]'>
                       <span>·</span>
@@ -124,7 +124,7 @@ const Comment = () => {
       <div className='fr4 w-full max-w-[960px] h-[50px] mt-10'>
         <div className='fr4-1 w-[200px] h-[50px] flex justify-center items-center'>
           <button className='reviewmore text-[16px] flex justify-start items-center border-[0.8px] border-solid border-black rounded-lg px-[23px] py-[13px] font-semibold'>
-            후기 {data[0].comment.length}개 모두 보기
+            후기 {data[2].comment.length}개 모두 보기
           </button>
         </div>
       </div>
