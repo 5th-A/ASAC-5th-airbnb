@@ -5,6 +5,7 @@ import guestPrefer_Right from '/public/assets/guestPrefer_Right.svg'
 import extensionArrow from '/public/assets/extensionArrow.svg'
 import roomDetail from '@/data/roomDetail.json'
 import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
+import GuestCountModal from '../Modal/GuestCountModal'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -81,7 +82,7 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
           <span> /박</span>
         </div>
-        <div className='box-border flex flex-col mb-4 w-full border rounded-md border-solid border-black'>
+        <div className='box-border flex flex-col relative mb-4 w-full border rounded-md border-solid border-black'>
           <button
             style={{ minHeight: '56px' }}
             className='flex h-full border-b border-solid border-black items-center w-full'
@@ -95,21 +96,25 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
               <div className='text-[14px] text-left'>2024. 6. 14.</div>
             </div>
           </button>
-          <div
-            className='flex justify-between mt-3 px-3 pb-[10px]'
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
-            <div>
-              <div className='text-[10px]'>인원</div>
-              <div className='text-[14px]'>게스트 1명</div>
+          <div className=''>
+            <div
+              className='flex justify-between mt-3 px-3 pb-[10px]'
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <div className=''>
+                <div className='text-[10px]'>인원</div>
+                <div className='text-[14px]'>게스트 1명</div>
+              </div>
+              <div>
+                {isOpen ? (
+                  <img src={extensionArrow.src}></img>
+                ) : (
+                  <img className='scale-y-[-1]' src={extensionArrow.src}></img>
+                )}
+              </div>
             </div>
-            <div>
-              {isOpen ? (
-                <img src={extensionArrow.src}></img>
-              ) : (
-                <img className='scale-y-[-1]' src={extensionArrow.src}></img>
-              )}
-            </div>
+            {isOpen && <GuestCountModal />}
+            {/*여기에 인원수 모달 */}
           </div>
         </div>
         <div className='w-full bg-customRed text-white font-semibold py-2 px-4 rounded-md'>
