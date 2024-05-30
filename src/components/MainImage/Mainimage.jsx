@@ -5,7 +5,7 @@ import heartIcon from '/public/assets/heart.svg'
 
 function ButtonComponent({ buttonSrc, text }) {
   return (
-    <button className='button flex items-center space-x-1'>
+    <button className='flex items-center space-x-1 w-[88.45px] h-[34px] p-2'>
       <img src={buttonSrc} alt={text + ' 아이콘'} className='h-4 w-4' />
       <span className='text-sm'>{text}</span>
     </button>
@@ -14,9 +14,9 @@ function ButtonComponent({ buttonSrc, text }) {
 
 function ButtonGroup() {
   return (
-    <div className='flex space-x-2 button-container w-[140px] h-[28px]'>
-      <ButtonComponent buttonSrc={shareIcon} text={'공유하기'} />
-      <ButtonComponent buttonSrc={heartIcon} text={'저장하기'} />
+    <div className='flex space-x-2 button-container'>
+      <ButtonComponent buttonSrc={shareIcon.src} text={'공유하기'} />
+      <ButtonComponent buttonSrc={heartIcon.src} text={'저장하기'} />
     </div>
   )
 }
@@ -25,8 +25,8 @@ const MainImage = () => {
   const room = roomDetail[0]
 
   return (
-    <div className='container mx-auto pt-12'>
-      <div className='flex justify-between items-center'>
+    <div className='container mx-auto flex flex-col items-center'>
+      <div className='flex justify-between items-center w-full max-w-[1120px]'>
         <h1 className='text-2xl font-bold'>{room.roomName}</h1>
         <ButtonGroup />
       </div>
