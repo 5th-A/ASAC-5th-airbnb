@@ -68,11 +68,18 @@ function HostInfo({ hostInfo }) {
   )
 }
 
-function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
-  function formatPrice(price) {
-    return new Intl.NumberFormat().format(price)
+function formatPrice(price, stayDay, FEE, currency = 'kr') {
+  switch (currency) {
+    case :
+    case :
+    case :
   }
-  const totalCharge = formatPrice(price * stayDay * (1 + FEE))
+  
+  return new Intl.NumberFormat().format(price * stayDay * (1 + FEE))
+}
+
+function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
+  const totalCharge = formatPrice(price, stayDay, FEE)
 
   return (
     <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
@@ -139,14 +146,17 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
   )
 }
 
-export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props로 넘겨받을 예정} */) {
-  const ROOM_NAME = 'NEW 스테이구구(Stay GUGU) 302호'
+export default async function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props로 넘겨받을 예정} */) {
+  const ROOM_NAME = '나인하우스 #독채'
   const STAY_DAY = 6
   const FEE = 0.1552
 
   const [isOpen, setIsOpen] = useState(false)
   //find메서드로 해당 객체만 반환
-  const roomDetailData = roomDetail.find((room) => room.roomName === ROOM_NAME)
+  // const roomDetailData = roomDetail.find((room) => room.roomName === ROOM_NAME)
+  const response = await fetch(`http://localhost:3000/api/rooms/${roomId}`)
+  const roomDetailData = await response.json()
+  // 에러 여부, 에러는 안났는데 없는지 여부
 
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 

@@ -58,17 +58,23 @@ const GuestArea = () => (
   </>
 )
 
-const SearchBarWrap = ({ children }) => (
-  <div className='SearchBarWrap w-8/12 h-[63px] rounded-[500px] border border-neutral-300 justify-start items-center gap-px inline-flex border-solid whitespace-nowrap'>
-    {children}
-  </div>
+const SearchBarWrap = ({ children, onSubmit }) => (
+  const [a, b] = useState()
+  <SimpleContext.Provider value={{a, b}}>
+    <div className='SearchBarWrap w-8/12 h-[63px] rounded-[500px] border border-neutral-300 justify-start items-center gap-px inline-flex border-solid whitespace-nowrap'>
+      {children}
+    </div>
+  </SimpleContext.Provider>
 )
 
 const SearchBar = () => (
-  <SearchBarWrap>
+  <SearchBarWrap onSubmit={() => { ... }}>
     <WhereArea />
+    <Line />
     <CheckInArea />
+    <Line />
     <CheckOutArea />
+    <Line />
     <GuestArea />
   </SearchBarWrap>
 )

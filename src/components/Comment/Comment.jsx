@@ -1,8 +1,175 @@
+'use client'
+import Image from 'next/image'
 import CommentJson from '@/data/comment.json'
 import star from '/public/assets/star.svg'
+import { FaRegStar } from 'react-icons/fa6'
+import { FaStar } from 'react-icons/fa'
+import { useRef, useState } from 'react'
+
 const data = CommentJson
 
-dateCalculate(data[0].comment[0].date)
+// function Star() {
+//   const ARRAY = [0, 1, 2, 3, 4]
+
+//   const [rate, setRate] = useState(0)
+//   const commentRef = useRef()
+
+//   const handleStarClick = (index) => {
+//     setRate(index + 1)
+//   }
+
+//   const handleSubmit = () => {
+//     const comment = commentRef.current.value
+//     // api 요청 할 부분
+//     console.log('Rate:', rate)
+//     console.log('Comment:', comment)
+//   }
+
+//   return (
+//     <>
+//       <div className='flex'>
+//         {ARRAY.map((_, index) => (
+//           <div
+//             key={index}
+//             id={`star-${index}`}
+//             onClick={() => handleStarClick(index)}
+//             style={{ cursor: 'pointer', display: 'inline-block' }} // 클릭 가능한 커서 스타일 추가
+//           >
+//             {index < rate ? <FaStar size='40' color='gold' /> : <FaRegStar size='40' />}
+//           </div>
+//         ))}
+//       </div>
+//       <div className=''>
+//         <div className='fr3-1 flex gap-3 mb-2'>
+//           <div className=''>
+//             <img
+//               className='w-[48px] h-[48px] rounded-3xl'
+//               src={data[0].comment[0].profile}
+//               alt='Profile'
+//             />
+//           </div>
+//           <div className='flex-col content-center'>
+//             <div className='h-[20px] font-semibold'>admin</div>
+//             <div className='h-[18px]'>admin</div>
+//           </div>
+//         </div>
+//       </div>
+//       <input className='border' type='text' ref={commentRef} />
+//       <button onClick={handleSubmit} className='btn'>
+//         버튼
+//       </button>
+//     </>
+//   )
+// }
+
+// function CommentInput() {
+//   const [comment, setComment] = useState('')
+
+//   const handleInputChange = (event) => {
+//     setComment(event.target.value)
+//   }
+
+//   return (
+//     <>
+//       <div className=''>
+//         <div className='fr3-1 flex gap-3 mb-2'>
+//           <div className=''>
+//             <img
+//               className='w-[48px] h-[48px] rounded-3xl'
+//               src={data[0].comment[0].profile}
+//               alt='Profile'
+//             />
+//           </div>
+//           <div className='flex-col content-center'>
+//             <div className='h-[20px] font-semibold'>admin</div>
+//             <div className='h-[18px]'>admin</div>
+//           </div>
+//         </div>
+//       </div>
+//       <input className='border' type='text' value={comment} />
+//       <button onClick={() => {}}> 버튼 </button>
+//     </>
+//   )
+// }
+
+// dateCalculate(data[0].comment[0].date)
+const StarRating = ({ rate, setRate }) => {
+  const ARRAY = [0, 1, 2, 3, 4]
+
+  const handleStarClick = (index) => {
+    setRate(index + 1)
+  }
+
+  return (
+    <div className='flex'>
+      {ARRAY.map((_, index) => (
+        <div
+          key={index}
+          id={`star-${index}`}
+          onClick={() => handleStarClick(index)}
+          style={{ cursor: 'pointer', display: 'inline-block' }} // 클릭 가능한 커서 스타일 추가
+        >
+          {index < rate ? <FaStar size='40' color='gold' /> : <FaRegStar size='40' />}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+const CommentInput = ({ commentRef, comment, setComment }) => {
+  const handleInputChange = () => {
+    setComment(commentRef.current.value)
+  }
+
+  return (
+    <div className=''>
+      <div className='fr3-1 flex gap-3 mb-2'>
+        <div className=''>
+          <img
+            className='w-[48px] h-[48px] rounded-3xl'
+            src={data[0].comment[0].profile}
+            alt='Profile'
+          />
+        </div>
+        <div className='flex-col content-center'>
+          <div className='h-[20px] font-semibold'>admin</div>
+          <div className='h-[18px]'>admin</div>
+        </div>
+      </div>
+      <input
+        className='border'
+        type='text'
+        ref={commentRef}
+        value={comment}
+        onChange={handleInputChange}
+      />
+    </div>
+  )
+}
+
+const StarAndComment = () => {
+  const [rate, setRate] = useState(0)
+  const [comment, setComment] = useState('')
+  const commentRef = useRef()
+
+  const handleSubmit = () => {
+    const commentValue = commentRef.current.value
+    // api 요청 할 부분
+    console.log('Rate:', rate)
+    console.log('Comment:', commentValue)
+    setComment('')
+  }
+
+  return (
+    <>
+      <StarRating rate={rate} setRate={setRate} />
+      <CommentInput commentRef={commentRef} comment={comment} setComment={setComment} />
+      <button onClick={handleSubmit} className='btn'>
+        버튼
+      </button>
+    </>
+  )
+}
 
 function dateCalculate(dateString) {
   const nowdate = new Date()
@@ -74,6 +241,7 @@ const NoReview = () => {
 }
 
 const Comment = () => {
+  console.log('리랜더')
   return (
     <div className='all p-12 bg-white flex justify-center items-center flex-col'>
       {/*그 밑에 전체 평점, 청결도, 정확도 etc.. */}
@@ -103,6 +271,7 @@ const Comment = () => {
                       <img className='w-[9px] h-[9px]' src={star.src} />
                       <img className='w-[9px] h-[9px]' src={star.src} />
                       <img className='w-[9px] h-[9px]' src={star.src} />
+                      {/* <Image src={star} width={9} /> */}
                     </div>
                     <div className='px-[5px]'>
                       <span>·</span>
@@ -127,6 +296,9 @@ const Comment = () => {
             후기 {data[0].comment.length}개 모두 보기
           </button>
         </div>
+      </div>
+      <div>
+        <StarAndComment />
       </div>
     </div>
   )
