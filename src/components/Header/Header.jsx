@@ -1,3 +1,4 @@
+import Category from '../Category/Category'
 import SearchBar from '../SearchBar/SearchBar'
 
 function Header() {
@@ -77,6 +78,7 @@ function Header() {
         </div>
       </div>
       <SearchBar />
+      {/* <Category /> */}
     </>
   )
 }
