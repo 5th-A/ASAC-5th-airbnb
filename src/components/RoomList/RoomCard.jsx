@@ -31,6 +31,7 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
   return (
     <>
       {/*Image slider*/}
+
       <div className='flex flex-col'>
         <div className='relative'>
           <Swiper

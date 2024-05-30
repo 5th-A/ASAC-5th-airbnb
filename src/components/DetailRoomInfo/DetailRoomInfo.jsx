@@ -153,7 +153,6 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   return (
     <div className='flex w-full items-center'>
       {' '}
-      //여기임
       <div className='flex itemWrapper justify-between'>
         <div className='flex-6 box-border'>
           <div className='py-2'>
