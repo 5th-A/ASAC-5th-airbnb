@@ -5,7 +5,6 @@ import guestPrefer_Right from '/public/assets/guestPrefer_Right.svg'
 import extensionArrow from '/public/assets/extensionArrow.svg'
 import roomDetail from '@/data/roomDetail.json'
 import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
-import GuestCountModal from '../Modal/GuestCountModal'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -76,13 +75,13 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
   const totalCharge = formatPrice(price * stayDay * (1 + FEE))
 
   return (
-    <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
+    <div className='calculator inline-block sticky top-20 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
       <div className='flex flex-col'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
           <span> /박</span>
         </div>
-        <div className='box-border flex flex-col relative mb-4 w-full border rounded-md border-solid border-black'>
+        <div className='box-border flex flex-col mb-4 w-full border rounded-md border-solid border-black'>
           <button
             style={{ minHeight: '56px' }}
             className='flex h-full border-b border-solid border-black items-center w-full'
@@ -96,25 +95,21 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
               <div className='text-[14px] text-left'>2024. 6. 14.</div>
             </div>
           </button>
-          <div className=''>
-            <div
-              className='flex justify-between mt-3 px-3 pb-[10px]'
-              onClick={() => setIsOpen((prev) => !prev)}
-            >
-              <div className=''>
-                <div className='text-[10px]'>인원</div>
-                <div className='text-[14px]'>게스트 1명</div>
-              </div>
-              <div>
-                {isOpen ? (
-                  <img src={extensionArrow.src}></img>
-                ) : (
-                  <img className='scale-y-[-1]' src={extensionArrow.src}></img>
-                )}
-              </div>
+          <div
+            className='flex justify-between mt-3 px-3 pb-[10px]'
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            <div>
+              <div className='text-[10px]'>인원</div>
+              <div className='text-[14px]'>게스트 1명</div>
             </div>
-            {isOpen && <GuestCountModal />}
-            {/*여기에 인원수 모달 */}
+            <div>
+              {isOpen ? (
+                <img src={extensionArrow.src}></img>
+              ) : (
+                <img className='scale-y-[-1]' src={extensionArrow.src}></img>
+              )}
+            </div>
           </div>
         </div>
         <div className='w-full bg-customRed text-white font-semibold py-2 px-4 rounded-md'>
@@ -156,9 +151,9 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-    <div className='flex w-[100%] justify-center items-center'>
-      <div className='flex itemWrapper justify-center w-[70%] px-10'>
-        <div className='flex-6 box-border'>
+    <div className='flex w-full items-center justify-center'>
+      <div className='flex flex-grow-1 w-full itemWrapper justify-center'>
+        <div className='flex-grow box-border w-[70%]]'>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>
               {roomDetailData.address}, {roomDetailData.roomType}
