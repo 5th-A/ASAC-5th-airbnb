@@ -10,13 +10,17 @@ import MainImage from '@/components/MainImage/Mainimage'
 export default function roomDetail() {
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
-      <SmallHeader />
-      <MainImage />
-      <DetailRoomInfo />
-      <Comment />
-      <Amenities />
-      <DetailPageCalendarDisplay />
-      <HostIntroduction />
+      <div>
+        <SmallHeader />
+        <div className='w-full px-20'>
+          <MainImage />
+          <DetailRoomInfo />
+          <Comment />
+          <Amenities />
+          <DetailPageCalendarDisplay />
+          <HostIntroduction />
+        </div>
+      </div>
     </main>
   )
 }

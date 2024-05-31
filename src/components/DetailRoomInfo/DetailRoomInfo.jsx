@@ -75,7 +75,7 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
   const totalCharge = formatPrice(price * stayDay * (1 + FEE))
 
   return (
-    <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
+    <div className='calculator inline-block sticky top-20 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
       <div className='flex flex-col'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
@@ -151,10 +151,9 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-    <div className='flex w-full items-center'>
-      {' '}
-      <div className='flex itemWrapper justify-between'>
-        <div className='flex-6 box-border'>
+    <div className='flex w-full items-center justify-center'>
+      <div className='flex flex-grow-1 w-full itemWrapper justify-center'>
+        <div className='flex-grow box-border w-[70%]]'>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>
               {roomDetailData.address}, {roomDetailData.roomType}

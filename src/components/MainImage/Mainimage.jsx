@@ -5,7 +5,7 @@ import heartIcon from '/public/assets/heart.svg'
 
 function ButtonComponent({ buttonSrc, text }) {
   return (
-    <button className='flex items-center space-x-1 w-[88.45px] h-[34px] p-2'>
+    <button className='flex items-center space-x-1 p-2'>
       <img src={buttonSrc} alt={text + ' 아이콘'} className='h-4 w-4' />
       <span className='text-sm'>{text}</span>
     </button>
