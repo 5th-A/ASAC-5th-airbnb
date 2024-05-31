@@ -109,7 +109,7 @@ const StarRating = ({ rate, setRate }) => {
           onClick={() => handleStarClick(index)}
           style={{ cursor: 'pointer', display: 'inline-block' }} // 클릭 가능한 커서 스타일 추가
         >
-          {index < rate ? <FaStar size='40' color='gold' /> : <FaRegStar size='40' />}
+          {index < rate ? <FaStar size='30' color='black' /> : <FaRegStar size='30' />}
         </div>
       ))}
     </div>
@@ -252,8 +252,8 @@ const Comment = () => {
       {/*<NoReview />*/}
       <div className='flex justify-center items-center'>
         <div className='fr3 w-full  -mx-2 flex flex-wrap justify-center  grid grid-cols-2  '>
-          {/* 최대 6개만 출력하게 하기 */}
-          {data[0].comment.map((each, index) => {
+          {/* 최대 6개만 출력하게 하기 JSON 파일에  댓글이 없어서 빈값이 있을 수도 있어서 */}
+          {(data[0]?.comment || []).slice(0, 6).map((each, index) => {
             return (
               <div key={index} className=''>
                 <div className=' px-2 w-[400px] h-[190px]  mr-[64px]'>
@@ -296,7 +296,7 @@ const Comment = () => {
       <div className='fr4 w-full max-w-[960px] h-[50px] mt-10'>
         <div className='fr4-1 w-[200px] h-[50px] flex justify-center items-center'>
           <button className='reviewmore text-[16px] flex justify-start items-center border-[0.8px] border-solid border-black rounded-lg px-[23px] py-[13px] font-semibold'>
-            후기 {data[0].comment.length}개 모두 보기
+            후기 {data[4]?.comment?.length || 0}개 모두 보기
           </button>
         </div>
       </div>
