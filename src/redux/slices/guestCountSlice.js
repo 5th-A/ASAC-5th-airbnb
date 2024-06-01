@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const guestCountSlice = createSlice({
   name: 'guestCount',
   initialState: {
-    adults: 0,
+    adults: 1,
     teens: 0,
     kids: 0,
     pets: 0,

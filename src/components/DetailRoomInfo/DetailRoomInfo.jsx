@@ -7,6 +7,7 @@ import roomDetail from '@/data/roomDetail.json'
 import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
 import GuestCountModal from '../Modal/GuestCountModal'
 import Providers from '@/redux/Providers'
+import { useSelector } from 'react-redux'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -75,6 +76,23 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
     return new Intl.NumberFormat().format(price)
   }
   const totalCharge = formatPrice(price * stayDay * (1 + FEE))
+  const { adults, teens, kids, pets } = useSelector((state) => state.guestCount)
+
+  function showCurrentGuest(adults, teens, kids, pets) {
+    let guestList = []
+
+    if (adults + teens > 0) {
+      guestList.push(`게스트 ${adults + teens}명`)
+    }
+    if (kids > 0) {
+      guestList.push(`, 유아 ${kids}명`)
+    }
+    if (pets > 0) {
+      guestList.push(`, 반려동물 ${pets}마리`)
+    }
+
+    return guestList
+  }
 
   return (
     <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
@@ -104,7 +122,7 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
             >
               <div className=''>
                 <div className='text-[10px]'>인원</div>
-                <div className='text-[14px]'>게스트 1명</div>
+                <div className='text-[14px]'>{showCurrentGuest(adults, teens, kids, pets)}</div>
               </div>
               <div>
                 {isOpen ? (
@@ -115,7 +133,6 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
               </div>
             </div>
             {isOpen && <GuestCountModal />}
-            {/*여기에 인원수 모달 */}
           </div>
         </div>
         <div className='w-full bg-customRed text-white font-semibold py-2 px-4 rounded-md'>
@@ -151,9 +168,9 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   const FEE = 0.1552
 
   const [isOpen, setIsOpen] = useState(false)
+
   //find메서드로 해당 객체만 반환
   const roomDetailData = roomDetail.find((room) => room.roomName === ROOM_NAME)
-
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
