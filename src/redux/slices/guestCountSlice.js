@@ -10,15 +10,21 @@ const guestCountSlice = createSlice({
   },
   reducers: {
     increment: (state, action) => {
-      const category = action.payload
-      if (state[category] !== undefined) {
-        state[category] += 1
+      //increment(param)에서 param이 action.payload
+      const type = action.payload
+      if (state[type] !== undefined) {
+        state[type] += 1
       }
     },
     decrement: (state, action) => {
-      const category = action.payload
-      if (state[category] !== undefined && state[category] > 0) {
-        state[category] -= 1
+      const type = action.payload
+      if (type === 'adults') {
+        //성인은 반드시 1명 이상 설정
+        if (state.adults > 1) {
+          state[type] -= 1
+        }
+      } else if (state[type] !== undefined && state[type] > 0) {
+        state[type] -= 1
       }
     },
   },
