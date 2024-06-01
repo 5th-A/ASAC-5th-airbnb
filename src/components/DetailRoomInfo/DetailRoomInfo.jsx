@@ -95,7 +95,7 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
   }
 
   return (
-    <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
+    <div className='calculator inline-block sticky top-20 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
       <div className='flex flex-col'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
@@ -163,7 +163,7 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
 }
 
 export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props로 넘겨받을 예정} */) {
-  const ROOM_NAME = 'NEW 스테이구구(Stay GUGU) 302호'
+  const ROOM_NAME = '양평 독채풀빌라 스테이호은 (프라이빗 수영장, 마운틴뷰, 무료자쿠지, 개울가)'
   const STAY_DAY = 6
   const FEE = 0.1552
 
@@ -175,9 +175,9 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
 
   return (
     <Providers>
-      <div className='flex w-[100%] justify-center items-center'>
-        <div className='flex itemWrapper justify-center w-[70%] px-10'>
-          <div className='flex-6 box-border'>
+      <div className='flex w-[100%] justify-center items-center border-b border-gray-300 border-solid'>
+        <div className='flex w-full itemWrapper justify-between px-10'>
+          <div className='box-border w-[60%]'>
             <div className='py-2'>
               <h2 className='text-xl font-semibold'>
                 {roomDetailData.address}, {roomDetailData.roomType}
@@ -235,11 +235,11 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
             <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
               {roomDetailData.introduction}
             </div>
-            <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>
+            <div className='pt-12 pb-12 '>
               <AccommodationDetails />
             </div>
           </div>
-          <div className='flex relative w-[40%]'>
+          <div className='flex relative'>
             <div className='ml-auto mt-8'>
               <Calculator
                 isOpen={isOpen}
