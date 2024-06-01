@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { increment, decrement } from '@/redux/slices/guestCountSlice'
 
 function getDetailInfo(type) {
   switch (type) {
@@ -7,7 +9,7 @@ function getDetailInfo(type) {
       return '13세 이상'
     case '청소년':
       return '2~12세'
-    case '아동':
+    case '유아':
       return '2세 미만'
     case '반려동물':
       return '보조동물을 동반하시나요?'
@@ -27,7 +29,7 @@ function CounterButton({ onClick, children }) {
   )
 }
 
-function GuestCountButton({ type, setType, children }) {
+function GuestCountButton({ type, count, handleIncrement, handleDecrement, children }) {
   return (
     <div className='flex flex-row justify-between py-4 items-center'>
       <div>
@@ -35,9 +37,19 @@ function GuestCountButton({ type, setType, children }) {
         <div className='text-[14px]'>{getDetailInfo(children)}</div>
       </div>
       <div className='flex flex-row justify-between items-center'>
-        <CounterButton onClick={() => setType((prev) => prev + 1)}>+</CounterButton>
-        <div className='px-2'>{type}</div>
-        <CounterButton onClick={() => setType((prev) => (prev !== 0 ? prev - 1 : prev))}>
+        <CounterButton
+          onClick={() => {
+            handleIncrement(type)
+          }}
+        >
+          +
+        </CounterButton>
+        <div className='px-2'>{count}</div>
+        <CounterButton
+          onClick={() => {
+            handleDecrement(type)
+          }}
+        >
           -
         </CounterButton>
       </div>
@@ -46,24 +58,41 @@ function GuestCountButton({ type, setType, children }) {
 }
 
 export default function GuestCountModal() {
-  const [adults, setAdults] = useState(0)
-  const [teens, setTeens] = useState(0)
-  const [kids, setKids] = useState(0)
-  const [pets, setPets] = useState(0)
-
+  const dispatch = useDispatch()
+  const { adults, teens, kids, pets } = useSelector((state) => state.guestCount)
   return (
     <div className='absolute z-50 bg-white w-full border border-solid rounded-xl border-gray-300'>
       <div className='p-4 mb-4'>
-        <GuestCountButton type={adults} setType={setAdults}>
+        <GuestCountButton
+          type='adults'
+          count={adults}
+          handleIncrement={(category) => dispatch(increment(category))}
+          handleDecrement={(category) => dispatch(decrement(category))}
+        >
           성인
         </GuestCountButton>
-        <GuestCountButton type={teens} setType={setTeens}>
+        <GuestCountButton
+          type='teens'
+          count={teens}
+          handleIncrement={(category) => dispatch(increment(category))}
+          handleDecrement={(category) => dispatch(decrement(category))}
+        >
           청소년
         </GuestCountButton>
-        <GuestCountButton type={kids} setType={setKids}>
-          아동
+        <GuestCountButton
+          type='kids'
+          count={kids}
+          handleIncrement={(category) => dispatch(increment(category))}
+          handleDecrement={(category) => dispatch(decrement(category))}
+        >
+          유아
         </GuestCountButton>
-        <GuestCountButton type={pets} setType={setPets}>
+        <GuestCountButton
+          type='pets'
+          count={pets}
+          handleIncrement={(category) => dispatch(increment(category))}
+          handleDecrement={(category) => dispatch(decrement(category))}
+        >
           반려동물
         </GuestCountButton>
       </div>
