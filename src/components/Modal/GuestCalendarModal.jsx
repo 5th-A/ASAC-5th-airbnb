@@ -25,9 +25,9 @@ export default function GuestCalendarModal({ isCalendarOpen, setIsCalendarOpen }
         setIsCalendarOpen(false)
       }
     }
-    document.addEventListener('mousedown', outSideClick)
+    document.addEventListener('click', outSideClick)
     return () => {
-      document.removeEventListener('mousedown', outSideClick)
+      document.removeEventListener('click', outSideClick)
     }
   }, [setIsCalendarOpen])
   return (
