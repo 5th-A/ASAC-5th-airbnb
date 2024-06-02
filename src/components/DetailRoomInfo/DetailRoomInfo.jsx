@@ -6,7 +6,6 @@ import extensionArrow from '/public/assets/extensionArrow.svg'
 import roomDetail from '@/data/roomDetail.json'
 import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
 import GuestCountModal from '../Modal/GuestCountModal'
-import Providers from '@/redux/Providers'
 import { useSelector } from 'react-redux'
 
 function FilterInfo({ filter }) {
@@ -135,6 +134,7 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
             {isOpen && <GuestCountModal />}
           </div>
         </div>
+        <div>{/*여기에 날짜 모달*/}</div>
         <div className='w-full bg-customRed text-white font-semibold py-2 px-4 rounded-md'>
           <button className='w-full py-2 px-4'>예약하기</button>
         </div>
@@ -174,84 +174,79 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-    <Providers>
-      <div className='flex w-[100%] justify-center items-center border-b border-gray-300 border-solid'>
-        <div className='flex w-full itemWrapper justify-between px-10'>
-          <div className='box-border w-[60%]'>
-            <div className='py-2'>
-              <h2 className='text-xl font-semibold'>
-                {roomDetailData.address}, {roomDetailData.roomType}
-              </h2>
-              <FilterInfo filter={roomDetailData.filter} />
-            </div>
-            {roomDetailData.guestPrefer && (
-              <div className='flex py-5 px-7 border border-solid rounded-xl border-gray-300'>
-                <div className='flex justify-center space-x-4'>
-                  <div
-                    className='flex justify-center'
-                    style={{ minWidth: '94px', maxHeight: '36px' }}
-                  >
-                    <img src={guestPrefer_Left.src} width='23' height='36' />
-                    <div
-                      className='font-semibold text-center px-1 pb-1'
-                      style={{ minWidth: '56px' }}
-                    >
-                      게스트 <br /> 선호
-                    </div>
-                    <img src={guestPrefer_Right.src} width='23' height='36' />
+    <div className='flex w-[100%] justify-center items-center border-b border-gray-300 border-solid'>
+      <div className='flex w-full itemWrapper justify-between px-10'>
+        <div className='box-border w-[60%]'>
+          <div className='py-2'>
+            <h2 className='text-xl font-semibold'>
+              {roomDetailData.address}, {roomDetailData.roomType}
+            </h2>
+            <FilterInfo filter={roomDetailData.filter} />
+          </div>
+          {roomDetailData.guestPrefer && (
+            <div className='flex py-5 px-7 border border-solid rounded-xl border-gray-300'>
+              <div className='flex justify-center space-x-4'>
+                <div
+                  className='flex justify-center'
+                  style={{ minWidth: '94px', maxHeight: '36px' }}
+                >
+                  <img src={guestPrefer_Left.src} width='23' height='36' />
+                  <div className='font-semibold text-center px-1 pb-1' style={{ minWidth: '56px' }}>
+                    게스트 <br /> 선호
                   </div>
-                  <div
-                    className='overflow-hidden whitespace-normal font-semibold'
-                    style={{ maxHeight: '48px' }}
-                  >
-                    에어비앤비 게스트에게 가장 사랑받는 숙소
-                  </div>
+                  <img src={guestPrefer_Right.src} width='23' height='36' />
                 </div>
                 <div
-                  className='flex-grow justify-center text-center px-4 border-r border-gray-300 border-solid'
-                  style={{ minWidth: '81px' }}
+                  className='overflow-hidden whitespace-normal font-semibold'
+                  style={{ maxHeight: '48px' }}
                 >
-                  <div className='font-semibold text-[22px]'>4.89</div>
-                  <div>별개수</div>
-                </div>
-                <div className='mx-2'></div>
-                <div
-                  className='flex-grow justify-between items-center text-center'
-                  style={{ minWidth: '52px' }}
-                >
-                  <div className='font-semibold text-[18px]'>426개</div>
-                  <div className='text-[12px] underline underline-offset-1 '>후기</div>
+                  에어비앤비 게스트에게 가장 사랑받는 숙소
                 </div>
               </div>
-            )}
-            <div className='flex justify-between pt-5 pb-8'>
-              <div className='flex-grow'>
-                <div className='width-[100%] grid grid-cols-2 grid-rows-3 gap-3 auto-rows-fr text-sm'>
-                  <FilterCategory categories={roomDetailData.categories} />
-                </div>
+              <div
+                className='flex-grow justify-center text-center px-4 border-r border-gray-300 border-solid'
+                style={{ minWidth: '81px' }}
+              >
+                <div className='font-semibold text-[22px]'>4.89</div>
+                <div>별개수</div>
+              </div>
+              <div className='mx-2'></div>
+              <div
+                className='flex-grow justify-between items-center text-center'
+                style={{ minWidth: '52px' }}
+              >
+                <div className='font-semibold text-[18px]'>426개</div>
+                <div className='text-[12px] underline underline-offset-1 '>후기</div>
               </div>
             </div>
-            <HostInfo hostInfo={roomDetailData.host} />
-            <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
-              {roomDetailData.introduction}
-            </div>
-            <div className='pt-12 pb-12 '>
-              <AccommodationDetails />
+          )}
+          <div className='flex justify-between pt-5 pb-8'>
+            <div className='flex-grow'>
+              <div className='width-[100%] grid grid-cols-2 grid-rows-3 gap-3 auto-rows-fr text-sm'>
+                <FilterCategory categories={roomDetailData.categories} />
+              </div>
             </div>
           </div>
-          <div className='flex relative'>
-            <div className='ml-auto mt-8'>
-              <Calculator
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-                price={roomDetailData.price}
-                stayDay={STAY_DAY}
-                FEE={FEE}
-              />
-            </div>
+          <HostInfo hostInfo={roomDetailData.host} />
+          <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
+            {roomDetailData.introduction}
+          </div>
+          <div className='pt-12 pb-12 '>
+            <AccommodationDetails />
+          </div>
+        </div>
+        <div className='flex relative'>
+          <div className='ml-auto mt-8'>
+            <Calculator
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              price={roomDetailData.price}
+              stayDay={STAY_DAY}
+              FEE={FEE}
+            />
           </div>
         </div>
       </div>
-    </Providers>
+    </div>
   )
 }

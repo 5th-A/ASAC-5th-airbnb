@@ -6,6 +6,7 @@ import Header from '@/components/Header/Header'
 import SmallHeader from '@/components/Header/SmallHeader'
 import HostIntroduction from '@/components/HostIntroduction/HostIntroduction'
 import MainImage from '@/components/MainImage/Mainimage'
+import Providers from '@/redux/Providers'
 
 export default function roomDetail() {
   return (
@@ -13,12 +14,14 @@ export default function roomDetail() {
       <div>
         <SmallHeader />
         <div className='w-full px-20'>
-          <MainImage />
-          <DetailRoomInfo />
-          <Comment />
-          <Amenities />
-          <DetailPageCalendarDisplay />
-          <HostIntroduction />
+          <Providers>
+            <MainImage />
+            <DetailRoomInfo />
+            <Comment />
+            <Amenities />
+            <DetailPageCalendarDisplay />
+            <HostIntroduction />
+          </Providers>
         </div>
       </div>
     </main>
