@@ -127,7 +127,7 @@ function Calculator({
             style={{ minHeight: '56px' }}
             className='flex h-full border-b border-solid border-black items-center w-full'
           >
-            <div className='w-[50%] items-center border-r border-solid border-black px-3'>
+            <div className='w-[50%] items-center border-r border-solid border-black px-3 py-4'>
               <div className='text-[10px] text-left'>체크인</div>
               <div className='text-[14px] text-left'>
                 {selectedStartDate !== null ? formatDate(selectedStartDate) : '날짜선택'}
