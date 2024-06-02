@@ -3,24 +3,30 @@ import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
-import emptyHeart from '/public/assets/likeButton_empty.svg'
-import fullHeart from '/public/assets/likeButton_full.svg'
-import nextArrow from '/public/assets/nextArrow.svg'
-import prevArrow from '/public/assets/prevArrow.svg'
-
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 import './RoomCard.css'
+import Image from 'next/image'
 
 export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
-  console.log(roomAddress)
-  const [isLike, setIsLike] = useState(emptyHeart.src)
+  const emptyHeart = '/assets/likeButton_empty.svg'
+  const fullHeart = '/assets/likeButton_full.svg'
+  const nextArrow = '/assets/nextArrow.svg'
+  const prevArrow = '/assets/prevArrow.svg'
+  const [isLike, setIsLike] = useState(emptyHeart)
   const imgList = imgSrc.map((img) => {
     return (
       <SwiperSlide key={img.id}>
-        <img className='rounded-2xl' src={img.url} />
+        <Image
+          className='rounded-2xl'
+          src={img.url}
+          layout='responsive'
+          width={1}
+          height={1}
+          alt='room picture'
+        />
       </SwiperSlide>
     )
   })
@@ -52,10 +58,10 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
           >
             {imgList}
             <div className='swiper-button-prev w-7 h-7'>
-              <img src={prevArrow.src}></img>
+              <Image src={prevArrow} width={28} height={28} alt='prev arrow button' />
             </div>
             <div className='swiper-button-next w-7 h-7'>
-              <img src={nextArrow.src}></img>
+              <Image src={nextArrow} width={28} height={28} alt='next arrow button' />
             </div>
           </Swiper>
           {guestPrefer && (
@@ -65,13 +71,15 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
           )}
 
           <button className='absolute top-3 right-2 p-2 z-10'>
-            <img
+            <Image
               src={isLike}
               onClick={() => {
-                setIsLike(isLike === emptyHeart.src ? fullHeart.src : emptyHeart.src)
+                setIsLike(isLike === emptyHeart ? fullHeart : emptyHeart)
               }}
-              className='w-5 h-5'
-            ></img>
+              width={20}
+              height={20}
+              alt='like button'
+            />
           </button>
         </div>
         {/*Room Info*/}

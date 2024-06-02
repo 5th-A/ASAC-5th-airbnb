@@ -1,14 +1,12 @@
 'use client'
+
 import { useEffect, useState } from 'react'
-import guestPrefer_Left from '/public/assets/guestPrefer_Left.svg'
-import guestPrefer_Right from '/public/assets/guestPrefer_Right.svg'
-import extensionArrow from '/public/assets/extensionArrow.svg'
 import roomDetail from '@/data/roomDetail.json'
 import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
 import GuestCountModal from '../Modal/GuestCountModal'
 import { useSelector } from 'react-redux'
 import GuestCalendarModal from '../Modal/GuestCalendarModal'
-import { setSelectedEndDate, setSelectedStartDate } from '@/redux/slices/calendarSlice'
+import Image from 'next/image'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -34,7 +32,7 @@ function FilterInfo({ filter }) {
 function FilterCategory({ categories }) {
   return Object.entries(categories).map(([key, value]) => (
     <div key={value.id} className='flex gap-1'>
-      <img src={value.icon} width='20' height='20' />
+      <Image src={value.icon} width={20} height={20} alt='filtered_category_icon' />
       <div>{value.name}</div>
     </div>
   ))
@@ -48,7 +46,7 @@ function HostInfo({ hostInfo }) {
   return (
     <div className='flex items-center py-6 border-t border-b border-gray-300 border-solid gap-x-6'>
       <div className='overflow-hidden w-10 h-10' style={{ borderRadius: '70%' }}>
-        <img className='object-cover' src={hostInfo.profile} />
+        <Image src={hostInfo.profile} width={40} height={40} alt='host profile image' />
       </div>
       <div className='flex flex-col gap-y-1 '>
         <div className='font-semibold'>호스트: {hostInfo.name} 님</div>
@@ -81,6 +79,7 @@ function Calculator({
   isCalendarOpen,
   setIsCalendarOpen,
 }) {
+  const extensionArrow = '/assets/extensionArrow.svg'
   function formatPrice(price) {
     return new Intl.NumberFormat().format(price)
   }
@@ -127,20 +126,19 @@ function Calculator({
           <button
             onClick={() => {
               setIsCalendarOpen((prev) => !prev)
-              setIsGuestOpen(false)
             }}
             style={{ minHeight: '56px' }}
             className='flex h-full border-b border-solid border-black items-center w-full'
           >
-            <div className='w-[50%] items-center border-r border-solid border-black px-3 py-4'>
+            <div className='w-[50%] items-center border-r border-solid border-black px-3 py-3.5'>
               <div className='text-[10px] text-left'>체크인</div>
-              <div className='text-[14px] text-left'>
+              <div className='text-[14px] text-left mt-1'>
                 {selectedStartDate !== null ? formatDate(selectedStartDate) : '날짜선택'}
               </div>
             </div>
             <div className='w-[50%] px-3'>
               <div className='text-[10px] text-left'>체크아웃</div>
-              <div className='text-[14px] text-left'>
+              <div className='text-[14px] text-left mt-1'>
                 {selectedEndDate !== null ? formatDate(selectedEndDate) : '날짜선택'}
               </div>
             </div>
@@ -153,13 +151,21 @@ function Calculator({
             >
               <div className=''>
                 <div className='text-[10px]'>인원</div>
-                <div className='text-[14px]'>{showCurrentGuest(adults, teens, kids, pets)}</div>
+                <div className='text-[14px] mt-1'>
+                  {showCurrentGuest(adults, teens, kids, pets)}
+                </div>
               </div>
               <div>
                 {isGuestOpen ? (
-                  <img src={extensionArrow.src}></img>
+                  <Image src={extensionArrow} width={16} height={16} alt='extensionArrow' />
                 ) : (
-                  <img className='scale-y-[-1]' src={extensionArrow.src}></img>
+                  <Image
+                    className='scale-y-[-1]'
+                    src={extensionArrow}
+                    width={16}
+                    height={16}
+                    alt='extensionArrow-reverse'
+                  />
                 )}
               </div>
             </div>
@@ -201,7 +207,8 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
 
   const FEE = 0.1552
   const { selectedStartDate, selectedEndDate } = useSelector((state) => state.setCalendar)
-
+  const guestPrefer_Left = '/assets/guestPrefer_Left.svg'
+  const guestPrefer_Right = '/assets/guestPrefer_Right.svg'
   const [isGuestOpen, setIsGuestOpen] = useState(false)
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
   const [stayDay, setStayDay] = useState(null)
@@ -209,7 +216,6 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
     const msInDay = 24 * 60 * 60 * 1000
     return Math.round((end - start) / msInDay)
   }
-  console.log('staDay:', stayDay)
   useEffect(() => {
     if (selectedStartDate !== null && selectedEndDate !== null) {
       setStayDay(calculateNights(selectedStartDate, selectedEndDate))
@@ -240,11 +246,11 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
                   className='flex justify-center'
                   style={{ minWidth: '94px', maxHeight: '36px' }}
                 >
-                  <img src={guestPrefer_Left.src} width='23' height='36' />
+                  <Image src={guestPrefer_Left} width={23} height={36} alt='guestPrefer_Left' />
                   <div className='font-semibold text-center px-1 pb-1' style={{ minWidth: '56px' }}>
                     게스트 <br /> 선호
                   </div>
-                  <img src={guestPrefer_Right.src} width='23' height='36' />
+                  <Image src={guestPrefer_Right} width={23} height={36} alt='guestPrefer_Right' />
                 </div>
                 <div
                   className='overflow-hidden whitespace-normal font-semibold'
