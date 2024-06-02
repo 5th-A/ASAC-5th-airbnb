@@ -1,14 +1,12 @@
+'use client'
+
 import { useDispatch, useSelector } from 'react-redux'
 import CalendarContainer from '../Calendar/CalendarContainer'
-import {
-  setSelectedStartDate,
-  setSelectedEndDate,
-  setSelectedDatesText,
-  resetDates,
-} from '@/redux/slices/calendarSlice'
-import { useEffect } from 'react'
+import { setSelectedStartDate, setSelectedEndDate, resetDates } from '@/redux/slices/calendarSlice'
+import { useEffect, useRef } from 'react'
 
-export default function GuestCalendarModal({ setIsCalendarOpen }) {
+export default function GuestCalendarModal({ isCalendarOpen, setIsCalendarOpen }) {
+  const modalRef = useRef()
   const dispatch = useDispatch()
   const { selectedStartDate, selectedEndDate, selectedDatesText } = useSelector(
     (state) => state.setCalendar,
@@ -21,10 +19,24 @@ export default function GuestCalendarModal({ setIsCalendarOpen }) {
     const d = new Date(date)
     return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()}`
   }
+  useEffect(() => {
+    const outSideClick = (e) => {
+      if (isCalendarOpen && modalRef.current && !modalRef.current.contains(e.target)) {
+        setIsCalendarOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', outSideClick)
+    return () => {
+      document.removeEventListener('mousedown', outSideClick)
+    }
+  }, [setIsCalendarOpen])
   return (
     <>
-      <div className='w-[661px] px-8 pt-6 pb-4 absolute z-50 right-0 shadow-md bg-white border border-solid rounded-xl border-gray-300'>
-        <div className='min-w-[260] flex flex-row justify-between'>
+      <div
+        ref={modalRef}
+        className='w-[661px] px-8 pt-6 pb-4 absolute z-50 right-0 shadow-md bg-white border border-solid rounded-xl border-gray-300'
+      >
+        <div className='min-w-[260px] flex flex-row justify-between'>
           <div>
             {selectedStartDate !== null && selectedEndDate !== null ? (
               <>
@@ -60,13 +72,15 @@ export default function GuestCalendarModal({ setIsCalendarOpen }) {
           </div>
         </div>
         <div className='flex flex-col'>
-          <CalendarContainer
-            visibleCalendars={2}
-            selectedStartDate={selectedStartDate}
-            setSelectedStartDate={(date) => dispatch(setSelectedStartDate(date))}
-            selectedEndDate={selectedEndDate}
-            setSelectedEndDate={(date) => dispatch(setSelectedEndDate(date))}
-          />
+          <div className='min-h-[340px]'>
+            <CalendarContainer
+              visibleCalendars={2}
+              selectedStartDate={selectedStartDate}
+              setSelectedStartDate={(date) => dispatch(setSelectedStartDate(date))}
+              selectedEndDate={selectedEndDate}
+              setSelectedEndDate={(date) => dispatch(setSelectedEndDate(date))}
+            />
+          </div>
           <div className='space-x-5 ml-auto'>
             <button
               className='text-[14px] underline font-semibold'

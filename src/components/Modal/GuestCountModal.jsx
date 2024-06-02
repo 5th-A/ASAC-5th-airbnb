@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment, decrement } from '@/redux/slices/guestCountSlice'
 
@@ -57,11 +57,26 @@ function GuestCountButton({ type, count, handleIncrement, handleDecrement, child
   )
 }
 
-export default function GuestCountModal() {
+export default function GuestCountModal({ setIsGuestOpen, isGuestOpen }) {
+  const modalRef = useRef()
   const dispatch = useDispatch()
   const { adults, teens, kids, pets } = useSelector((state) => state.guestCount)
+  useEffect(() => {
+    const outSideClick = (e) => {
+      if (isGuestOpen && modalRef.current && !modalRef.current.contains(e.target)) {
+        setIsGuestOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', outSideClick)
+    return () => {
+      document.removeEventListener('mousedown', outSideClick)
+    }
+  }, [setIsGuestOpen])
   return (
-    <div className='absolute z-50 bg-white w-full border border-solid rounded-xl border-gray-300'>
+    <div
+      ref={modalRef}
+      className='absolute z-50 bg-white w-full border border-solid rounded-xl border-gray-300'
+    >
       <div className='p-4 mb-4'>
         <GuestCountButton
           type='adults'

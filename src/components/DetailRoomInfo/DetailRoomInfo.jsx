@@ -117,7 +117,12 @@ function Calculator({
         </div>
         <div className='box-border flex flex-col relative mb-4 w-full border rounded-md border-solid border-black'>
           <div>
-            {isCalendarOpen && <GuestCalendarModal setIsCalendarOpen={setIsCalendarOpen} />}
+            {isCalendarOpen && (
+              <GuestCalendarModal
+                isCalendarOpen={isCalendarOpen}
+                setIsCalendarOpen={setIsCalendarOpen}
+              />
+            )}
           </div>
           <button
             onClick={() => {
@@ -158,7 +163,9 @@ function Calculator({
                 )}
               </div>
             </div>
-            {isGuestOpen && <GuestCountModal />}
+            {isGuestOpen && (
+              <GuestCountModal setIsGuestOpen={setIsGuestOpen} isGuestOpen={isGuestOpen} />
+            )}
           </div>
         </div>
 
