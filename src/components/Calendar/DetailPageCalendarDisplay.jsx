@@ -44,8 +44,8 @@ const DetailPageCalendarDisplay = () => {
   }, [selectedStartDate, selectedEndDate, location, dispatch])
 
   return (
-    <div className='p-4'>
-      <div className='mb-4'>
+    <div className='p-4 w-full'>
+      <div className='mb-4 w-full flex-grow justify-between'>
         <h1 className='font-bold pl-10'>{displayText}</h1>
         <p className='pl-10 pt-1'>{selectedDatesText}</p>
       </div>
