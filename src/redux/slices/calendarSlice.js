@@ -17,6 +17,7 @@ const calendarSlice = createSlice({
     setSelectedDatesText: (state, action) => {
       state.selectedDatesText = action.payload
     },
+    //콜백 넘겨주면 체크인/체크아웃 날자 null로 변경
     resetDates: (state) => {
       state.selectedStartDate = null
       state.selectedEndDate = null
