@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CalendarContainer from './CalendarContainer'
 import {
@@ -15,10 +15,7 @@ const DetailPageCalendarDisplay = () => {
     (state) => state.setCalendar,
   )
   const location = 'Hwacheon-myeon, Hongcheon-gun'
-
-  // const selectedStartDate = useSelector((state) => state.calendar.selectedStartDate)
-  // const selectedEndDate = useSelector((state) => state.calendar.selectedEndDate)
-  // const selectedDatesText = useSelector((state) => state.calendar.selectedDatesText)
+  const [displayText, setDisplayText] = useState(location)
 
   const formatDate = (date) => {
     const d = new Date(date)
@@ -33,13 +30,10 @@ const DetailPageCalendarDisplay = () => {
   useEffect(() => {
     if (selectedStartDate && selectedEndDate) {
       const nights = calculateNights(selectedStartDate, selectedEndDate)
-      dispatch(setSelectedDatesText(`${location}에서 ${nights}박`))
+      setDisplayText(`${location}에서 ${nights}박`)
       const startDate = new Date(selectedStartDate)
       const endDate = new Date(selectedEndDate)
       dispatch(setSelectedDatesText(`${formatDate(startDate)} - ${formatDate(endDate)}`))
-      console.log(
-        `Selected Period: ${startDate.toLocaleDateString()} to ${endDate.toLocaleDateString()}`,
-      )
     } else if (selectedStartDate) {
       dispatch(setSelectedDatesText('체크아웃 날짜를 선택해주세요.'))
       dispatch(setSelectedDatesText(formatDate(selectedStartDate)))
@@ -52,7 +46,7 @@ const DetailPageCalendarDisplay = () => {
   return (
     <div className='p-4'>
       <div className='mb-4'>
-        <h1 className='font-bold pl-10'>{location}</h1>
+        <h1 className='font-bold pl-10'>{displayText}</h1>
         <p className='pl-10 pt-1'>{selectedDatesText}</p>
       </div>
       <CalendarContainer
