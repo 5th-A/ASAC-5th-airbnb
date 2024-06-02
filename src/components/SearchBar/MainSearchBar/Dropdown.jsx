@@ -1,21 +1,30 @@
 import React from 'react'
+import cities from '@/data/cities.json'
 
-const Dropdown = ({ isOpen, type }) => {
+const WhereContent = ({ onSelectCity }) => (
+  <div className='p-4'>
+    <div className='text-neutral-800 text-sm font-bold mb-2'>한국</div>
+    <div className='grid grid-cols-4 gap-2'>
+      {cities.map((city) => (
+        <button
+          key={city.id}
+          onClick={() => onSelectCity(city.name)}
+          className='px-4 py-2 border border-gray-300 rounded-full text-sm text-neutral-800 hover:bg-gray-200'
+        >
+          {city.name}
+        </button>
+      ))}
+    </div>
+  </div>
+)
+
+const Dropdown = ({ isOpen, type, onSelectCity }) => {
   if (!isOpen) return null
 
   let content
   switch (type) {
     case 'where':
-      content = (
-        <>
-          <div className="Where text-neutral-800 text-xs font-['SF Pro'] ">지역으로 검색하기</div>
-          <div className="SearchDestinations text-neutral-500 text-sm font-normal font-['SF Pro'] ">
-            <div>서울</div>
-            <div>부산</div>
-            <div>속초</div>
-          </div>
-        </>
-      )
+      content = <WhereContent onSelectCity={onSelectCity} />
       break
     case 'checkin':
       content = (
@@ -65,7 +74,7 @@ const Dropdown = ({ isOpen, type }) => {
 
   return (
     <div
-      className={`absolute top-full ${dropdownPosition} ${dropdownWidth} rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 mt-1`}
+      className={`absolute top-full ${dropdownPosition} ${dropdownWidth} rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 mt-1`}
     >
       <div className='py-1'>
         <div className='px-4 py-2'>{content}</div>

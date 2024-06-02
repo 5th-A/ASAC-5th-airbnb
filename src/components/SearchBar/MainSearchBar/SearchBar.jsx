@@ -16,7 +16,9 @@ const SearchBarWrap = ({ children, isActive }) => (
 
 const SearchBar = () => {
   const [dropdownType, setDropdownType] = useState(null)
+  const [selectedCity, setSelectedCity] = useState('')
   const searchBarRef = useRef(null)
+  const inputRef = useRef(null)
 
   const handleOpenDropdown = (type) => {
     setDropdownType(type)
@@ -26,11 +28,25 @@ const SearchBar = () => {
     setDropdownType(null)
   }
 
+  const handleSelectCity = (city) => {
+    setSelectedCity(city)
+    if (inputRef.current) {
+      inputRef.current.value = city
+    }
+    handleCloseDropdown()
+    handleOpenDropdown('checkin')
+  }
+
   const handleClickOutside = (event) => {
     if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
-      console.log(event.target)
       handleCloseDropdown()
     }
+  }
+
+  const handleSearchButtonClick = () => {
+    const city = inputRef.current ? inputRef.current.value : ''
+    console.log('Selected city:', city)
+    // 여기에 API 전송 할 예정
   }
 
   useEffect(() => {
@@ -52,6 +68,8 @@ const SearchBar = () => {
           <WhereArea
             onClick={() => handleOpenDropdown('where')}
             isActive={dropdownType === 'where'}
+            selectedCity={selectedCity}
+            inputRef={inputRef}
           />
           <CheckInArea
             onClick={() => handleOpenDropdown('checkin')}
@@ -64,9 +82,14 @@ const SearchBar = () => {
           <GuestArea
             onClick={() => handleOpenDropdown('guest')}
             isActive={dropdownType === 'guest'}
+            onSearch={handleSearchButtonClick} // 검색 버튼 클릭 핸들러 전달
           />
         </SearchBarWrap>
-        <Dropdown isOpen={dropdownType !== null} type={dropdownType} />
+        <Dropdown
+          isOpen={dropdownType !== null}
+          type={dropdownType}
+          onSelectCity={handleSelectCity}
+        />
       </div>
     </>
   )
