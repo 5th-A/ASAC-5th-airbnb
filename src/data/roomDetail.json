@@ -118,32 +118,32 @@
       {
         "id": 7,
         "name": "한적한 시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 8,
         "name": "슈퍼호스트",
-        "icon": "src/assets/superhost.svg"
+        "icon": "/assets/superhost.svg"
       },
       {
         "id": 9,
         "name": "한정 시간 무료 취소",
-        "icon": "src/assets/freecancel.svg"
+        "icon": "/assets/freecancel.svg"
       },
       {
         "id": 10,
         "name": "셀프 체크인",
-        "icon": "src/assets/selfCheckIn.svg"
+        "icon": "/assets/selfCheckIn.svg"
       },
       {
         "id": 11,
         "name": "세탁기 및 건조기",
-        "icon": "src/assets/laundryMachine.svg"
+        "icon": "/assets/laundryMachine.svg"
       },
       {
         "id": 12,
         "name": "TV",
-        "icon": "src/assets/TV.svg"
+        "icon": "/assets/TV.svg"
       }
     ],
     "host": {
@@ -196,32 +196,32 @@
       {
         "id": 13,
         "name": "한적한 시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 14,
         "name": "한정 시간 무료 취소",
-        "icon": "src/assets/freecancel.svg"
+        "icon": "/assets/freecancel.svg"
       },
       {
         "id": 15,
         "name": "셀프 체크인",
-        "icon": "src/assets/selfCheckIn.svg"
+        "icon": "/assets/selfCheckIn.svg"
       },
       {
         "id": 16,
         "name": "세탁기",
-        "icon": "src/assets/laundryMachine.svg"
+        "icon": "/assets/laundryMachine.svg"
       },
       {
         "id": 17,
         "name": "TV",
-        "icon": "src/assets/TV.svg"
+        "icon": "/assets/TV.svg"
       },
       {
         "id": 18,
         "name": "무선 인터넷",
-        "icon": "src/assets/wifi.svg"
+        "icon": "/assets/wifi.svg"
       }
     ],
     "host": {
@@ -274,27 +274,27 @@
       {
         "id": 19,
         "name": "한적한 시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 20,
         "name": "한정 시간 무료 취소",
-        "icon": "src/assets/freecancel.svg"
+        "icon": "/assets/freecancel.svg"
       },
       {
         "id": 21,
         "name": "세탁기 및 건조기",
-        "icon": "src/assets/laundryMachine.svg"
+        "icon": "/assets/laundryMachine.svg"
       },
       {
         "id": 22,
         "name": "에어컨",
-        "icon": "src/assets/airconditioner.svg"
+        "icon": "/assets/airconditioner.svg"
       },
       {
         "id": 23,
         "name": "난방",
-        "icon": "src/assets/heater.svg"
+        "icon": "/assets/heater.svg"
       }
     ],
     "host": {
@@ -347,27 +347,27 @@
       {
         "id": 24,
         "name": "한적한 시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 25,
         "name": "한정 시간 무료 취소",
-        "icon": "src/assets/freecancel.svg"
+        "icon": "/assets/freecancel.svg"
       },
       {
         "id": 26,
         "name": "TV",
-        "icon": "src/assets/TV.svg"
+        "icon": "/assets/TV.svg"
       },
       {
         "id": 27,
         "name": "무선 인터넷",
-        "icon": "src/assets/wifi.svg"
+        "icon": "/assets/wifi.svg"
       },
       {
         "id": 28,
         "name": "에어컨",
-        "icon": "src/assets/airconditioner.svg"
+        "icon": "/assets/airconditioner.svg"
       }
     ],
     "host": {
@@ -420,32 +420,32 @@
       {
         "id": 29,
         "name": "한적한 시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 30,
         "name": "슈퍼호스트",
-        "icon": "src/assets/superhost.svg"
+        "icon": "/assets/superhost.svg"
       },
       {
         "id": 31,
         "name": "위치 평점 최고",
-        "icon": "src/assets/locationRate.svg"
+        "icon": "/assets/locationRate.svg"
       },
       {
         "id": 32,
         "name": "한정 시간 무료 취소",
-        "icon": "src/assets/freecancel.svg"
+        "icon": "/assets/freecancel.svg"
       },
       {
         "id": 33,
         "name": "셀프 체크인",
-        "icon": "src/assets/selfCheckIn.svg"
+        "icon": "/assets/selfCheckIn.svg"
       },
       {
         "id": 34,
         "name": "세탁기",
-        "icon": "src/assets/laundryMachine.svg"
+        "icon": "/assets/laundryMachine.svg"
       }
     ],
     "host": {
@@ -498,22 +498,22 @@
       {
         "id": 35,
         "name": "한적한 시골",
-        "icon": "src/assets/countryside.svg"
+        "icon": "/assets/countryside.svg"
       },
       {
         "id": 36,
         "name": "세탁기 및 건조기",
-        "icon": "src/assets/laundryMachine.svg"
+        "icon": "/assets/laundryMachine.svg"
       },
       {
         "id": 37,
         "name": "무선 인터넷",
-        "icon": "src/assets/wifi.svg"
+        "icon": "/assets/wifi.svg"
       },
       {
         "id": 38,
         "name": "에어컨",
-        "icon": "src/assets/locationRate.svg"
+        "icon": "/assets/locationRate.svg"
       }
     ],
     "host": {

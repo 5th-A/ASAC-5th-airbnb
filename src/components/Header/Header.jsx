@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import SearchBar from '../SearchBar/SearchBar'
 
 function Header() {
@@ -5,9 +6,9 @@ function Header() {
     <>
       <div className='flex justify-between items-center top-0 h-[80px] fixed w-screen px-10 z-20 bg-white border-solid  border-b border-gray-200 '>
         <div className=''>
-          <a href='App.jsx'>
+          <Link href={'/'}>
             <img className='w-[102px] h-[32px]' src='/assets/header/airbnbLogo.svg' />
-          </a>
+          </Link>
         </div>
         <div className='w-[300px] justify-end items-center gap-6 flex px-3.5 ml-36'>
           <button className='bg-none border-none outline-none focus:font-black '>숙소</button>

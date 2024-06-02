@@ -1,10 +1,14 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import guestPrefer_Left from '/public/assets/guestPrefer_Left.svg'
 import guestPrefer_Right from '/public/assets/guestPrefer_Right.svg'
 import extensionArrow from '/public/assets/extensionArrow.svg'
 import roomDetail from '@/data/roomDetail.json'
 import AccommodationDetails from '../AccommodationDetails/AccommodationDetails'
+import GuestCountModal from '../Modal/GuestCountModal'
+import { useSelector } from 'react-redux'
+import GuestCalendarModal from '../Modal/GuestCalendarModal'
+import { setSelectedEndDate, setSelectedStartDate } from '@/redux/slices/calendarSlice'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -68,50 +72,103 @@ function HostInfo({ hostInfo }) {
   )
 }
 
-function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
+function Calculator({
+  price,
+  stayDay,
+  FEE,
+  setIsGuestOpen,
+  isGuestOpen,
+  isCalendarOpen,
+  setIsCalendarOpen,
+}) {
   function formatPrice(price) {
     return new Intl.NumberFormat().format(price)
   }
+  function formatDate(date) {
+    const d = new Date(date)
+    return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()}`
+  }
   const totalCharge = formatPrice(price * stayDay * (1 + FEE))
+  const { adults, teens, kids, pets } = useSelector((state) => state.guestCount)
+  const { selectedStartDate, selectedEndDate } = useSelector((state) => state.setCalendar)
+
+  function showCurrentGuest(adults, teens, kids, pets) {
+    let guestList = []
+
+    if (adults + teens > 0) {
+      guestList.push(`게스트 ${adults + teens}명`)
+    }
+    if (kids > 0) {
+      guestList.push(`, 유아 ${kids}명`)
+    }
+    if (pets > 0) {
+      guestList.push(`, 반려동물 ${pets}마리`)
+    }
+
+    return guestList
+  }
 
   return (
-    <div className='calculator inline-block sticky top-0 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
-      <div className='flex flex-col'>
+    <div className='calculator inline-block sticky top-20 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
+      <div className='flex flex-col relative'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
           <span> /박</span>
         </div>
-        <div className='box-border flex flex-col mb-4 w-full border rounded-md border-solid border-black'>
+        <div className='box-border flex flex-col relative mb-4 w-full border rounded-md border-solid border-black'>
+          <div>
+            {isCalendarOpen && (
+              <GuestCalendarModal
+                isCalendarOpen={isCalendarOpen}
+                setIsCalendarOpen={setIsCalendarOpen}
+              />
+            )}
+          </div>
           <button
+            onClick={() => {
+              setIsCalendarOpen((prev) => !prev)
+              setIsGuestOpen(false)
+            }}
             style={{ minHeight: '56px' }}
             className='flex h-full border-b border-solid border-black items-center w-full'
           >
-            <div className='w-[50%] items-center border-r border-solid border-black px-3'>
+            <div className='w-[50%] items-center border-r border-solid border-black px-3 py-4'>
               <div className='text-[10px] text-left'>체크인</div>
-              <div className='text-[14px] text-left'>2024. 6. 9.</div>
+              <div className='text-[14px] text-left'>
+                {selectedStartDate !== null ? formatDate(selectedStartDate) : '날짜선택'}
+              </div>
             </div>
             <div className='w-[50%] px-3'>
               <div className='text-[10px] text-left'>체크아웃</div>
-              <div className='text-[14px] text-left'>2024. 6. 14.</div>
+              <div className='text-[14px] text-left'>
+                {selectedEndDate !== null ? formatDate(selectedEndDate) : '날짜선택'}
+              </div>
             </div>
           </button>
-          <div
-            className='flex justify-between mt-3 px-3 pb-[10px]'
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
-            <div>
-              <div className='text-[10px]'>인원</div>
-              <div className='text-[14px]'>게스트 1명</div>
+
+          <div className=''>
+            <div
+              className='flex justify-between mt-3 px-3 pb-[10px]'
+              onClick={() => setIsGuestOpen((prev) => !prev)}
+            >
+              <div className=''>
+                <div className='text-[10px]'>인원</div>
+                <div className='text-[14px]'>{showCurrentGuest(adults, teens, kids, pets)}</div>
+              </div>
+              <div>
+                {isGuestOpen ? (
+                  <img src={extensionArrow.src}></img>
+                ) : (
+                  <img className='scale-y-[-1]' src={extensionArrow.src}></img>
+                )}
+              </div>
             </div>
-            <div>
-              {isOpen ? (
-                <img src={extensionArrow.src}></img>
-              ) : (
-                <img className='scale-y-[-1]' src={extensionArrow.src}></img>
-              )}
-            </div>
+            {isGuestOpen && (
+              <GuestCountModal setIsGuestOpen={setIsGuestOpen} isGuestOpen={isGuestOpen} />
+            )}
           </div>
         </div>
+
         <div className='w-full bg-customRed text-white font-semibold py-2 px-4 rounded-md'>
           <button className='w-full py-2 px-4'>예약하기</button>
         </div>
@@ -141,19 +198,35 @@ function Calculator({ price, stayDay, FEE, setIsOpen, isOpen }) {
 
 export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props로 넘겨받을 예정} */) {
   const ROOM_NAME = 'NEW 스테이구구(Stay GUGU) 302호'
-  const STAY_DAY = 6
-  const FEE = 0.1552
 
-  const [isOpen, setIsOpen] = useState(false)
+  const FEE = 0.1552
+  const { selectedStartDate, selectedEndDate } = useSelector((state) => state.setCalendar)
+
+  const [isGuestOpen, setIsGuestOpen] = useState(false)
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false)
+  const [stayDay, setStayDay] = useState(null)
+  function calculateNights(start, end) {
+    const msInDay = 24 * 60 * 60 * 1000
+    return Math.round((end - start) / msInDay)
+  }
+  console.log('staDay:', stayDay)
+  useEffect(() => {
+    if (selectedStartDate !== null && selectedEndDate !== null) {
+      setStayDay(calculateNights(selectedStartDate, selectedEndDate))
+    }
+    if (selectedStartDate === null || selectedEndDate === null) {
+      setStayDay(null)
+    }
+  }, [selectedStartDate, selectedEndDate])
+
   //find메서드로 해당 객체만 반환
   const roomDetailData = roomDetail.find((room) => room.roomName === ROOM_NAME)
-
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-    <div className='flex w-[100%] justify-center items-center'>
-      <div className='flex itemWrapper justify-center w-[70%] px-10'>
-        <div className='flex-6 box-border'>
+    <div className='flex w-[100%] justify-center items-center border-b border-gray-300 border-solid'>
+      <div className='flex w-full itemWrapper justify-between px-10'>
+        <div className='box-border w-[60%]'>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>
               {roomDetailData.address}, {roomDetailData.roomType}
@@ -208,17 +281,19 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
           <div className='pt-8 pb-12 border-b whitespace-pre-line border-gray-300 border-solid'>
             {roomDetailData.introduction}
           </div>
-          <div className='pt-12 pb-12 border-b border-gray-300 border-solid'>
+          <div className='pt-12 pb-12 '>
             <AccommodationDetails />
           </div>
         </div>
-        <div className='flex relative w-[40%]'>
+        <div className='flex relative'>
           <div className='ml-auto mt-8'>
             <Calculator
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
+              isGuestOpen={isGuestOpen}
+              isCalendarOpen={isCalendarOpen}
+              setIsCalendarOpen={setIsCalendarOpen}
+              setIsGuestOpen={setIsGuestOpen}
               price={roomDetailData.price}
-              stayDay={STAY_DAY}
+              stayDay={stayDay}
               FEE={FEE}
             />
           </div>
