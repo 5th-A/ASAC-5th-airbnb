@@ -67,9 +67,9 @@ export default function GuestCountModal({ setIsGuestOpen, isGuestOpen }) {
         setIsGuestOpen(false)
       }
     }
-    document.addEventListener('mousedown', outSideClick)
+    document.addEventListener('click', outSideClick)
     return () => {
-      document.removeEventListener('mousedown', outSideClick)
+      document.removeEventListener('click', outSideClick)
     }
   }, [setIsGuestOpen])
   return (
