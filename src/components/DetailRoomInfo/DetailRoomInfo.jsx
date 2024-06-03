@@ -109,7 +109,11 @@ function Calculator({
   }
 
   return (
+<<<<<<< Updated upstream
     <div className='calculator inline-block sticky top-20 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
+=======
+    <div className='calculator inline-block sticky top-20 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
+>>>>>>> Stashed changes
       <div className='flex flex-col relative'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
