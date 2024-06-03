@@ -109,11 +109,7 @@ function Calculator({
   }
 
   return (
-<<<<<<< Updated upstream
     <div className='calculator inline-block sticky top-20 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
-=======
-    <div className='calculator inline-block sticky top-20 bottom-0 p-6 border rounded-lg border-solid border-customGray shadow-xl'>
->>>>>>> Stashed changes
       <div className='flex flex-col relative'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
@@ -236,7 +232,6 @@ export default function DetailRoomInfo({ id }) {
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-
     <div className='flex w-full items-center justify-center'>
       <div className='flex flex-grow-1 w-full itemWrapper justify-center'>
         <div className='flex-grow box-border w-[70%]]'>
