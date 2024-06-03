@@ -147,10 +147,12 @@ function FilterModalComponent({ isOpen, onClose }) {
         </div>
 
         {/* 모달 하단 - 버튼 영역 */}
-        <div className='flex justify-between items-center'>
-          <button className='p-2 bg-gray-200 rounded'>전체 해제</button>
+        <footer className='flex justify-between items-center'>
+          <button className='hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 rounded'>
+            전체 해제
+          </button>
           <button className='p-2 bg-black text-white rounded'>숙소 925개 보기</button>
-        </div>
+        </footer>
       </div>
     </div>
   )
