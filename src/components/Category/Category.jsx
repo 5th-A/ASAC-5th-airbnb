@@ -14,6 +14,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 
+import FilterModalComponent from '../Filter/FilterModalComponent' // Make sure the path is correct
+
 function ButtonComponent({ button }) {
   return (
     <li style={{ listStyleType: 'none', height: '90px', margin: '0' }}>
@@ -61,6 +63,7 @@ function ButtonComponent({ button }) {
 
 export default function Category() {
   const [buttonInfo, setButtonInfo] = useState(example)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleWheel = (swiper, event) => {
     if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
@@ -71,6 +74,16 @@ export default function Category() {
       event.preventDefault()
       swiper.mousewheel.disable()
     }
+  }
+
+  // 필터 버튼을 눌렀을 때 모달창을 띄워준다.
+  const handleFilterClick = () => {
+    setIsModalOpen(true)
+  }
+
+  // 모달에서 닫기 버튼을 눌러주면 모달창을 닫아준다.
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   return (
@@ -108,10 +121,14 @@ export default function Category() {
         </Swiper>
       </div>
       {/* 버튼 크기 변경 */}
-      <button className='flex w-[76px] h-[32px] items-center justify-center py-0 border rounded py-[7px]'>
+      <button
+        className='flex w-[76px] h-[32px] items-center justify-center py-0 border rounded py-[7px]'
+        onClick={handleFilterClick}
+      >
         <img src={filter.src} className='w-[16px] h-[16px] mr-1' />
         <div className='text-xs'>필터</div>
       </button>
+      <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   )
 }
