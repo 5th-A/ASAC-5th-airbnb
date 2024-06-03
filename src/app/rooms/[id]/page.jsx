@@ -8,7 +8,9 @@ import HostIntroduction from '@/components/HostIntroduction/HostIntroduction'
 import MainImage from '@/components/MainImage/Mainimage'
 import Providers from '@/redux/Providers'
 
-export default function roomDetail() {
+export default function roomDetail({ params }) {
+  const { id } = params
+
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
       <div>
@@ -16,7 +18,7 @@ export default function roomDetail() {
         <div className='w-full px-20'>
           <Providers>
             <MainImage />
-            <DetailRoomInfo />
+            <DetailRoomInfo id={id} />
             <Comment />
             <Amenities />
             <DetailPageCalendarDisplay />

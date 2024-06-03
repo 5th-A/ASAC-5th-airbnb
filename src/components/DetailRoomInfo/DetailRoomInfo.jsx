@@ -7,6 +7,7 @@ import GuestCountModal from '../Modal/GuestCountModal'
 import { useSelector } from 'react-redux'
 import GuestCalendarModal from '../Modal/GuestCalendarModal'
 import Image from 'next/image'
+import { stringify } from 'querystring'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -202,7 +203,8 @@ function Calculator({
   )
 }
 
-export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props로 넘겨받을 예정} */) {
+export default function DetailRoomInfo({ id }) {
+  const ROOM_ID = id
   const ROOM_NAME = 'NEW 스테이구구(Stay GUGU) 302호'
 
   const FEE = 0.1552
@@ -226,7 +228,7 @@ export default function DetailRoomInfo(/* {ROOM_NAME 혹은 식별요소 props�
   }, [selectedStartDate, selectedEndDate])
 
   //find메서드로 해당 객체만 반환
-  const roomDetailData = roomDetail.find((room) => room.roomName === ROOM_NAME)
+  const roomDetailData = roomDetail.find((room) => room.id == ROOM_ID)
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
