@@ -232,9 +232,10 @@ export default function DetailRoomInfo({ id }) {
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-    <div className='flex w-[100%] justify-center items-center border-b border-gray-300 border-solid'>
-      <div className='flex w-full itemWrapper justify-between px-10'>
-        <div className='box-border w-[60%]'>
+
+    <div className='flex w-full items-center justify-center'>
+      <div className='flex flex-grow-1 w-full itemWrapper justify-center'>
+        <div className='flex-grow box-border w-[70%]]'>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>
               {roomDetailData.address}, {roomDetailData.roomType}

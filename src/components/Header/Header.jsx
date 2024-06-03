@@ -4,7 +4,7 @@ import SearchBar from '../SearchBar/SearchBar'
 function Header() {
   return (
     <>
-      <div className='flex justify-between items-center top-0 h-[80px] fixed w-screen px-10 z-20 bg-white border-solid  border-b border-gray-200 '>
+      <div className='flex justify-between items-center top-0 h-[80px]  w-screen px-10 z-20 bg-white border-solid  border-b border-gray-200 '>
         <div className=''>
           <Link href={'/'}>
             <img className='w-[102px] h-[32px]' src='/assets/header/airbnbLogo.svg' />
@@ -77,7 +77,10 @@ function Header() {
           </div>
         </div>
       </div>
-      <SearchBar />
+      <div className='w-full flex justify-center items-center'>
+        <SearchBar />
+      </div>
+      {/* <Category /> */}
     </>
   )
 }
