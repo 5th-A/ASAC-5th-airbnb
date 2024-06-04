@@ -21,7 +21,7 @@ function Header() {
             <div className='BecomeAHost text-neutral-800 text-sm font-black '>
               당신의 공간을 에어비앤비하세요
             </div>
-            <div className='Globe Frame20 w-4 h-4 relative flex-col justify-start items-start inline-flex'>
+            <div className='Globe Frame20 w-4 h-4  flex-col justify-start items-start inline-flex'>
               <div>
                 <a href='#'>
                   <svg

@@ -6,6 +6,7 @@ import Header from '@/components/Header/Header'
 import SmallHeader from '@/components/Header/SmallHeader'
 import HostIntroduction from '@/components/HostIntroduction/HostIntroduction'
 import MainImage from '@/components/MainImage/Mainimage'
+import CommentJson from '@/data/comment.json'
 import Providers from '@/redux/Providers'
 
 export default function roomDetail({ params }) {
