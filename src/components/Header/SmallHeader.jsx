@@ -1,4 +1,4 @@
-import SearchBar from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/MainSearchBar/SearchBar'
 import SmallSearchBar from '../SearchBar/SmallSearchBar'
 
 function SmallHeader() {

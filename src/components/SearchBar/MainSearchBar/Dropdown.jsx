@@ -1,5 +1,6 @@
 import React from 'react'
 import cities from '@/data/cities.json'
+import CalendarContainer from '@/components/Calendar/CalendarContainer'
 
 const WhereContent = ({ onSelectCity }) => (
   <div className='p-4'>
@@ -18,7 +19,15 @@ const WhereContent = ({ onSelectCity }) => (
   </div>
 )
 
-const Dropdown = ({ isOpen, type, onSelectCity }) => {
+const Dropdown = ({
+  isOpen,
+  type,
+  onSelectCity,
+  setSelectedStartDate,
+  setSelectedEndDate,
+  selectedStartDate,
+  selectedEndDate,
+}) => {
   if (!isOpen) return null
 
   let content
@@ -27,31 +36,28 @@ const Dropdown = ({ isOpen, type, onSelectCity }) => {
       content = <WhereContent onSelectCity={onSelectCity} />
       break
     case 'checkin':
-      content = (
-        <>
-          <div className="CheckIn text-neutral-800 text-xs font-['SF Pro'] ">날짜를 선택하세요</div>
-          <div className="AddDates text-neutral-500 text-sm font-normal font-['SF Pro'] ">
-            <div>2023-12-01</div>
-            <div>2023-12-02</div>
-            <div>2023-12-03</div>
-          </div>
-        </>
-      )
-      break
     case 'checkout':
       content = (
-        <>
-          <div className="CheckOut text-neutral-800 text-xs font-['SF Pro'] ">
-            날짜를 선택하세요
-          </div>
-          <div className="AddDates text-neutral-500 text-sm font-normal font-['SF Pro'] ">
-            <div>2023-12-01</div>
-            <div>2023-12-02</div>
-            <div>2023-12-03</div>
-          </div>
-        </>
+        <CalendarContainer
+          visibleCalendars={2}
+          selectedStartDate={selectedStartDate}
+          setSelectedStartDate={setSelectedStartDate}
+          selectedEndDate={selectedEndDate}
+          setSelectedEndDate={setSelectedEndDate}
+        />
       )
       break
+    // case 'checkout':
+    //   content = (
+    //     <CalendarContainer
+    //       visibleCalendars={2}
+    //       selectedStartDate={null}
+    //       setSelectedStartDate={() => {}}
+    //       selectedEndDate={null}
+    //       setSelectedEndDate={type === 'checkout' ? setSelectedEndDate : () => {}}
+    //     />
+    //   )
+    //   break
     case 'guest':
       content = (
         <>

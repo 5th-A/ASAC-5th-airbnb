@@ -1,8 +1,7 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import WhereArea from './WhereArea'
-import CheckInArea from './CheckInArea'
-import CheckOutArea from './CheckOutArea'
+import DateArea from './DateArea'
 import GuestArea from './GuestArea'
 import Dropdown from './Dropdown'
 
@@ -17,6 +16,8 @@ const SearchBarWrap = ({ children, isActive }) => (
 const SearchBar = () => {
   const [dropdownType, setDropdownType] = useState(null)
   const [selectedCity, setSelectedCity] = useState('')
+  const [selectedStartDate, setSelectedStartDate] = useState(null)
+  const [selectedEndDate, setSelectedEndDate] = useState(null)
   const searchBarRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -34,7 +35,21 @@ const SearchBar = () => {
       inputRef.current.value = city
     }
     handleCloseDropdown()
-    handleOpenDropdown('checkin')
+    handleOpenDropdown('checkin') // 도시를 선택한 후 체크인 모달을 엽니다.
+  }
+
+  const handleSelectStartDate = (date) => {
+    setSelectedStartDate(date)
+  }
+
+  const handleSelectEndDate = (date) => {
+    setSelectedEndDate(date)
+    handleCloseDropdown()
+    if (dropdownType === 'checkin') {
+      handleOpenDropdown('checkout')
+    } else {
+      handleOpenDropdown('guest')
+    }
   }
 
   const handleClickOutside = (event) => {
@@ -46,7 +61,10 @@ const SearchBar = () => {
   const handleSearchButtonClick = () => {
     const city = inputRef.current ? inputRef.current.value : ''
     console.log('Selected city:', city)
-    // 여기에 API 전송 할 예정
+    console.log('Selected StartDate', new Date(selectedStartDate).toLocaleDateString())
+    console.log('Selected EndDate', new Date(selectedEndDate).toLocaleDateString())
+
+    // 여기에 API 전송 로직
   }
 
   useEffect(() => {
@@ -71,13 +89,13 @@ const SearchBar = () => {
             selectedCity={selectedCity}
             inputRef={inputRef}
           />
-          <CheckInArea
-            onClick={() => handleOpenDropdown('checkin')}
-            isActive={dropdownType === 'checkin'}
-          />
-          <CheckOutArea
-            onClick={() => handleOpenDropdown('checkout')}
-            isActive={dropdownType === 'checkout'}
+          <DateArea
+            onClickCheckin={() => handleOpenDropdown('checkin')}
+            onClickCheckout={() => handleOpenDropdown('checkout')}
+            isActiveCheckin={dropdownType === 'checkin'}
+            isActiveCheckout={dropdownType === 'checkout'}
+            selectedStartDate={selectedStartDate}
+            selectedEndDate={selectedEndDate}
           />
           <GuestArea
             onClick={() => handleOpenDropdown('guest')}
@@ -89,6 +107,10 @@ const SearchBar = () => {
           isOpen={dropdownType !== null}
           type={dropdownType}
           onSelectCity={handleSelectCity}
+          selectedStartDate={selectedStartDate}
+          selectedEndDate={selectedEndDate}
+          setSelectedStartDate={handleSelectStartDate}
+          setSelectedEndDate={handleSelectEndDate}
         />
       </div>
     </>
