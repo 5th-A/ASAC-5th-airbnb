@@ -7,12 +7,21 @@ const SignUpModal = ({ isShow, closeModal }) => {
         closeModal()
       }
     }
-
     if (isShow) {
       document.addEventListener('click', handleOutsideClick)
     }
 
-    return () => document.removeEventListener('click', handleOutsideClick)
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') {
+        closeModal()
+      }
+    }
+    window.addEventListener('keydown', handleEsc)
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+      window.removeEventListener('keydown', handleEsc)
+    }
   }, [isShow, closeModal])
 
   if (!isShow) return null
@@ -24,23 +33,30 @@ const SignUpModal = ({ isShow, closeModal }) => {
         id='modal-backdrop'
       >
         <div
-          className=' text-left bg-white rounded-3xl flex flex-col items-center shadow-gray-100 '
+          className='min-w-[240px] bg-white rounded-xl flex flex-col items-center shadow-gray-150 '
           id='modal-content'
         >
-          <ul className='list-none'>
-            <button className='block'>
-              <li className='my-1 px-2 py-2 cursor-pointer hover:bg-gray-100'>회원가입</li>
+          <ul className='list-none w-full py-1'>
+            <button className='block w-full'>
+              <li className='w-full my-1 px-4 py-2 cursor-pointer hover:bg-gray-100 text-left '>
+                회원가입
+              </li>
             </button>
-            <button className='block'>
-              <li className='block my-1 px-2 py-2 cursor-pointer hover:bg-gray-100'>로그인</li>
+            <button className='block w-full'>
+              <li className='w-full my-1 px-4 py-2 cursor-pointer hover:bg-gray-100 text-left '>
+                로그인
+              </li>
             </button>
-            <button className='block'>
-              <li className='my-1 px-2 py-2 cursor-pointer hover:bg-gray-100'>
+            <hr className='border-t border-gray-300' />
+            <button className='block w-full'>
+              <li className='w-full my-1 px-4 py-2 cursor-pointer hover:bg-gray-100 text-left '>
                 당신의 공간을 에어비앤비하세요
               </li>
             </button>
-            <button className='block'>
-              <li className='my-1 px-2 py-2 cursor-pointer hover:bg-gray-100'>도움말 센터</li>
+            <button className='block w-full'>
+              <li className='w-full my-1 px-4 py-2 cursor-pointer hover:bg-gray-100 text-left '>
+                도움말 센터
+              </li>
             </button>
           </ul>
         </div>
