@@ -6,14 +6,17 @@ import Header from '@/components/Header/Header'
 import SmallHeader from '@/components/Header/SmallHeader'
 import HostIntroduction from '@/components/HostIntroduction/HostIntroduction'
 import MainImage from '@/components/MainImage/Mainimage'
+import CommentJson from '@/data/comment.json'
 
-export default function roomDetail() {
+export default function roomDetail({ params }) {
+  const { id } = params
+
   return (
     <main className='flex min-h-screen flex-col items-center p-24'>
       <SmallHeader />
       <MainImage />
       <DetailRoomInfo />
-      <Comment />
+      <Comment id={id} />
       <Amenities />
       <DetailPageCalendarDisplay />
       <HostIntroduction />
