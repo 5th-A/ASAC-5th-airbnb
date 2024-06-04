@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import RoomTypeComponent from './RoomTypeComponent'
+import PriceRangeComponent from './PriceRangeModalComponent'
+import BedroomComponent from './Bedroomcomponent'
 
 const FilterModalComponent = ({ isOpen, onClose }) => {
-  const [statement, setStatement] = useState('방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.')
   const [selectedButton, setSelectedButton] = useState('all') // 초기값을 'all'로 설정
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
         <div className='w-[600px] max-h-[90vh] border-b-8 bg-white rounded-lg flex flex-col'>
           {/* 모달 상단 - 필터 제목 */}
           <header className='flex justify-between items-center border-b-2 border-solid border-gray-200'>
-            <div className='w-full min-h-10 flex justify-center items-center px-3 relative'>
+            <div className='w-full min-h-16 flex justify-center items-center px-3 relative'>
               <button onClick={onClose} className='absolute left-5 top-1.2 bg-none border-none'>
                 ✖
               </button>
@@ -54,6 +55,8 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
               selectedButton={selectedButton}
               handleButtonClick={handleButtonClick}
             />
+            <PriceRangeComponent />
+            <BedroomComponent />
           </div>
 
           {/* 모달 하단 - 버튼 영역 */}
