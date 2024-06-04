@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import SearchBar from '../SearchBar/MainSearchBar/SearchBar'
-
+import Providers from '@/redux/providers'
 
 function Header() {
   return (
@@ -79,7 +79,9 @@ function Header() {
         </div>
       </div>
       <div className='w-full flex justify-center items-center'>
-        <SearchBar />
+        <Providers>
+          <SearchBar />
+        </Providers>
       </div>
       {/* <Category /> */}
     </>

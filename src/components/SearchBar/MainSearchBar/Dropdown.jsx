@@ -1,6 +1,7 @@
 import React from 'react'
 import cities from '@/data/cities.json'
 import CalendarContainer from '@/components/Calendar/CalendarContainer'
+import GuestContent from '@/components/SearchBar/MainSearchBar/GuestContent'
 
 const WhereContent = ({ onSelectCity }) => (
   <div className='p-4'>
@@ -27,6 +28,8 @@ const Dropdown = ({
   setSelectedEndDate,
   selectedStartDate,
   selectedEndDate,
+  guestCounts,
+  dispatch,
 }) => {
   if (!isOpen) return null
 
@@ -47,27 +50,10 @@ const Dropdown = ({
         />
       )
       break
-    // case 'checkout':
-    //   content = (
-    //     <CalendarContainer
-    //       visibleCalendars={2}
-    //       selectedStartDate={null}
-    //       setSelectedStartDate={() => {}}
-    //       selectedEndDate={null}
-    //       setSelectedEndDate={type === 'checkout' ? setSelectedEndDate : () => {}}
-    //     />
-    //   )
-    //   break
     case 'guest':
       content = (
         <>
-          <div className="Guest text-neutral-800 text-xs font-['SF Pro'] ">게스트 선택하기</div>
-          <div className="GuestOptions text-neutral-500 text-sm font-normal font-['SF Pro'] ">
-            <div>성인</div>
-            <div>어린이</div>
-            <div>유아</div>
-            <div>반려동물</div>
-          </div>
+          <GuestContent guestCounts={guestCounts} dispatch={dispatch} />
         </>
       )
       break
