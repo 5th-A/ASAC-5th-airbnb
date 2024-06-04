@@ -5,9 +5,12 @@ import RoomList from '@/components/RoomList/RoomList'
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
-      <Header />
-      <Category />
+    <main className='flex flex-col items-center'>
+      <div className='w-full'>
+        <Header />
+        <Category />
+      </div>
+
       <RoomList />
     </main>
   )

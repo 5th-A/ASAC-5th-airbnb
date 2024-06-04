@@ -68,12 +68,9 @@ const CalendarContainer = ({
   }
 
   return (
-    <div className='w-full relative'>
+    <div className='flex flex-gorw justify-between'>
       {Array.from({ length: calendarsToShow }).map((_, index) => (
-        <div
-          className='inline-block align-top w-full max-w-xs p-6 bg-white min-h-[400px] relative'
-          key={index}
-        >
+        <div className='inline-block align-top w-full max-w-xs p-6 bg-white relative' key={index}>
           {index === 0 && (
             <div
               className='absolute top-[9%] left-[9%] cursor-pointer text-lg font-bold p-2 user-select-none transform -translate-y-1/2 z-10'

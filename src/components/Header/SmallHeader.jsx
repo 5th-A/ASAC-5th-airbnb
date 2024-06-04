@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import SearchBar from '../SearchBar/MainSearchBar/SearchBar'
+
 import SmallSearchBar from '../SearchBar/SmallSearchBar'
 
 function SmallHeader() {
@@ -6,9 +8,9 @@ function SmallHeader() {
     <>
       <div className='flex justify-between items-center top-0 h-[80px] fixed w-screen px-10 z-20 bg-white border-solid  border-b border-gray-200 '>
         <div className='w-1/3'>
-          <a href='App.jsx'>
-            <img className='h-[32px]' src='/assets/header/airbnbLogo.svg' />
-          </a>
+          <Link href={'/'}>
+            <img className='w-[102px] h-[32px]' src='/assets/header/airbnbLogo.svg' />
+          </Link>
         </div>
         <div className='w-1/3 justify-center items-center  flex px-3.5 '>
           <SmallSearchBar />
