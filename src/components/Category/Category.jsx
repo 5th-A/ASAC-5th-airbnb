@@ -6,6 +6,7 @@ import nextArrow from '/public/assets/nextArrow.svg'
 import prevArrow from '/public/assets/prevArrow.svg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
+import filter from '/public/assets/filter.svg'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -73,8 +74,8 @@ export default function Category() {
   }
 
   return (
-    <div style={{ width: '100%', height: '90px', padding: '0 80px' }}>
-      <div style={{ display: 'flex', height: '90px' }}>
+    <div className='w-full  bg-white z-50 flex items-center justify-between px-[80px]'>
+      <div className='flex items-center' style={{ width: 'calc(100% - 86px)', height: '90px' }}>
         <Swiper
           navigation={{
             nextEl: '.swiper-button-next',
@@ -99,13 +100,18 @@ export default function Category() {
             ))}
           </ul>
           <div className='swiper-button-prev w-7 h-7'>
-            <img src={prevArrow.src}></img>
+            <img src={prevArrow.src} alt='이전' />
           </div>
           <div className='swiper-button-next w-7 h-7'>
-            <img src={nextArrow.src}></img>
+            <img src={nextArrow.src} alt='다음' />
           </div>
         </Swiper>
       </div>
+      {/* 버튼 크기 변경 */}
+      <button className='flex w-[76px] h-[32px] items-center justify-center py-0 border rounded py-[7px]'>
+        <img src={filter.src} className='w-[16px] h-[16px] mr-1' />
+        <div className='text-xs'>필터</div>
+      </button>
     </div>
   )
 }
