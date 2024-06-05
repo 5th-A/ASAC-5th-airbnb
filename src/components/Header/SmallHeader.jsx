@@ -1,5 +1,6 @@
-import SearchBar from '../SearchBar/SearchBar'
 import Link from 'next/link'
+import SearchBar from '../SearchBar/MainSearchBar/SearchBar'
+
 import SmallSearchBar from '../SearchBar/SmallSearchBar'
 
 function SmallHeader() {

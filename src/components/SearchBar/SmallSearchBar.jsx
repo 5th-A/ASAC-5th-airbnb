@@ -9,7 +9,6 @@ const SmallWhereArea = () => (
         어디든지
       </div>
     </div>
-    <Line />
   </>
 )
 
@@ -20,7 +19,6 @@ const CheckInArea = () => (
         언제든 일주일
       </div>
     </div>
-    <Line />
   </>
 )
 
