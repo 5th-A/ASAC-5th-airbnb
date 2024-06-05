@@ -14,7 +14,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 
-import FilterModalComponent from '../Filter/FilterModalComponent' // Make sure the path is correct
+import FilterModalComponent from '../Filter/FilterModal' // Make sure the path is correct
 
 function ButtonComponent({ button }) {
   return (
