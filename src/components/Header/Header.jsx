@@ -1,8 +1,14 @@
+'use client'
+
 import Link from 'next/link'
-import SearchBar from '../SearchBar/MainSearchBar/SearchBar'
+import { useState } from 'react'
+import SearchBar from '@/components/SearchBar/MainSearchBar/SearchBar'
 import Providers from '@/redux/providers'
+import SignUpModal from '@/components/Modal/SignUpModal'
 
 function Header() {
+  const [isShow, setIsShow] = useState(false)
+
   return (
     <>
       <div className='flex justify-between items-center top-0 h-[80px]  w-screen px-10 z-20 bg-white border-solid  border-b border-gray-200 '>
@@ -21,7 +27,7 @@ function Header() {
             <div className='BecomeAHost text-neutral-800 text-sm font-black '>
               당신의 공간을 에어비앤비하세요
             </div>
-            <div className='Globe Frame20 w-4 h-4 relative flex-col justify-start items-start inline-flex'>
+            <div className='Globe Frame20 w-4 h-4  flex-col justify-start items-start inline-flex'>
               <div>
                 <a href='#'>
                   <svg
@@ -41,7 +47,18 @@ function Header() {
               </div>
             </div>
 
-            <button className='Frame w-[86px] h-[48px] border  rounded-[29px] border-gray-200 py-2 pr-2 pl-3.5 inline-flex justify-center items-center gap-3 '>
+            <button
+              onClick={() => {
+                setIsShow(true)
+              }}
+              className='Frame w-[86px] h-[48px] border  rounded-[29px] border-gray-200 py-2 pr-2 pl-3.5 inline-flex justify-center items-center gap-3 '
+            >
+              <SignUpModal
+                isShow={isShow}
+                closeModal={() => {
+                  setIsShow(false)
+                }}
+              />
               <svg
                 display='block'
                 fill='none'

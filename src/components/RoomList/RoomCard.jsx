@@ -30,8 +30,16 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
       </SwiperSlide>
     )
   })
+
   function formatPrice(price) {
     return new Intl.NumberFormat().format(price)
+  }
+
+  //Link작동 방지하면서 isLike 상태 관리
+  function blockLink(e) {
+    //기본동작(Link href) 방지
+    e.preventDefault()
+    setIsLike(isLike === emptyHeart ? fullHeart : emptyHeart)
   }
 
   return (
@@ -72,15 +80,7 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
           )}
 
           <button className='absolute top-3 right-2 p-2 z-10'>
-            <Image
-              src={isLike}
-              onClick={() => {
-                setIsLike(isLike === emptyHeart ? fullHeart : emptyHeart)
-              }}
-              width={20}
-              height={20}
-              alt='like button'
-            />
+            <Image src={isLike} onClick={blockLink} width={20} height={20} alt='like button' />
           </button>
         </div>
         {/*Room Info*/}
