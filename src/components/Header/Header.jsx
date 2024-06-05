@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import SearchBar from '../SearchBar/MainSearchBar/SearchBar'
+import SearchBar from '@/components/SearchBar/MainSearchBar/SearchBar'
+import Providers from '@/redux/providers'
 import SignUpModal from '@/components/Modal/SignUpModal'
 
 function Header() {
@@ -95,7 +96,9 @@ function Header() {
         </div>
       </div>
       <div className='w-full flex justify-center items-center'>
-        <SearchBar />
+        <Providers>
+          <SearchBar />
+        </Providers>
       </div>
       {/* <Category /> */}
     </>

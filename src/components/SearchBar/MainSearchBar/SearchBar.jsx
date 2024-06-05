@@ -1,9 +1,13 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
-import WhereArea from './WhereArea'
-import DateArea from './DateArea'
-import GuestArea from './GuestArea'
-import Dropdown from './Dropdown'
+import { useDispatch, useSelector } from 'react-redux'
+
+import WhereArea from '@/components/SearchBar/MainSearchBar/WhereArea'
+import DateArea from '@/components/SearchBar/MainSearchBar//DateArea'
+import GuestArea from '@/components/SearchBar/MainSearchBar/GuestArea'
+import Dropdown from '@/components/SearchBar/MainSearchBar/Dropdown'
+
+import { setSelectedStartDate, setSelectedEndDate } from '@/redux/slices/calendarSlice'
 
 const SearchBarWrap = ({ children, isActive }) => (
   <div
@@ -14,10 +18,12 @@ const SearchBarWrap = ({ children, isActive }) => (
 )
 
 const SearchBar = () => {
+  const dispatch = useDispatch()
+  const { selectedStartDate, selectedEndDate } = useSelector((state) => state.setCalendar)
+  const { adults, teens, kids, pets } = useSelector((state) => state.guestCount)
+
   const [dropdownType, setDropdownType] = useState(null)
   const [selectedCity, setSelectedCity] = useState('')
-  const [selectedStartDate, setSelectedStartDate] = useState(null)
-  const [selectedEndDate, setSelectedEndDate] = useState(null)
   const searchBarRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -35,15 +41,15 @@ const SearchBar = () => {
       inputRef.current.value = city
     }
     handleCloseDropdown()
-    handleOpenDropdown('checkin') // 도시를 선택한 후 체크인 모달을 엽니다.
+    handleOpenDropdown('checkin')
   }
 
   const handleSelectStartDate = (date) => {
-    setSelectedStartDate(date)
+    dispatch(setSelectedStartDate(date))
   }
 
   const handleSelectEndDate = (date) => {
-    setSelectedEndDate(date)
+    dispatch(setSelectedEndDate(date))
     handleCloseDropdown()
     if (dropdownType === 'checkin') {
       handleOpenDropdown('checkout')
@@ -63,7 +69,7 @@ const SearchBar = () => {
     console.log('Selected city:', city)
     console.log('Selected StartDate', new Date(selectedStartDate).toLocaleDateString())
     console.log('Selected EndDate', new Date(selectedEndDate).toLocaleDateString())
-
+    console.log('counts', adults, teens, kids, pets)
     // 여기에 API 전송 로직
   }
 
@@ -100,7 +106,8 @@ const SearchBar = () => {
           <GuestArea
             onClick={() => handleOpenDropdown('guest')}
             isActive={dropdownType === 'guest'}
-            onSearch={handleSearchButtonClick} // 검색 버튼 클릭 핸들러 전달
+            onSearch={handleSearchButtonClick}
+            guestCounts={{ adults, teens, kids, pets }}
           />
         </SearchBarWrap>
         <Dropdown
@@ -111,6 +118,8 @@ const SearchBar = () => {
           selectedEndDate={selectedEndDate}
           setSelectedStartDate={handleSelectStartDate}
           setSelectedEndDate={handleSelectEndDate}
+          guestCounts={{ adults, teens, kids, pets }}
+          dispatch={dispatch}
         />
       </div>
     </>
