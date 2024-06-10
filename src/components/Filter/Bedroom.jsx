@@ -18,7 +18,7 @@ const Bedroom = () => {
   }
 
   return (
-    <div className='p-4 border-b-2 border-solid border-gray-200'>
+    <div className='p-4 border-solid border-gray-200'>
       <div className='pb-6'>
         <h2 className='text-md font-semibold pb-2'>
           <span>침실과 침대</span>

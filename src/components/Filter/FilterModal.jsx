@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import RoomType from './RoomType'
 import PriceRange from './PriceRangeModal'
 import Bedroom from './Bedroom'
-import Facilites from './Facilities'
+// import Facilities from './Facilities'
 
 const FilterModalComponent = ({ isOpen, onClose }) => {
   const [selectedButton, setSelectedButton] = useState('all') // 초기값을 'all'로 설정
@@ -55,7 +55,7 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
             <RoomType selectedButton={selectedButton} handleButtonClick={handleButtonClick} />
             <PriceRange />
             <Bedroom />
-            <Facilites />
+            {/* <Facilities /> */}
           </div>
 
           {/* 모달 하단 - 버튼 영역 */}
