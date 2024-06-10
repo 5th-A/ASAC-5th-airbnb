@@ -524,5 +524,149 @@
       "name": "Youna"
     },
     "introduction": "💌\n\n숙소 \n숲속 마을 제일 안쪽에 자리 잡고 있는 \n아기자기한 예쁜 글램핑장 입니다 \n도심을 완전히 벗어난 공간속에서 \n놀며 쉬며 자연을 만끽하세요🌱"
+  },
+  {
+    "id": 8,
+    "roomName": "예와안채 독채펜션",
+    "price": 392700,
+    "RoomImages": [
+      {
+        "id": 11,
+        "url": "https://a0.muscache.com/im/pictures/ac0ba0e5-4b8f-4582-89e8-a6a5419d0aef.jpg?im_w=1200"
+      },
+      {
+        "id": 12,
+        "url": "https://a0.muscache.com/im/pictures/7a9b7188-edda-4eff-8a43-c04aa68b519b.jpg?im_w=720"
+      },
+      {
+        "id": 13,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-48667594/original/9e96ce71-0b73-46c1-8a5a-df2fc0e385bd.jpeg?im_w=720"
+      },
+      {
+        "id": 14,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-48667594/original/8d2d6399-95ad-4e58-8169-76b8e88eb45e.jpeg?im_w=720"
+      },
+      {
+        "id": 15,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-48667594/original/c49aeaa9-0d1e-4e9c-a98d-81d3ce1bd9e4.jpeg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "경주시",
+    "roomType": "한국의 저택 전체",
+    "filter": { "maximum": 12, "beds": 4, "bedRooms": 3, "bathRooms": 2, "floor": 0 },
+    "guestPrefer": true,
+    "categories": [
+      { "id": 39, "name": "한적한 시골", "icon": "/assets/countryside.svg" },
+      { "id": 40, "name": "슈퍼호스트", "icon": "/assets/superhost.svg" },
+      { "id": 41, "name": "위치 평점 최고", "icon": "/assets/locationRate.svg" },
+      { "id": 42, "name": "한정 시간 무료 취소", "icon": "/assets/freecancel.svg" },
+      { "id": 43, "name": "셀프 체크인", "icon": "/assets/selfCheckIn.svg" },
+      { "id": 44, "name": "세탁기 및 건조기", "icon": "/assets/laundryMachine.svg" }
+    ],
+    "host": {
+      "id": 8,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-1214071/original/48d22f20-1262-464e-905d-0057e6d6de73.jpeg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2020,
+      "name": "성복"
+    },
+    "introduction": "독채펜션 예와안채입니다. 산속의 한옥처럼 꾸며진 독채펜션입니다.\n깨끗한 자연과 함께하는 예와안채에서 자연을 즐겨보세요.\n최대 12명까지 숙박이 가능하며, 예와안채는 예약하신 팀만 독점으로 사용하실수 있습니다.\n휴식과 자연, 감성까지 모두 드립니다.\n조용한 마을에 있으니 소음에 주의해 주세요."
+  },
+  {
+    "id": 9,
+    "roomName": "스테이 포레스트 2호 독채펜션 (Stay Forest 2호)",
+    "price": 220000,
+    "RoomImages": [
+      {
+        "id": 16,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/e36ca9d8-df98-4dca-8b8e-a2c766fddb58.jpeg?im_w=1200"
+      },
+      {
+        "id": 17,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/d5c5b095-6d8b-4d49-8c4c-2d947c212f49.jpeg?im_w=720"
+      },
+      {
+        "id": 18,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/6be4ec46-7a6f-4fa4-9c3a-3fc9b55ccfb1.jpeg?im_w=720"
+      },
+      {
+        "id": 19,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/aa66e9f2-6a73-4eb2-bac6-25c6fcb2cc21.jpeg?im_w=720"
+      },
+      {
+        "id": 20,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/3f9e2ebb-fc4a-461e-a55b-9a0924e753c4.jpeg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Gapyeong-gun",
+    "roomType": "한국의 저택 전체",
+    "filter": { "maximum": 10, "beds": 3, "bedRooms": 2, "bathRooms": 2, "floor": 0 },
+    "guestPrefer": true,
+    "categories": [
+      { "id": 45, "name": "한적한 시골", "icon": "/assets/countryside.svg" },
+      { "id": 46, "name": "슈퍼호스트", "icon": "/assets/superhost.svg" },
+      { "id": 47, "name": "한정 시간 무료 취소", "icon": "/assets/freecancel.svg" },
+      { "id": 48, "name": "셀프 체크인", "icon": "/assets/selfCheckIn.svg" },
+      { "id": 49, "name": "애완동물 동반 가능", "icon": "/assets/pets.svg" },
+      { "id": 50, "name": "TV", "icon": "/assets/TV.svg" }
+    ],
+    "host": {
+      "id": 9,
+      "profile": "https://a0.muscache.com/im/pictures/user/c18b99c3-5900-4db1-9a9d-a271b517fad7.jpg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2022,
+      "name": "김현"
+    },
+    "introduction": "가평 시내에 위치한 2개동 독채펜션입니다.\n우리 펜션의 가장 큰 장점은\n펜션 안에 들어와서는 오직 자신들만의 공간을 누릴 수 있고, 모두가 함께 최고의 시간을 보내 실 수 있다는\n그런 특별한 공간을 제공해 드립니다.\n\n항상 깨끗한 펜션, 완벽한 프라이버시를 보장해 드립니다!\n\n• 성수기와 주말에는 이용요금이 상이합니다.\n• 모든 객실에 반려견과 반려묘 동반 가능합니다."
+  },
+  {
+    "id": 10,
+    "roomName": "안개숲 방갈로펜션 #독채펜션 #반려견동반 #개별바베큐#개별수영장",
+    "price": 200000,
+    "RoomImages": [
+      {
+        "id": 21,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/2c8eb1a8-5bd2-4e90-9b38-d5ccc5e03c7e.jpeg?im_w=1200"
+      },
+      {
+        "id": 22,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/cf5d40e1-9337-4dbc-8f05-18d25ced5e19.jpeg?im_w=720"
+      },
+      {
+        "id": 23,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/3aa6aa5b-2d3a-46c1-a947-60fa7d5d9d2a.jpeg?im_w=720"
+      },
+      {
+        "id": 24,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/ba6ad8fc-0c5e-4109-b736-4ec7089d40b4.jpeg?im_w=720"
+      },
+      {
+        "id": 25,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/4d6e3ec8-9bf3-4b38-be4a-1f74d1a60f4a.jpeg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Gapyeong-gun",
+    "roomType": "한국의 통나무집 전체",
+    "filter": { "maximum": 6, "beds": 3, "bedRooms": 2, "bathRooms": 1, "floor": 0 },
+    "guestPrefer": true,
+    "categories": [
+      { "id": 51, "name": "한적한 시골", "icon": "/assets/countryside.svg" },
+      { "id": 52, "name": "슈퍼호스트", "icon": "/assets/superhost.svg" },
+      { "id": 53, "name": "한정 시간 무료 취소", "icon": "/assets/freecancel.svg" },
+      { "id": 54, "name": "셀프 체크인", "icon": "/assets/selfCheckIn.svg" },
+      { "id": 55, "name": "TV", "icon": "/assets/TV.svg" },
+      { "id": 56, "name": "무선 인터넷", "icon": "/assets/wifi.svg" }
+    ],
+    "host": {
+      "id": 10,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-12425749/original/83aa16cf-ddcb-4116-bd7a-d988ba68b570.jpeg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2021,
+      "name": "안개"
+    },
+    "introduction": "천년의 고향, 북한강변이 내려다보이는 언덕 위에 만들어진 안개숲 방갈로펜션 입니다. 구글 맵에서 안개숲 방갈로라고 치면 쉽게 찾을 수 있습니다. 주위에 고급 이탈리안 레스토랑과 펜션이 있는 조용한 전원 힐링 스테이입니다. 특히 아침 숲 안개비와 석양이 현장감 있게 보이는 펜션입니다."
   }
 ]
