@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import SearchBar from '@/components/SearchBar/MainSearchBar/SearchBar'
-import Providers from '@/redux/providers'
+import Providers from '@/redux/Providers'
 import SignUpModal from '@/components/Modal/SignUpModal'
 
 function Header() {
@@ -51,7 +51,7 @@ function Header() {
               onClick={() => {
                 setIsShow(true)
               }}
-              className='Frame w-[86px] h-[48px] border  rounded-[29px] border-gray-200 py-2 pr-2 pl-3.5 inline-flex justify-center items-center gap-3 '
+              className='Frame relative w-[86px] h-[48px] border  rounded-[29px] border-gray-200 py-2 pr-2 pl-3.5 inline-flex justify-center items-center gap-3 '
             >
               <SignUpModal
                 isShow={isShow}

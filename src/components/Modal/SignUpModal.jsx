@@ -29,7 +29,7 @@ const SignUpModal = ({ isShow, closeModal }) => {
   return (
     <>
       <div
-        className='rounded-lg text-sm fixed top-20 right-10 flex justify-center items-center shadow-lg shadow-gray-300 bg-opacity-50 z-50 '
+        className='absolute top-14 right-0 rounded-lg text-sm flex justify-center items-center border-solid border-customGray shadow-2xl border-customGray z-50 '
         id='modal-backdrop'
       >
         <div
