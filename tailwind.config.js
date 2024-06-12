@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        cardWidth: '960px',
+      },
       truncate: {
         overflow: 'hidden',
         textOverflow: 'ellipsis',

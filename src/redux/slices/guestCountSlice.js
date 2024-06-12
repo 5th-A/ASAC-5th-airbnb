@@ -27,8 +27,14 @@ const guestCountSlice = createSlice({
         state[type] -= 1
       }
     },
+    resetGuest: (state) => {
+      state.adults = 1
+      state.teens = 0
+      state.kids = 0
+      state.pets = 0
+    },
   },
 })
 
-export const { increment, decrement } = guestCountSlice.actions
+export const { increment, decrement, resetGuest } = guestCountSlice.actions
 export default guestCountSlice.reducer
