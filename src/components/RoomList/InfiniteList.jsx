@@ -38,7 +38,7 @@ export default function InfiniteList() {
     async function fetchRooms() {
       setLoading(true)
       console.log(page)
-      const newRooms = roomDetail.slice((page - 1) * 5, page * 5)
+      const newRooms = roomDetail.slice((page - 1) * 4, page * 4)
       setRoomLists((prev) => [...prev, ...newRooms])
       setLoading(false)
     }
@@ -63,7 +63,7 @@ export default function InfiniteList() {
       )}
       {handleInfinite && (
         <div>
-          <div className='box-border justify-center grid grid-cols-2 w-9/10 gap-3 cardWidth:grid-cols-5'>
+          <div className='box-border justify-center grid grid-cols-2 w-9/10 gap-3 cardWidth:grid-cols-4'>
             {roomLists.map((room) => {
               return (
                 <Link href={`/rooms/${room.id}`}>
@@ -79,9 +79,7 @@ export default function InfiniteList() {
               )
             })}
           </div>
-          <div ref={observerRef} className='bg-red-500 mt-5'>
-            {page}
-          </div>
+          <div ref={observerRef} className='mt-5'></div>
         </div>
       )}
     </div>
