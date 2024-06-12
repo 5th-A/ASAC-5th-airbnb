@@ -10,9 +10,9 @@ const DateArea = ({
 }) => {
   return (
     <>
-      <div className='flex w-2/6'>
+      <div className='flex justify-between'>
         <div
-          className={`Frame21 w-1/2 h-[63px] px-6 py-3.5 flex justify-between items-center gap-1 inline-flex hover:bg-gray-200 hover:rounded-full cursor-pointer ${isActiveCheckin ? 'bg-white rounded-full' : 'bg-transparent'}`}
+          className={`Frame21 h-[63px] px-6 py-3.5 flex justify-between items-center gap-1 hover:bg-gray-200 hover:rounded-full cursor-pointer ${isActiveCheckin ? 'bg-white rounded-full' : 'bg-transparent'}`}
           onClick={onClickCheckin}
         >
           <div>
@@ -26,7 +26,7 @@ const DateArea = ({
           ></div>
         </div>
         <div
-          className={`Frame21 w-1/2 h-[63px] px-6 py-3.5 flex justify-between items-center gap-1 inline-flex hover:bg-gray-200 hover:rounded-full cursor-pointer ${isActiveCheckout ? 'bg-white rounded-full' : 'bg-transparent'}`}
+          className={`Frame21 w-1/2 h-[63px] px-6 py-3.5 flex justify-between items-center gap-1 hover:bg-gray-200 hover:rounded-full cursor-pointer ${isActiveCheckout ? 'bg-white rounded-full' : 'bg-transparent'}`}
           onClick={onClickCheckout}
         >
           <div>
