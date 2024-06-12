@@ -531,31 +531,31 @@
     "price": 392700,
     "RoomImages": [
       {
-        "id": 11,
-        "url": "https://a0.muscache.com/im/pictures/ac0ba0e5-4b8f-4582-89e8-a6a5419d0aef.jpg?im_w=1200"
+        "id": 31,
+        "url": "https://a0.muscache.com/im/pictures/a0b0c9b4-4273-4f17-8fb6-4592b48501ca.jpg?im_w=1200"
       },
       {
-        "id": 12,
-        "url": "https://a0.muscache.com/im/pictures/7a9b7188-edda-4eff-8a43-c04aa68b519b.jpg?im_w=720"
+        "id": 32,
+        "url": "https://a0.muscache.com/im/pictures/0db1b372-38c2-402f-8222-32339d4a957a.jpg?im_w=720"
       },
       {
-        "id": 13,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-48667594/original/9e96ce71-0b73-46c1-8a5a-df2fc0e385bd.jpeg?im_w=720"
+        "id": 33,
+        "url": "https://a0.muscache.com/im/pictures/303f6372-af87-4575-bd23-66e8a971477a.jpg?im_w=720"
       },
       {
-        "id": 14,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-48667594/original/8d2d6399-95ad-4e58-8169-76b8e88eb45e.jpeg?im_w=720"
+        "id": 34,
+        "url": "https://a0.muscache.com/im/pictures/78388324-e228-4369-8ac6-e78b460a26a1.jpg?im_w=720"
       },
       {
-        "id": 15,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-48667594/original/c49aeaa9-0d1e-4e9c-a98d-81d3ce1bd9e4.jpeg?im_w=720"
+        "id": 35,
+        "url": "https://a0.muscache.com/im/pictures/7d39facf-da79-4178-ab49-73eefbf501ac.jpg?im_w=720"
       }
     ],
     "isLike": false,
     "address": "경주시",
     "roomType": "한국의 저택 전체",
     "filter": { "maximum": 12, "beds": 4, "bedRooms": 3, "bathRooms": 2, "floor": 0 },
-    "guestPrefer": true,
+    "guestPrefer": false,
     "categories": [
       { "id": 39, "name": "한적한 시골", "icon": "/assets/countryside.svg" },
       { "id": 40, "name": "슈퍼호스트", "icon": "/assets/superhost.svg" },
@@ -579,24 +579,24 @@
     "price": 220000,
     "RoomImages": [
       {
-        "id": 16,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/e36ca9d8-df98-4dca-8b8e-a2c766fddb58.jpeg?im_w=1200"
+        "id": 21,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/4d679ace-8a31-4799-83a1-9a17d68b48e0.jpeg?im_w=1200"
       },
       {
-        "id": 17,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/d5c5b095-6d8b-4d49-8c4c-2d947c212f49.jpeg?im_w=720"
+        "id": 22,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/f9f078d2-6e42-4912-ae21-7eca075accb3.jpeg?im_w=720"
       },
       {
-        "id": 18,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/6be4ec46-7a6f-4fa4-9c3a-3fc9b55ccfb1.jpeg?im_w=720"
+        "id": 23,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/3958e054-74da-45da-8cf3-f0ab7c798124.jpeg?im_w=720"
       },
       {
-        "id": 19,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/aa66e9f2-6a73-4eb2-bac6-25c6fcb2cc21.jpeg?im_w=720"
+        "id": 24,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/eb85fd0f-d706-4514-95c0-af77924e30b7.jpeg?im_w=720"
       },
       {
-        "id": 20,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-51397749/original/3f9e2ebb-fc4a-461e-a55b-9a0924e753c4.jpeg?im_w=720"
+        "id": 25,
+        "url": "https://a0.muscache.com/im/pictures/98fec4f9-2cd7-4902-9119-95f090b91996.jpg?im_w=720"
       }
     ],
     "isLike": false,
@@ -628,23 +628,23 @@
     "RoomImages": [
       {
         "id": 21,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/2c8eb1a8-5bd2-4e90-9b38-d5ccc5e03c7e.jpeg?im_w=1200"
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/4d679ace-8a31-4799-83a1-9a17d68b48e0.jpeg?im_w=1200"
       },
       {
         "id": 22,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/cf5d40e1-9337-4dbc-8f05-18d25ced5e19.jpeg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/f9f078d2-6e42-4912-ae21-7eca075accb3.jpeg?im_w=720"
       },
       {
         "id": 23,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/3aa6aa5b-2d3a-46c1-a947-60fa7d5d9d2a.jpeg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/3958e054-74da-45da-8cf3-f0ab7c798124.jpeg?im_w=720"
       },
       {
         "id": 24,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/ba6ad8fc-0c5e-4109-b736-4ec7089d40b4.jpeg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/eb85fd0f-d706-4514-95c0-af77924e30b7.jpeg?im_w=720"
       },
       {
         "id": 25,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-47223872/original/4d6e3ec8-9bf3-4b38-be4a-1f74d1a60f4a.jpeg?im_w=720"
+        "url": "https://a0.muscache.com/im/pictures/98fec4f9-2cd7-4902-9119-95f090b91996.jpg?im_w=720"
       }
     ],
     "isLike": false,
@@ -668,5 +668,131 @@
       "name": "안개"
     },
     "introduction": "천년의 고향, 북한강변이 내려다보이는 언덕 위에 만들어진 안개숲 방갈로펜션 입니다. 구글 맵에서 안개숲 방갈로라고 치면 쉽게 찾을 수 있습니다. 주위에 고급 이탈리안 레스토랑과 펜션이 있는 조용한 전원 힐링 스테이입니다. 특히 아침 숲 안개비와 석양이 현장감 있게 보이는 펜션입니다."
+  },
+  {
+    "id": 11,
+    "roomName": "안개숲 방갈로펜션 #독채펜션 #반려견동반 #개별바베큐#개별수영장",
+    "price": 200000,
+    "RoomImages": [
+      {
+        "id": 21,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/4d679ace-8a31-4799-83a1-9a17d68b48e0.jpeg?im_w=1200"
+      },
+      {
+        "id": 22,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/f9f078d2-6e42-4912-ae21-7eca075accb3.jpeg?im_w=720"
+      },
+      {
+        "id": 23,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/3958e054-74da-45da-8cf3-f0ab7c798124.jpeg?im_w=720"
+      },
+      {
+        "id": 24,
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1054423266192008941/original/eb85fd0f-d706-4514-95c0-af77924e30b7.jpeg?im_w=720"
+      },
+      {
+        "id": 25,
+        "url": "https://a0.muscache.com/im/pictures/98fec4f9-2cd7-4902-9119-95f090b91996.jpg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Gapyeong-gun",
+    "roomType": "한국의 통나무집 전체",
+    "filter": { "maximum": 6, "beds": 3, "bedRooms": 2, "bathRooms": 1, "floor": 0 },
+    "guestPrefer": true,
+    "categories": [
+      { "id": 51, "name": "한적한 시골", "icon": "/assets/countryside.svg" },
+      { "id": 52, "name": "슈퍼호스트", "icon": "/assets/superhost.svg" },
+      { "id": 53, "name": "한정 시간 무료 취소", "icon": "/assets/freecancel.svg" },
+      { "id": 54, "name": "셀프 체크인", "icon": "/assets/selfCheckIn.svg" },
+      { "id": 55, "name": "TV", "icon": "/assets/TV.svg" },
+      { "id": 56, "name": "무선 인터넷", "icon": "/assets/wifi.svg" }
+    ],
+    "host": {
+      "id": 10,
+      "profile": "https://a0.muscache.com/im/pictures/user/User-12425749/original/83aa16cf-ddcb-4116-bd7a-d988ba68b570.jpeg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2021,
+      "name": "안개"
+    },
+    "introduction": "천년의 고향, 북한강변이 내려다보이는 언덕 위에 만들어진 안개숲 방갈로펜션 입니다. 구글 맵에서 안개숲 방갈로라고 치면 쉽게 찾을 수 있습니다. 주위에 고급 이탈리안 레스토랑과 펜션이 있는 조용한 전원 힐링 스테이입니다. 특히 아침 숲 안개비와 석양이 현장감 있게 보이는 펜션입니다."
+  },
+  {
+    "id": 12,
+    "roomName": "한강 비내섬과 앙성온천 근처 일출 아름다운 독채",
+    "price": 459000,
+    "RoomImages": [
+      {
+        "id": 26,
+        "url": "https://a0.muscache.com/im/pictures/7fa197a3-abfe-4c5a-8558-0d2208c2011e.jpg?im_w=1200"
+      },
+      {
+        "id": 27,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-558818377788738307/original/ade40aa0-ea7c-4d1a-8c42-436cccb4f5ac.jpeg?im_w=720"
+      },
+      {
+        "id": 28,
+        "url": "https://a0.muscache.com/im/pictures/0ce30d84-5929-406f-909f-d29faa16e0e7.jpg?im_w=720"
+      },
+      {
+        "id": 29,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-558818377788738307/original/db0633d3-7e5f-4088-8a1e-8ba782dc8d19.jpeg?im_w=720"
+      },
+      {
+        "id": 30,
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-558818377788738307/original/dee52010-933b-47c3-a04b-58c7a50f0f40.jpeg?im_w=720"
+      }
+    ],
+    "isLike": false,
+    "address": "Angseong-myeon, Cheongju",
+    "roomType": "한국의 별장 전체",
+    "filter": {
+      "maximum": 10,
+      "beds": 1,
+      "bedRooms": 2,
+      "bathRooms": 2,
+      "floor": 0
+    },
+    "guestPrefer": false,
+    "categories": [
+      {
+        "id": 29,
+        "name": "한적한 시골",
+        "icon": "/assets/countryside.svg"
+      },
+      {
+        "id": 30,
+        "name": "슈퍼호스트",
+        "icon": "/assets/superhost.svg"
+      },
+      {
+        "id": 31,
+        "name": "위치 평점 최고",
+        "icon": "/assets/locationRate.svg"
+      },
+      {
+        "id": 32,
+        "name": "한정 시간 무료 취소",
+        "icon": "/assets/freecancel.svg"
+      },
+      {
+        "id": 33,
+        "name": "셀프 체크인",
+        "icon": "/assets/selfCheckIn.svg"
+      },
+      {
+        "id": 34,
+        "name": "세탁기",
+        "icon": "/assets/laundryMachine.svg"
+      }
+    ],
+    "host": {
+      "id": 6,
+      "profile": "https://a0.muscache.com/im/pictures/user/b0c0feb2-0b04-4854-8351-940aa5e3daba.jpg?im_w=240",
+      "type": "슈퍼호스트",
+      "year": 2022,
+      "name": "비내산장"
+    },
+    "introduction": "서울근교 한강 비내섬과 앙성온천 근처입니다. \n해발고도가 높아 거실에 앉아서 열두굽이 능선과 아름다운 일출을 볼수 있습니다. \n집 뒷길은 벚꽃 산책길이고 근처 계곡과 낚시가능한 저수지가 있습니다. \n2층 독채로 한적한 휴식을 원하는 한두 가족들의 모임에 적합합니다. \n1. 개인 별장으로 주말 한 두가족만 받으려 합니다 \n2. 2박시 1박은 50% 반값 할인 해 드립니다 \n3. 할인은 문의주시면 특별가제안이나 예약변경으로 진행해 드립니다 \n4. 3박 이상은 문의시 최대한 진행해 드리겠습니다 \n5. 성수기인 7월말에서 8월초는 할인이 적용되지 않습니다 \n6. 심어놓은 야채들과 앵두나 대추, 밤 등은 편하게 따드셔도 됩니다 \n7. 바베큐 숯과 그릴은 기본으로 세팅해드립니다 \n8. 한적한 산골이라 저녁시간 고성이나 노래는 삼가해 주시기바랍니다 \n9. 행복한 휴식이 되시길 바랍니다"
   }
 ]

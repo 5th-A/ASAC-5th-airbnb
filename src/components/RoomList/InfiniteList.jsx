@@ -10,65 +10,65 @@ export default function InfiniteList() {
   const [roomLists, setRoomLists] = useState([])
   const [page, setPage] = useState(2)
   const [loading, setLoading] = useState(false)
-  const spy = useRef()
+  const observerRef = useRef(null)
 
-  async function fetchData() {
-    console.log('load!!')
-    setLoading(true)
-    try {
-      const newData = roomDetail.slice((page - 1) * 2, page * 2 - 1)
-      setRoomLists((prev) => [...prev, ...newData])
-      setPage((prev) => prev + 1)
-    } catch (e) {
-      console.log('fetching error')
-    } finally {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPage((prev) => prev + 1)
+        }
+      },
+      {
+        threshold: 0.01,
+      },
+    )
+    if (observerRef.current) {
+      observer.observe(observerRef.current)
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current)
+      }
+    }
+  }, [observerRef, handleInfinite])
+
+  useEffect(() => {
+    async function fetchRooms() {
+      setLoading(true)
+      console.log(page)
+      const newRooms = roomDetail.slice((page - 1) * 5, page * 5)
+      setRoomLists((prev) => [...prev, ...newRooms])
       setLoading(false)
     }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  useEffect(() => {
     if (handleInfinite) {
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting && !loading) {
-          fetchData()
-          console.log('감지됨')
-        }
-      })
-      if (spy.current) {
-        observer.observe(spy.current)
-      }
-
-      return () => {
-        if (spy.current) {
-          observer.unobserve(spy.current)
-        }
-      }
+      fetchRooms()
     }
-  }, [handleInfinite, loading])
+  }, [page, handleInfinite, loading])
 
   return (
     <div>
-      <div className='flex w-full justify-center items-center'>
-        <button
-          className='items-center justify-center text-white bg-black p-4 border-black border-solid rounded-xl'
-          onClick={() => {
-            setHandleInfinite(true)
-          }}
-        >
-          숙소 더보기
-        </button>
-      </div>
+      {handleInfinite || (
+        <div className='flex w-full justify-center items-center'>
+          <button
+            className='items-center justify-center text-white bg-black p-4 border-black border-solid rounded-xl'
+            onClick={() => {
+              setHandleInfinite(true)
+            }}
+          >
+            숙소 더보기
+          </button>
+        </div>
+      )}
       {handleInfinite && (
         <div>
-          <div className='box-border justify-center grid grid-cols-2 w-9/10 gap-3 auto-rows-fr cardWidth:grid-cols-2'>
+          <div className='box-border justify-center grid grid-cols-2 w-9/10 gap-3 cardWidth:grid-cols-5'>
             {roomLists.map((room) => {
               return (
-                <Link href={`/rooms/${room.id}`} key={room.id}>
+                <Link href={`/rooms/${room.id}`}>
                   <RoomCard
+                    key={room.id}
                     imgSrc={room.RoomImages}
                     roomName={room.roomName}
                     roomAddress={room.address}
@@ -79,8 +79,8 @@ export default function InfiniteList() {
               )
             })}
           </div>
-          <div ref={spy} className='target bg-red-500'>
-            여기 감지되면 추가로드
+          <div ref={observerRef} className='bg-red-500 mt-5'>
+            {page}
           </div>
         </div>
       )}
