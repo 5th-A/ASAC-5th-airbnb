@@ -12,20 +12,20 @@ function Header() {
   return (
     <div className='flex w-full flex-col justify-between items-center border-solid border-b border-gray-200'>
       <div className='flex w-full justify-between items-center  px-5 py-4'>
-        <div className='top-0'>
+        <div className='w-1/3 flex-grow top-0'>
           <Link href={'/'}>
             <img className='w-[102px] h-[32px]' src='/assets/header/airbnbLogo.svg' />
           </Link>
         </div>
-        <div className='justify-between items-center gap-6 flex-col px-3.5'>
+        <div className='justify-between w-1/3 flex-grow items-center gap-6 flex-col px-3.5'>
           <div className='w-full flex justify-center items-center  min-h-[38px]'>
             <button className='bg-none border-none outline-none focus:font-black '>숙소</button>
             <button className='bg-none  border-none focus:font-black'>체험</button>
             <button className='bg-none  border-none focus:font-black'>온라인체험</button>
           </div>
         </div>
-        <div>
-          <div className='Login w-[360px] h-[38px] justify-center items-center gap-6 inline-flex'>
+        <div className='flex justify-end w-1/3 flex-grow'>
+          <div className='Login  h-[38px] items-center gap-6 inline-flex'>
             <div className='BecomeAHost text-neutral-800 text-sm font-black '>
               당신의 공간을 에어비앤비하세요
             </div>
@@ -97,7 +97,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className='w-full flex justify-center items-center'>
+      <div className='w-full flex justify-center items-center pb-2'>
         <Providers>
           <SearchBar />
         </Providers>
