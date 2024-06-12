@@ -18,10 +18,14 @@ function Header() {
           </Link>
         </div>
         <div className='justify-between w-1/3 flex-grow items-center gap-6 flex-col px-3.5'>
-          <div className='w-full flex justify-center items-center  min-h-[38px]'>
-            <button className='bg-none border-none outline-none focus:font-black '>숙소</button>
-            <button className='bg-none  border-none focus:font-black'>체험</button>
-            <button className='bg-none  border-none focus:font-black'>온라인체험</button>
+          <div className='w-full flex justify-center items-center  min-h-[38px] '>
+            <button className='mx-4 my-2.5 bg-none border-none outline-none focus:font-black '>
+              숙소
+            </button>
+            <button className='mx-4 my-2.5 bg-none  border-none focus:font-black'>체험</button>
+            <button className='mx-4 my-2.5 bg-none  border-none focus:font-black'>
+              온라인체험
+            </button>
           </div>
         </div>
         <div className='flex justify-end w-1/3 flex-grow'>
