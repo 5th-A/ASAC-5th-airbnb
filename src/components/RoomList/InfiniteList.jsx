@@ -36,9 +36,14 @@ export default function InfiniteList() {
 
   useEffect(() => {
     async function fetchRooms() {
+      let startIndex = (page - 1) * 6
+      let endIndex = page * 6
+      if (endIndex > roomDetail.length) {
+        endIndex = roomDetail.length + 1
+      }
       setLoading(true)
       console.log(page)
-      const newRooms = roomDetail.slice((page - 1) * 4, page * 4)
+      const newRooms = roomDetail.slice(startIndex, endIndex)
       setRoomLists((prev) => [...prev, ...newRooms])
       setLoading(false)
     }
@@ -63,7 +68,7 @@ export default function InfiniteList() {
       )}
       {handleInfinite && (
         <div>
-          <div className='box-border justify-center grid grid-cols-2 mt-2 w-9/10 gap-3 cardWidth:grid-cols-4'>
+          <div className='box-border justify-center grid  mt-2 w-9/10 gap-3 card_lg:grid-cols-6 card_md:grid-cols-4 card_sm:grid-cols-2'>
             {roomLists.map((room) => {
               return (
                 <Link href={`/rooms/${room.id}`} key={room.id}>
