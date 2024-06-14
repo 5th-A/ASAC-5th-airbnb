@@ -104,7 +104,11 @@ function Calculator({
       guestList.push(`, 반려동물 ${pets}마리`)
     }
 
-    return guestList
+    if (adults + teens + kids + pets === 0) {
+      return '게스트 추가'
+    } else {
+      return guestList
+    }
   }
 
   return (
