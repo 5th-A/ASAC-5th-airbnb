@@ -4,7 +4,7 @@ import roomDetail from '@/data/roomDetail.json'
 
 function ButtonComponent({ buttonSrc, text }) {
   return (
-    <button className='button flex items-center space-x-1'>
+    <button className='button flex items-center space-x-1 rounded-xl hover:bg-customGray p-2'>
       <Image src={buttonSrc} alt={text + ' 아이콘'} width={16} height={16} />
       <span className='text-sm'>{text}</span>
     </button>

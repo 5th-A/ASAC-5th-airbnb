@@ -22,12 +22,12 @@ const GuestArea = ({ onClick, isActive, onSearch, guestCounts }) => {
   return (
     <>
       <div
-        className={`h-[63px] flex flex-grow justify-between hover:rounded-full hover:bg-gray-200 cursor-pointer ${isActive ? 'bg-white rounded-full' : 'bg-transparent'}`}
+        className={`h-[63px] min-w-[284px] flex flex-grow justify-between hover:rounded-full hover:bg-gray-200 cursor-pointer ${isActive ? 'bg-white rounded-full' : 'bg-transparent'}`}
       >
-        <div className='h-[63px] px-6 py-3.5 flex flex-col gap-x-1' onClick={onClick}>
+        <div className='h-[63px] px-6 py-3.5 flex flex-grow flex-col gap-x-1' onClick={onClick}>
           <div className="Who text-neutral-800 text-xs font-['SF Pro']">여행자</div>
-          <div className="AddGuests overflow-hidden pb-1 text-neutral-500 text-sm font-normal font-['SF Pro']">
-            {guestCounts !== null ? showCurrentGuest(guestCounts) : '게스트추가'}
+          <div className="AddGuests min-w-[240px] overflow-hidden pb-1 text-neutral-500 text-sm font-normal font-['SF Pro']">
+            {guestCounts !== null ? showCurrentGuest(guestCounts) : '게스트 추가'}
           </div>
         </div>
         <div className='min-w-[70px] min-h-[56px]' onClick={onSearch}>

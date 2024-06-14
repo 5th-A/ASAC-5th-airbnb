@@ -7,7 +7,6 @@ import GuestCountModal from '../Modal/GuestCountModal'
 import { useSelector } from 'react-redux'
 import GuestCalendarModal from '../Modal/GuestCalendarModal'
 import Image from 'next/image'
-import { stringify } from 'querystring'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)

@@ -99,10 +99,9 @@ export default function Category() {
           slidesPerView={12}
           slidesPerGroup={12}
           spaceBetween={10}
-          modules={[Navigation, Mousewheel, Keyboard]}
+          modules={[Navigation, Keyboard]}
           className='mySwiper'
           autoHeight={true}
-          style={{ height: '90px' }}
           onWheel={(swiper, event) => handleWheel(swiper, event)}
         >
           <ul style={{ display: 'flex', padding: '0', margin: '0' }}>
@@ -121,13 +120,15 @@ export default function Category() {
         </Swiper>
       </div>
       {/* 버튼 크기 변경 */}
-      <button
-        className='flex w-[76px] h-[32px] items-center justify-center py-0 border rounded py-[7px]'
-        onClick={handleFilterClick}
-      >
-        <img src={filter.src} className='w-[16px] h-[16px] mr-1' />
-        <div className='text-xs'>필터</div>
-      </button>
+      <div className='flex items-center justify-center border rounded-xl border-black border-solid py-[7px] px-0.25 mt-5'>
+        <button
+          className='flex flex-row w-[80px] h-[32px] items-center justify-center'
+          onClick={handleFilterClick}
+        >
+          <img src={filter.src} className='w-[16px] h-[16px] mr-1' />
+          <div className='text-xs'>필터</div>
+        </button>
+      </div>
       <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   )
