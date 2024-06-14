@@ -52,7 +52,7 @@ export default function InfiniteList() {
       {handleInfinite || (
         <div className='flex w-full justify-center items-center'>
           <button
-            className='items-center justify-center text-white bg-black p-4 border-black border-solid rounded-xl'
+            className='items-center justify-center text-white bg-black p-4 border-black border-solid rounded-xl my-4'
             onClick={() => {
               setHandleInfinite(true)
             }}
@@ -63,12 +63,11 @@ export default function InfiniteList() {
       )}
       {handleInfinite && (
         <div>
-          <div className='box-border justify-center grid grid-cols-2 w-9/10 gap-3 cardWidth:grid-cols-4'>
+          <div className='box-border justify-center grid grid-cols-2 mt-2 w-9/10 gap-3 cardWidth:grid-cols-4'>
             {roomLists.map((room) => {
               return (
-                <Link href={`/rooms/${room.id}`}>
+                <Link href={`/rooms/${room.id}`} key={room.id}>
                   <RoomCard
-                    key={room.id}
                     imgSrc={room.RoomImages}
                     roomName={room.roomName}
                     roomAddress={room.address}

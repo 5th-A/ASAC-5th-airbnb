@@ -1,6 +1,5 @@
 import Category from '@/components/Category/Category'
 import Header from '@/components/Header/Header'
-import RoomCard from '@/components/RoomList/RoomCard'
 import RoomList from '@/components/RoomList/RoomList'
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
         <Header />
         <Category />
       </div>
-
       <RoomList />
     </main>
   )

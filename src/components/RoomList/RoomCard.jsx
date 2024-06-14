@@ -20,11 +20,12 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
     return (
       <SwiperSlide key={img.id}>
         <Image
-          className='rounded-2xl'
+          className='rounded-2xl w-full h-auto'
           src={img.url}
-          layout='responsive'
-          width={1}
-          height={1}
+          fill
+          sizes='(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw'
           alt='room picture'
         />
       </SwiperSlide>
