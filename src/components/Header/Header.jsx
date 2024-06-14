@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <div className='flex w-full flex-col justify-between items-center border-solid border-b border-gray-200'>
-      <div className='flex w-full justify-between items-center  px-5 py-4'>
+      <div className='flex w-full justify-between items-center  px-20 py-4'>
         <div className='w-1/3 flex-grow top-0'>
           <Link href={'/'}>
             <img className='w-[102px] h-[32px]' src='/assets/header/airbnbLogo.svg' />

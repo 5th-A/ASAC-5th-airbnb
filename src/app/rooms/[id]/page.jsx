@@ -19,7 +19,7 @@ export default function roomDetail({ params }) {
         <div>
           <div className='w-full px-20'>
             <Providers>
-              <MainImage />
+              <MainImage id={id} />
               <DetailRoomInfo id={id} />
               <Comment id={id} />
               <Amenities />

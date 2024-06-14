@@ -82,7 +82,7 @@ function Calculator({
 }) {
   const extensionArrow = '/assets/extensionArrow.svg'
   function formatPrice(price) {
-    return new Intl.NumberFormat().format(price)
+    return new Intl.NumberFormat().format(Math.round(price))
   }
   function formatDate(date) {
     const d = new Date(date)
@@ -109,7 +109,7 @@ function Calculator({
   }
 
   return (
-    <div className='calculator inline-block sticky top-20 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
+    <div className='calculator inline-block sticky top-0 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
       <div className='flex flex-col relative'>
         <div className='showPrice mb-6'>
           <span className='font-semibold text-[22px]'>₩{formatPrice(price)}</span>
@@ -128,8 +128,7 @@ function Calculator({
             onClick={() => {
               setIsCalendarOpen((prev) => !prev)
             }}
-            style={{ minHeight: '56px' }}
-            className='flex h-full border-b border-solid border-black items-center w-full'
+            className='flex h-full border-b border-solid border-black items-center w-full min-h-[56px]'
           >
             <div className='w-[50%] items-center border-r border-solid border-black px-3 py-3.5'>
               <div className='text-[10px] text-left'>체크인</div>
@@ -232,10 +231,9 @@ export default function DetailRoomInfo({ id }) {
   if (!roomDetailData) return <div>해당하는 방 정보를 찾을 수 없습니다.</div>
 
   return (
-
-    <div className='flex w-full items-center justify-center'>
-      <div className='flex flex-grow-1 w-full itemWrapper justify-center'>
-        <div className='flex-grow box-border w-[70%]]'>
+    <div className='flex w-full items-center justify-center border-b border-customGray border-solid'>
+      <div className='flex flex-grow-1 w-full itemWrapper justify-between'>
+        <div className='box-border w-[60%]'>
           <div className='py-2'>
             <h2 className='text-xl font-semibold'>
               {roomDetailData.address}, {roomDetailData.roomType}
@@ -279,8 +277,8 @@ export default function DetailRoomInfo({ id }) {
               </div>
             </div>
           )}
-          <div className='flex justify-between pt-5 pb-8'>
-            <div className='flex-grow'>
+          <div className='flex  pt-5 pb-8'>
+            <div className='flex-grow '>
               <div className='width-[100%] grid grid-cols-2 grid-rows-3 gap-3 auto-rows-fr text-sm'>
                 <FilterCategory categories={roomDetailData.categories} />
               </div>
