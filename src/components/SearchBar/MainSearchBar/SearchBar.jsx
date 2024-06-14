@@ -87,7 +87,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <div ref={searchBarRef} className='w-8/12 mx-auto relative'>
+      <div ref={searchBarRef} className='mx-auto relative'>
         <SearchBarWrap isActive={dropdownType !== null}>
           <WhereArea
             onClick={() => handleOpenDropdown('where')}

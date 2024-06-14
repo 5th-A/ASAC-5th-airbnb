@@ -153,7 +153,7 @@ const GuestPrefer = () => {
 //후기 없을 때
 const NoReview = () => {
   return (
-    <div className='fr1 w-full max-w-[960px] h-[150px]'>
+    <div className='fr1 w-full h-[150px]'>
       <div className='flex justify-first items-center text-[22px] font-semibold py-12'>
         후기 (아직) 없음
       </div>
@@ -180,18 +180,18 @@ const Comment = ({ id }) => {
   }
 
   return (
-    <div className='all p-12 bg-white flex justify-center items-center flex-col box-border'>
+    <div className='all w-full bg-white flex justify-center items-center flex-col box-border'>
       {/*그 밑에 전체 평점, 청결도, 정확도 etc.. */}
       <GuestPrefer />
 
       {/*<NoReview />*/}
       <div className='flex justify-center items-center'>
-        <div className='fr3 w-full  -mx-2 flex flex-wrap justify-center  grid grid-cols-2  '>
+        <div className='fr3 w-full mx-2 flex flex-wrap justify-center  grid grid-cols-2  '>
           {/* 최대 6개만 출력하게 하기 JSON 파일에  댓글이 없어서 빈값이 있을 수도 있어서 */}
           {(dataSeg?.comment || []).slice(0, 6).map((each, index) => {
             return (
               <div key={index} className=''>
-                <div className=' px-2 w-[400px] h-[190px]  mr-[64px]'>
+                <div className=' px-2 h-[190px] mr-16'>
                   <div className='fr3-1 flex gap-3 mb-2'>
                     <div className='relative w-[48px] h-[48px]'>
                       <Image
@@ -231,7 +231,7 @@ const Comment = ({ id }) => {
       </div>
 
       {/*후기 모두보기 버튼 */}
-      <div className=' fr4 w-full max-w-[960px] h-[50px] mt-10 mb-10'>
+      <div className=' fr4 w-full h-[50px] mt-10 mb-10'>
         <div className='fr4-1 w-[200px] h-[50px] flex justify-center items-center border-[0.8px] border-solid border-black rounded-lg mb-4'>
           <button
             onClick={showModal}

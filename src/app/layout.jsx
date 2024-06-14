@@ -1,3 +1,4 @@
+import Providers from '@/redux/Providers'
 import './index.css'
 import Footer from '@/components/Footer/Footer'
 
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
         <meta name='description' content='Web site created...' />
       </head>
       <body>
-        <div id='root'>{children}</div>
+        <Providers>
+          <div id='root'>{children}</div>
+        </Providers>
         <Footer />
       </body>
     </html>

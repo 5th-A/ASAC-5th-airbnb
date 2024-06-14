@@ -33,7 +33,7 @@ function GuestCountButton({ type, count, handleIncrement, handleDecrement, child
     <div className='flex flex-row justify-between py-4 items-center'>
       <div>
         <div className='text-[16px] font-semibold pb-1'>{children}</div>
-        <div className='text-[14px]'>{getDetailInfo(children)}</div>
+        <div className='text-[14px] '>{getDetailInfo(children)}</div>
       </div>
       <div className='flex flex-row justify-between items-center'>
         <CounterButton
@@ -60,44 +60,39 @@ export default function GuestCountModal({ guestCounts, dispatch }) {
   const modalRef = useRef()
   const { adults, teens, kids, pets } = guestCounts
   return (
-    <div
-      ref={modalRef}
-      className='absolute z-50 bg-white w-full border border-solid rounded-xl border-gray-300'
-    >
-      <div className='p-4 mb-4'>
-        <GuestCountButton
-          type='adults'
-          count={adults}
-          handleIncrement={(category) => dispatch(increment(category))}
-          handleDecrement={(category) => dispatch(decrement(category))}
-        >
-          성인
-        </GuestCountButton>
-        <GuestCountButton
-          type='teens'
-          count={teens}
-          handleIncrement={(category) => dispatch(increment(category))}
-          handleDecrement={(category) => dispatch(decrement(category))}
-        >
-          청소년
-        </GuestCountButton>
-        <GuestCountButton
-          type='kids'
-          count={kids}
-          handleIncrement={(category) => dispatch(increment(category))}
-          handleDecrement={(category) => dispatch(decrement(category))}
-        >
-          유아
-        </GuestCountButton>
-        <GuestCountButton
-          type='pets'
-          count={pets}
-          handleIncrement={(category) => dispatch(increment(category))}
-          handleDecrement={(category) => dispatch(decrement(category))}
-        >
-          반려동물
-        </GuestCountButton>
-      </div>
+    <div ref={modalRef}>
+      <GuestCountButton
+        type='adults'
+        count={adults}
+        handleIncrement={(category) => dispatch(increment(category))}
+        handleDecrement={(category) => dispatch(decrement(category))}
+      >
+        성인
+      </GuestCountButton>
+      <GuestCountButton
+        type='teens'
+        count={teens}
+        handleIncrement={(category) => dispatch(increment(category))}
+        handleDecrement={(category) => dispatch(decrement(category))}
+      >
+        청소년
+      </GuestCountButton>
+      <GuestCountButton
+        type='kids'
+        count={kids}
+        handleIncrement={(category) => dispatch(increment(category))}
+        handleDecrement={(category) => dispatch(decrement(category))}
+      >
+        유아
+      </GuestCountButton>
+      <GuestCountButton
+        type='pets'
+        count={pets}
+        handleIncrement={(category) => dispatch(increment(category))}
+        handleDecrement={(category) => dispatch(decrement(category))}
+      >
+        반려동물
+      </GuestCountButton>
     </div>
   )
 }

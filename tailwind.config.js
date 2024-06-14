@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       screens: {
-        cardWidth: '960px',
+        card_lg: '1280px',
+        card_md: '960px',
+        card_sm: '480px',
       },
       truncate: {
         overflow: 'hidden',
