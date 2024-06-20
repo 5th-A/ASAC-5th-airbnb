@@ -17,7 +17,7 @@ export default function roomDetail({ params }) {
       </header>
       <main className='flex min-h-screen flex-col  items-center'>
         <div className='justify-center max-w-[1600px] px-20 mx-19.5'>
-          <div className='w-full px-20 justify-center'>
+          <div className='w-full px-22 justify-center'>
             <Providers>
               <MainImage id={id} />
               <DetailRoomInfo id={id} />
