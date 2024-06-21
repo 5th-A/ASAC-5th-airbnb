@@ -203,7 +203,6 @@ function Calculator({
 
 export default function DetailRoomInfo({ id }) {
   const ROOM_ID = id
-  const ROOM_NAME = 'NEW 스테이구구(Stay GUGU) 302호'
 
   const FEE = 0.1552
   const { selectedStartDate, selectedEndDate } = useSelector((state) => state.setCalendar)
