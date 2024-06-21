@@ -87,7 +87,7 @@ export default function Category() {
   }
 
   return (
-    <div className='w-full  bg-white z-50 flex items-center justify-between px-[80px]'>
+    <div className='w-full  bg-white z-30 flex items-center justify-between px-[80px]'>
       <div className='flex items-center' style={{ width: 'calc(100% - 86px)', height: '90px' }}>
         <Swiper
           navigation={{

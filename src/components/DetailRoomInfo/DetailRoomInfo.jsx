@@ -106,6 +106,10 @@ function Calculator({
 
     return guestList
   }
+  function totalGuest(adults, teens, kids, pets) {
+    let sum = adults + teens + kids + pets
+    return sum
+  }
 
   return (
     <div className='calculator inline-block sticky top-0 bottom-0 my-4 p-6 border rounded-lg border-solid border-customGray shadow-xl min-w-[373px]'>
@@ -151,7 +155,9 @@ function Calculator({
               <div className=''>
                 <div className='text-[10px]'>인원</div>
                 <div className='text-[14px] mt-1'>
-                  {showCurrentGuest(adults, teens, kids, pets)}
+                  {totalGuest(adults, teens, kids, pets)
+                    ? showCurrentGuest(adults, teens, kids, pets)
+                    : '게스트 추가'}
                 </div>
               </div>
               <div>
