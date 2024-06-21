@@ -2,10 +2,17 @@ import { useEffect, useState } from 'react'
 import RoomType from './RoomType'
 import PriceRange from './PriceRangeModal'
 import Bedroom from './Bedroom'
-// import Facilities from './Facilities'
+// import Facilities from './Facilities';
 
 const FilterModalComponent = ({ isOpen, onClose }) => {
-  const [selectedButton, setSelectedButton] = useState('all') // 초기값을 'all'로 설정
+  const initialFilters = {
+    roomType: 'all',
+    priceRange: { min: 14000, max: 580000 + '+' },
+    bedrooms: { 침실: '상관없음', 침대: '상관없음', 욕실: '상관없음' },
+    statement: '방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.',
+  }
+
+  const [filters, setFilters] = useState(initialFilters)
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -30,8 +37,25 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null
 
-  const handleButtonClick = (button) => {
-    setSelectedButton(button)
+  const handleRoomTypeChange = (type) => {
+    const statement = {
+      all: '방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.',
+      room: '단독으로 사용하는 방이 있고, 공용 공간도 있는 형태입니다.',
+      house: '집 전체를 단독으로 사용합니다.',
+    }
+    setFilters({ ...filters, roomType: type, statement: statement[type] })
+  }
+
+  const handlePriceChange = (range) => {
+    setFilters({ ...filters, priceRange: range })
+  }
+
+  const handleBedroomChange = (bedrooms) => {
+    setFilters({ ...filters, bedrooms })
+  }
+
+  const handleResetFilters = () => {
+    setFilters(initialFilters)
   }
 
   return (
@@ -52,15 +76,22 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
 
           {/* 모달 내용 - 스크롤 가능 영역 */}
           <div className='flex-1 overflow-y-auto mb-4'>
-            <RoomType selectedButton={selectedButton} handleButtonClick={handleButtonClick} />
-            <PriceRange />
-            <Bedroom />
+            <RoomType
+              selectedButton={filters.roomType}
+              handleButtonClick={handleRoomTypeChange}
+              statement={filters.statement}
+            />
+            <PriceRange selectedRange={filters.priceRange} handleRangeChange={handlePriceChange} />
+            <Bedroom selectedOptions={filters.bedrooms} handleOptionChange={handleBedroomChange} />
             {/* <Facilities /> */}
           </div>
 
           {/* 모달 하단 - 버튼 영역 */}
           <footer className='flex border-t-2 justify-between items-center border-t-2 border-solid border-gray-200 p-3'>
-            <button className='hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 rounded'>
+            <button
+              className='hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 rounded'
+              onClick={handleResetFilters}
+            >
               전체 해제
             </button>
             <button className='p-2 bg-black text-white rounded'>숙소 925개 보기</button>
