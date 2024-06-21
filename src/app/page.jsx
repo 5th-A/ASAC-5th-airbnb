@@ -1,6 +1,6 @@
 import Category from '@/components/Category/Category'
 import Header from '@/components/Header/Header'
-import RoomList from '@/components/RoomList/RoomList'
+// import RoomList from '@/components/RoomList/RoomList'
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         <Header />
         <Category />
       </div>
-      <RoomList />
+      {/* <RoomList /> */}
     </main>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import roomDetail from '@/data/roomDetail.json'
+import roomDetail from '../roomDetail.json'
 import Link from 'next/link'
 import RoomCard from './RoomCard'
 
