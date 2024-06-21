@@ -1,20 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const Bedroom = () => {
+const Bedroom = ({ selectedOptions, handleOptionChange }) => {
   const options = ['상관없음', '1', '2', '3', '4', '5', '6', '7', '8+']
   const categories = ['침실', '침대', '욕실']
 
-  const [selectedOptions, setSelectedOptions] = useState({
-    침실: '상관없음',
-    침대: '상관없음',
-    욕실: '상관없음',
-  })
-
   const handleOptionClick = (category, option) => {
-    setSelectedOptions((prevState) => ({
-      ...prevState,
-      [category]: option,
-    }))
+    handleOptionChange({ ...selectedOptions, [category]: option })
   }
 
   return (
