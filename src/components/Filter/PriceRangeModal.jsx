@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { FilterContext } from './FilterContext'
 
-const PriceRangeComponent = ({ selectedRange, handleRangeChange }) => {
-  const [range, setRange] = useState(selectedRange)
+const PriceRangeComponent = () => {
+  const { filters, handlePriceChange } = useContext(FilterContext)
+  const [range, setRange] = useState(filters.priceRange)
 
   useEffect(() => {
-    setRange(selectedRange)
-  }, [selectedRange])
+    setRange(filters.priceRange)
+  }, [filters.priceRange])
 
   const handleChange = (e) => {
     const { name, value } = e.target
     const updatedRange = { ...range, [name]: value }
     setRange(updatedRange)
-    handleRangeChange(updatedRange)
+    handlePriceChange(updatedRange)
   }
 
   return (
@@ -52,4 +54,5 @@ const PriceRangeComponent = ({ selectedRange, handleRangeChange }) => {
     </div>
   )
 }
+
 export default PriceRangeComponent
