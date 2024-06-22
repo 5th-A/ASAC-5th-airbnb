@@ -15,6 +15,7 @@ import 'swiper/css/pagination'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 
 import FilterModalComponent from '../Filter/FilterModal' // Make sure the path is correct
+import { FilterProvider } from '../Filter/FilterContext'
 
 function ButtonComponent({ button }) {
   return (
@@ -129,7 +130,9 @@ export default function Category() {
           <div className='text-xs'>필터</div>
         </button>
       </div>
-      <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
+      <FilterProvider>
+        <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
+      </FilterProvider>
     </div>
   )
 }
