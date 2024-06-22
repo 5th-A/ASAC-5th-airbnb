@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
+import { FilterContext } from './FilterContext'
 
-const Bedroom = ({ selectedOptions, handleOptionChange }) => {
+const Bedroom = () => {
+  const { filters, handleBedroomChange } = useContext(FilterContext)
   const options = ['상관없음', '1', '2', '3', '4', '5', '6', '7', '8+']
   const categories = ['침실', '침대', '욕실']
 
   const handleOptionClick = (category, option) => {
-    handleOptionChange({ ...selectedOptions, [category]: option })
+    handleBedroomChange({ ...filters.bedrooms, [category]: option })
   }
 
   return (
@@ -23,7 +25,7 @@ const Bedroom = ({ selectedOptions, handleOptionChange }) => {
               <button
                 key={idx}
                 className={`text-xs py-2 px-4 rounded-full ${
-                  selectedOptions[category] === option
+                  filters.bedrooms[category] === option
                     ? 'bg-black text-white'
                     : 'border border-gray-400'
                 }`}
