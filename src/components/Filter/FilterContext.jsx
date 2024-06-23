@@ -7,7 +7,7 @@ const FilterProvider = ({ children }) => {
     roomType: 'all',
     data: [],
     filteredData: [],
-    priceRange: { min: 14000, max: 580000 + '+' },
+    priceRange: { min: 14000, max: '580000+' },
     bedrooms: { 침실: '상관없음', 침대: '상관없음', 욕실: '상관없음' },
     statement: '방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.',
   }
@@ -16,7 +16,7 @@ const FilterProvider = ({ children }) => {
 
   const fetchRoomData = async () => {
     try {
-      const response = await fetch('/roomDetail.json') // JSON 파일
+      const response = await fetch('/roomDetail.json') // JSON 파일 경로
       const data = await response.json()
       setFilters((prev) => ({ ...prev, data }))
     } catch (error) {
@@ -33,8 +33,8 @@ const FilterProvider = ({ children }) => {
       const matchesBathrooms =
         bedrooms['욕실'] === '상관없음' || item.filter.bathRooms == bedrooms['욕실']
       const matchesPrice =
-        item.price >= priceRange.min && item.price <= parseInt(priceRange.max.replace('+', ''), 10) // 가격 필터링 추가
-      return matchesRoomType && matchesBedrooms && matchesBeds && matchesBathrooms
+        item.price >= priceRange.min && item.price <= parseInt(priceRange.max.replace('+', ''), 10)
+      return matchesRoomType && matchesBedrooms && matchesBeds && matchesBathrooms && matchesPrice
     })
     console.log(`필터링된 데이터:`, filteredData)
     return filteredData
@@ -45,13 +45,15 @@ const FilterProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    const filteredData = filterData(
-      filters.data,
-      filters.roomType,
-      filters.bedrooms,
-      filters.priceRange,
-    )
-    setFilters((prev) => ({ ...prev, filteredData }))
+    if (filters.data.length > 0) {
+      const filteredData = filterData(
+        filters.data,
+        filters.roomType,
+        filters.bedrooms,
+        filters.priceRange,
+      )
+      setFilters((prev) => ({ ...prev, filteredData }))
+    }
   }, [filters.roomType, filters.bedrooms, filters.priceRange, filters.data])
 
   const handleRoomTypeChange = (type) => {
@@ -80,7 +82,12 @@ const FilterProvider = ({ children }) => {
     setFilters((prev) => ({
       ...prev,
       ...newFilters,
-      filteredData: filterData(prev.data, newFilters.roomType, newFilters.bedrooms),
+      filteredData: filterData(
+        prev.data,
+        newFilters.roomType,
+        newFilters.bedrooms,
+        prev.priceRange,
+      ),
     }))
   }
 
