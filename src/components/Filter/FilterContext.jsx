@@ -85,13 +85,12 @@ const FilterProvider = ({ children }) => {
   }
 
   const applyFilters = () => {
-    // applyFilters 함수 추가
     const filteredData = filterData(
       filters.data,
       filters.roomType,
       filters.bedrooms,
       filters.priceRange,
-    ) // priceRange 추가
+    )
     console.log('적용된 필터 데이터:', filteredData)
     return filteredData
   }
