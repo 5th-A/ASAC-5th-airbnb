@@ -5,6 +5,8 @@ const FilterContext = createContext()
 const FilterProvider = ({ children }) => {
   const initialFilters = {
     roomType: 'all',
+    data: [],
+    filteredData: [],
     priceRange: { min: 14000, max: 580000 + '+' },
     bedrooms: { 침실: '상관없음', 침대: '상관없음', 욕실: '상관없음' },
     statement: '방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.',
@@ -14,41 +16,36 @@ const FilterProvider = ({ children }) => {
 
   const fetchRoomData = async () => {
     try {
-      const response = await fetch('/roomDetail.json') // JSON 파일 경로
+      const response = await fetch('/roomDetail.json') // JSON 파일
       const data = await response.json()
-      return data
+      setFilters((prev) => ({ ...prev, data }))
     } catch (error) {
-      console.error('Error Fetch:', error)
-      return []
+      console.error('Error fetching data:', error)
     }
   }
 
-  const updateRoomData = async (type) => {
-    const data = await fetchRoomData()
-    const filteredData = data.filter((item) => item.roomType === type || type === 'all')
-    console.log(`숙소 유형별로 해당하는 데이터 : "${type}":`, filteredData)
-    setFilters((prev) => ({ ...prev, data: filteredData }))
+  const filterData = (data, roomType, bedrooms) => {
+    const filteredData = data.filter((item) => {
+      const matchesRoomType = roomType === 'all' || item.roomType === roomType
+      const matchesBedrooms =
+        bedrooms['침실'] === '상관없음' || item.filter.bedRooms == bedrooms['침실']
+      const matchesBeds = bedrooms['침대'] === '상관없음' || item.filter.beds == bedrooms['침대']
+      const matchesBathrooms =
+        bedrooms['욕실'] === '상관없음' || item.filter.bathRooms == bedrooms['욕실']
+      return matchesRoomType && matchesBedrooms && matchesBeds && matchesBathrooms
+    })
+    console.log(`필터링된 데이터:`, filteredData)
+    return filteredData
   }
 
-  // const fetchRoomData = async (type) => {
-  //   try {
-  //     const response = await fetch('/path/to/your/data.json'); // JSON 파일 경로
-  //     const data = await response.json();
-  //     const filteredData = data.filter(item => item.roomType === type || type === 'all');
-  //     console.log(`숙소 유형별로 해당하는 데이터 :"${type}":`, filteredData);
-  //     setFilters(prev => ({ ...prev, data: filteredData }));
-  //   } catch (error) {
-  //     console.error('Error 데이터', error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchRoomData(filters.roomType);
-  // }, [filters.roomType]);
+  useEffect(() => {
+    fetchRoomData()
+  }, [])
 
   useEffect(() => {
-    updateRoomData(filters.roomType)
-  }, [filters.roomType])
+    const filteredData = filterData(filters.data, filters.roomType, filters.bedrooms)
+    setFilters((prev) => ({ ...prev, filteredData }))
+  }, [filters.roomType, filters.bedrooms, filters.data])
 
   const handleRoomTypeChange = (type) => {
     const statement = {
@@ -56,19 +53,28 @@ const FilterProvider = ({ children }) => {
       room: '단독으로 사용하는 방이 있고, 공용 공간도 있는 형태입니다.',
       house: '집 전체를 단독으로 사용합니다.',
     }
-    setFilters({ ...filters, roomType: type, statement: statement[type] })
+    setFilters((prev) => ({ ...prev, roomType: type, statement: statement[type] }))
   }
 
   const handlePriceChange = (range) => {
-    setFilters({ ...filters, priceRange: range })
+    setFilters((prev) => ({ ...prev, priceRange: range }))
   }
 
   const handleBedroomChange = (bedrooms) => {
-    setFilters({ ...filters, bedrooms })
+    setFilters((prev) => ({ ...prev, bedrooms }))
   }
 
   const handleResetFilters = () => {
-    setFilters(initialFilters)
+    const newFilters = {
+      roomType: 'all',
+      bedrooms: { 침실: '상관없음', 침대: '상관없음', 욕실: '상관없음' },
+      statement: '방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.',
+    }
+    setFilters((prev) => ({
+      ...prev,
+      ...newFilters,
+      filteredData: filterData(prev.data, newFilters.roomType, newFilters.bedrooms),
+    }))
   }
 
   return (
