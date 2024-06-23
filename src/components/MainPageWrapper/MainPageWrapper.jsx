@@ -7,11 +7,12 @@ import { useState, useEffect } from 'react'
 export default function MainPageWrapper() {
   const [roomDetail, setRoomDetail] = useState([])
   const [initRoom, setInitRoom] = useState([])
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null)
 
   useEffect(() => {
     async function fetchRoomData() {
       try {
-        const response = await fetch('/RoomList.json') //GET
+        const response = await fetch('/RoomList.json') // GET
         if (!response.ok) {
           throw new Error(`숙소 목록을 불러오지 못했습니다. : ${response.status}`)
         }
@@ -24,9 +25,26 @@ export default function MainPageWrapper() {
     }
     fetchRoomData()
   }, [])
+
+  useEffect(() => {
+    async function fetchCategoryData() {
+      try {
+        const response = await fetch('/Category.json')
+        if (!response.ok) {
+          throw new Error(`카테고리 목록을 불러오지 못했습니다. : ${response.status}`)
+        }
+        const data = await response.json()
+        setSelectedCategoryId(data[0].id)
+      } catch (e) {
+        setError(e.message)
+      }
+    }
+    fetchCategoryData()
+  }, [])
+
   return (
     <>
-      <Category />
+      {selectedCategoryId && <Category id={selectedCategoryId} />}
       <RoomList roomDetail={roomDetail} initRoom={initRoom} />
     </>
   )
