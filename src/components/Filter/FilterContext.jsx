@@ -24,7 +24,7 @@ const FilterProvider = ({ children }) => {
     }
   }
 
-  const filterData = (data, roomType, bedrooms) => {
+  const filterData = (data, roomType, bedrooms, priceRange) => {
     const filteredData = data.filter((item) => {
       const matchesRoomType = roomType === 'all' || item.roomType === roomType
       const matchesBedrooms =
@@ -32,6 +32,8 @@ const FilterProvider = ({ children }) => {
       const matchesBeds = bedrooms['침대'] === '상관없음' || item.filter.beds == bedrooms['침대']
       const matchesBathrooms =
         bedrooms['욕실'] === '상관없음' || item.filter.bathRooms == bedrooms['욕실']
+      const matchesPrice =
+        item.price >= priceRange.min && item.price <= parseInt(priceRange.max.replace('+', ''), 10) // 가격 필터링 추가
       return matchesRoomType && matchesBedrooms && matchesBeds && matchesBathrooms
     })
     console.log(`필터링된 데이터:`, filteredData)
@@ -43,9 +45,14 @@ const FilterProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    const filteredData = filterData(filters.data, filters.roomType, filters.bedrooms)
+    const filteredData = filterData(
+      filters.data,
+      filters.roomType,
+      filters.bedrooms,
+      filters.priceRange,
+    )
     setFilters((prev) => ({ ...prev, filteredData }))
-  }, [filters.roomType, filters.bedrooms, filters.data])
+  }, [filters.roomType, filters.bedrooms, filters.priceRange, filters.data])
 
   const handleRoomTypeChange = (type) => {
     const statement = {
@@ -77,6 +84,18 @@ const FilterProvider = ({ children }) => {
     }))
   }
 
+  const applyFilters = () => {
+    // applyFilters 함수 추가
+    const filteredData = filterData(
+      filters.data,
+      filters.roomType,
+      filters.bedrooms,
+      filters.priceRange,
+    ) // priceRange 추가
+    console.log('적용된 필터 데이터:', filteredData)
+    return filteredData
+  }
+
   return (
     <FilterContext.Provider
       value={{
@@ -85,6 +104,7 @@ const FilterProvider = ({ children }) => {
         handlePriceChange,
         handleBedroomChange,
         handleResetFilters,
+        applyFilters,
       }}
     >
       {children}
