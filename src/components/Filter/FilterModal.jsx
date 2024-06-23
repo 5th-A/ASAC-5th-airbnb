@@ -5,7 +5,7 @@ import Bedroom from './Bedroom'
 import { FilterContext } from './FilterContext'
 
 const FilterModalComponent = ({ isOpen, onClose }) => {
-  const { handleResetFilters, applyFilters } = useContext(FilterContext)
+  const { filters, handleResetFilters, applyFilters } = useContext(FilterContext)
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -29,7 +29,6 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
   }, [isOpen, onClose])
 
   const handleApplyFilters = () => {
-    // handleApplyFilters 함수 추가
     const filteredData = applyFilters() // 필터링된 데이터 얻기
     console.log(filteredData) // 필터링된 데이터 콘솔에 출력
     onClose() // 모달 닫기
@@ -69,7 +68,7 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
               전체 해제
             </button>
             <button className='p-2 bg-black text-white rounded' onClick={handleApplyFilters}>
-              숙소 925개 보기
+              숙소 {filters.filteredData.length}개 보기
             </button>
           </footer>
         </div>
