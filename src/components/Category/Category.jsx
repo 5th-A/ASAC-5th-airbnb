@@ -130,9 +130,9 @@ export default function Category() {
           <div className='text-xs'>필터</div>
         </button>
       </div>
-      <FilterProvider>
-        <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
-      </FilterProvider>
+      {/* <FilterProvider> */}
+      <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
+      {/* </FilterProvider> */}
     </div>
   )
 }

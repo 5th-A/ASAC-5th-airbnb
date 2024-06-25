@@ -1,3 +1,4 @@
+'use client'
 import React, { createContext, useState, useEffect } from 'react'
 
 const FilterContext = createContext()
@@ -12,15 +13,36 @@ const FilterProvider = ({ children }) => {
     statement: '방, 집 전체 등 원하는 숙소 유형을 검색해 보세요.',
   }
 
-  const [filters, setFilters] = useState(initialFilters)
+  const [filters, setFilters] = useState(initialFilters) // 버튼들의 초기 상태값과 클릭 시의 상태값
+
+  // // 새로운 함수: 필터 조건에 맞는 URI 생성 api URI 사용
+  // const apiUri = (city, checkin, checkout, minPrice, maxPrice, bath, bed, bedRoom, roomType) => {
+  //   return `/api/filter/count/${city}&checkin=${checkin}&checkout=${checkout}&minPrice=${minPrice}&maxPrice=${maxPrice}&bath=${bath}&bed=${bed}&bedRoom=${bedRoom}&roomType=${roomType}`
+  // }
 
   const fetchRoomData = async () => {
     try {
+      // const { min: minPrice, max: maxPrice } = filters.priceRange
+      // const { 침실: bedRoom, 침대: bed, 욕실: bath } = filters.bedrooms
+      // const roomType = filters.roomType
+      // const uri = apiUri(
+      //   city,
+      //   checkin,
+      //   checkout,
+      //   minPrice,
+      //   maxPrice.replace('+', ''),
+      //   bath,
+      //   bed,
+      //   bedRoom,
+      //   roomType,
+      // )
+      // const response = await fetch(apiUri) // JSON 파일 경로
+
       const response = await fetch('/roomDetail.json') // JSON 파일 경로
       const data = await response.json()
       setFilters((prev) => ({ ...prev, data }))
     } catch (error) {
-      console.error('Error fetching data:', error)
+      console.error('fetch 에러 :', error)
     }
   }
 
@@ -63,14 +85,17 @@ const FilterProvider = ({ children }) => {
       house: '집 전체를 단독으로 사용합니다.',
     }
     setFilters((prev) => ({ ...prev, roomType: type, statement: statement[type] }))
+    console.log(`roomType changed to: ${type}`) // 출력값 보깅
   }
 
   const handlePriceChange = (range) => {
     setFilters((prev) => ({ ...prev, priceRange: range }))
+    console.log(`priceRange changed to: `, range) // 출력값 보깅
   }
 
   const handleBedroomChange = (bedrooms) => {
     setFilters((prev) => ({ ...prev, bedrooms }))
+    console.log(`bedrooms changed to: `, bedrooms) // 출력값 보깅
   }
 
   const handleResetFilters = () => {
