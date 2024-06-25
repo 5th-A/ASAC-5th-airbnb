@@ -35,8 +35,10 @@ export default function MainPageWrapper() {
   useEffect(() => {
     async function fetchRoomData() {
       try {
-        setSearchQuery(``)
-        const response = await fetch('/RoomList.json') //추후 완성된 searchQuery대입한 url로 변경
+        setSearchQuery(
+          `checkin=${selectedStartDate}&checkout=${selectedEndDate}&minPrice=${filters.priceRange.min}&maxPrice=${filters.priceRange.max}&bath=${filters.bedrooms.욕실}&bed=${filters.bedrooms.침대}&bedRoom=${filters.bedrooms.침실}&roomType=${filters.roomType}`,
+        )
+        const response = await fetch('/RoomList.json') //추후 완성된 searchQuery대입한 api로 변경
         if (!response.ok) {
           throw new Error(`숙소 목록을 불러오지 못했습니다. : ${response.status}`)
         }
@@ -51,7 +53,7 @@ export default function MainPageWrapper() {
   }, [filters])
   return (
     <>
-      <Header />
+      <Header searchQuery={searchQuery} />
       <Category />
       <RoomList roomDetail={roomDetail} initRoom={initRoom} />
     </>
