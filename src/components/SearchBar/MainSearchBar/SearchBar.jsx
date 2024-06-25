@@ -1,12 +1,10 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
 import WhereArea from '@/components/SearchBar/MainSearchBar/WhereArea'
-import DateArea from '@/components/SearchBar/MainSearchBar//DateArea'
+import DateArea from '@/components/SearchBar/MainSearchBar/DateArea'
 import GuestArea from '@/components/SearchBar/MainSearchBar/GuestArea'
 import Dropdown from '@/components/SearchBar/MainSearchBar/Dropdown'
-
 import { setSelectedStartDate, setSelectedEndDate } from '@/redux/slices/calendarSlice'
 
 const SearchBarWrap = ({ children, isActive }) => (
@@ -64,15 +62,6 @@ const SearchBar = () => {
     }
   }
 
-  const handleSearchButtonClick = () => {
-    const city = inputRef.current ? inputRef.current.value : ''
-    console.log('Selected city:', city)
-    console.log('Selected StartDate', new Date(selectedStartDate).toLocaleDateString())
-    console.log('Selected EndDate', new Date(selectedEndDate).toLocaleDateString())
-    console.log('counts', adults, teens, kids, pets)
-    // 여기에 API 전송 로직
-  }
-
   useEffect(() => {
     if (dropdownType) {
       document.addEventListener('mousedown', handleClickOutside)
@@ -84,6 +73,16 @@ const SearchBar = () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [dropdownType])
+
+  const searchParams = {
+    checkin: new Date(selectedStartDate).toISOString().split('T')[0],
+    checkout: new Date(selectedEndDate).toISOString().split('T')[0],
+    adults,
+    teens,
+    kids,
+    pets,
+    page: 0,
+  }
 
   return (
     <>
@@ -106,8 +105,9 @@ const SearchBar = () => {
           <GuestArea
             onClick={() => handleOpenDropdown('guest')}
             isActive={dropdownType === 'guest'}
-            onSearch={handleSearchButtonClick}
             guestCounts={{ adults, teens, kids, pets }}
+            searchParams={searchParams}
+            selectedCity={selectedCity}
           />
         </SearchBarWrap>
         <Dropdown
