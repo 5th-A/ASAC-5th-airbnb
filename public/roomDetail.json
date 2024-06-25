@@ -105,7 +105,7 @@
     ],
     "isLike": false,
     "address": "양평군",
-    "roomType": "all",
+    "roomType": "room",
     "filter": {
       "maximum": 6,
       "beds": 2,
@@ -649,7 +649,7 @@
     ],
     "isLike": false,
     "address": "Gapyeong-gun",
-    "roomType": "한국의 통나무집 전체",
+    "roomType": "all",
     "filter": { "maximum": 6, "beds": 3, "bedRooms": 2, "bathRooms": 1, "floor": 0 },
     "guestPrefer": true,
     "categories": [
@@ -896,7 +896,7 @@
     ],
     "isLike": false,
     "address": "양평군",
-    "roomType": "한국의 별장 전체",
+    "roomType": "house",
     "filter": {
       "maximum": 6,
       "beds": 2,
@@ -1100,7 +1100,7 @@
     ],
     "isLike": false,
     "address": "Gapyeong-eup, Gapyeong-gun",
-    "roomType": "한국의 돔하우스의 개인실",
+    "roomType": "room",
     "filter": {
       "maximum": 4,
       "beds": 1,
