@@ -54,7 +54,8 @@ function ButtonComponent({ button }) {
   )
 }
 
-const Category = ({ id }) => {
+// 선택된 아이디 값에 해당하는 카테고리 불러오는 로직 추가
+const Category = ({ id, setSelectedId }) => {
   const [buttonInfo, setButtonInfo] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
