@@ -9,11 +9,10 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 import FilterModalComponent from '../Filter/FilterModal'
-function ButtonComponent({ button, setSelectedId }) {
+function ButtonComponent({ button, setSelectedCategoryId }) {
   return (
     <li style={{ listStyleType: 'none', height: '90px', margin: '0' }}>
       <div
-        onClick={() => setSelectedId}
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -24,6 +23,7 @@ function ButtonComponent({ button, setSelectedId }) {
       >
         <div
           key={button.id}
+          onClick={() => setSelectedCategoryId(button.id)}
           className='w-10 h-[49px] flex-col justify-start items-center gap-2 inline-flex'
         >
           <div className='w-6 h-6 justify-center items-center inline-flex' />
@@ -56,7 +56,7 @@ function ButtonComponent({ button, setSelectedId }) {
 }
 
 // 선택된 아이디 값에 해당하는 카테고리 불러오는 로직 추가
-const Category = ({ id, setSelectedId }) => {
+const Category = ({ id, setSelectedCategoryId }) => {
   const [buttonInfo, setButtonInfo] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -109,7 +109,7 @@ const Category = ({ id, setSelectedId }) => {
           <ul style={{ display: 'flex', padding: '0', margin: '0' }}>
             {buttonInfo.map((button, idx) => (
               <SwiperSlide key={idx}>
-                <ButtonComponent button={button} setSelectedId={setSelectedId} />
+                <ButtonComponent button={button} setSelectedCategoryId={setSelectedCategoryId} />
               </SwiperSlide>
             ))}
           </ul>

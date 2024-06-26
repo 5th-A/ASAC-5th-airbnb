@@ -7,7 +7,8 @@ import { useState, useEffect } from 'react'
 export default function MainPageWrapper() {
   const [roomDetail, setRoomDetail] = useState([])
   const [initRoom, setInitRoom] = useState([])
-  const [selectedCategoryId, setSelectedCategoryId] = useState(null)
+  const [selectedCategoryId, setSelectedCategoryId] = useState(1)
+  console.log('category ID', selectedCategoryId)
 
   useEffect(() => {
     async function fetchRoomData() {
@@ -29,7 +30,7 @@ export default function MainPageWrapper() {
   return (
     <>
       {selectedCategoryId && (
-        <Category id={selectedCategoryId} setSelectedId={setSelectedCategoryId} />
+        <Category id={selectedCategoryId} setSelectedCategoryId={setSelectedCategoryId} />
       )}
       <RoomList roomDetail={roomDetail} initRoom={initRoom} />
     </>
