@@ -36,7 +36,7 @@ export default function MainPageWrapper() {
     async function fetchRoomData() {
       try {
         setSearchQuery(
-          `checkin=${selectedStartDate}&checkout=${selectedEndDate}&minPrice=${filters.priceRange.min}&maxPrice=${filters.priceRange.max}&bath=${filters.bedrooms.욕실}&bed=${filters.bedrooms.침대}&bedRoom=${filters.bedrooms.침실}&roomType=${filters.roomType}`,
+          `checkin=${selectedStartDate}&checkout=${selectedEndDate}&children=${teens}&adults=${adults}&infants=${kids}&pets=${pets}&minPrice=${filters.priceRange.min}&maxPrice=${filters.priceRange.max}&bath=${filters.bedrooms.욕실}&bed=${filters.bedrooms.침대}&bedRoom=${filters.bedrooms.침실}&roomType=${filters.roomType}`,
         )
         const response = await fetch('/RoomList.json') //추후 완성된 searchQuery대입한 api로 변경
         if (!response.ok) {
