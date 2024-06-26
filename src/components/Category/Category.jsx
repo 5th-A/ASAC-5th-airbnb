@@ -9,10 +9,11 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 import FilterModalComponent from '../Filter/FilterModal'
-function ButtonComponent({ button }) {
+function ButtonComponent({ button, setSelectedId }) {
   return (
     <li style={{ listStyleType: 'none', height: '90px', margin: '0' }}>
       <div
+        onClick={() => setSelectedId}
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -108,7 +109,7 @@ const Category = ({ id, setSelectedId }) => {
           <ul style={{ display: 'flex', padding: '0', margin: '0' }}>
             {buttonInfo.map((button, idx) => (
               <SwiperSlide key={idx}>
-                <ButtonComponent button={button} />
+                <ButtonComponent button={button} setSelectedId={setSelectedId} />
               </SwiperSlide>
             ))}
           </ul>
