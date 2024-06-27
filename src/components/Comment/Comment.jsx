@@ -1,12 +1,12 @@
 'use client'
+
 import Image from 'next/image'
-import CommentJson from '@/data/comment.json'
-import star from '/public/assets/star.svg'
+//import CommentJson from '@/data/comment.json'
 import { FaRegStar } from 'react-icons/fa6'
 import { FaStar } from 'react-icons/fa'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Modal from '@/components/Modal/Modal'
-const data = CommentJson
+//const data = CommentJson
 
 const StarRating = ({ rate, setRate }) => {
   const ARRAY = [0, 1, 2, 3, 4]
@@ -31,7 +31,7 @@ const StarRating = ({ rate, setRate }) => {
   )
 }
 
-const CommentInput = ({ commentRef, comment, setComment }) => {
+const CommentInput = ({ commentRef, comment, setComment, datas }) => {
   const handleInputChange = () => {
     setComment(commentRef.current.value)
   }
@@ -42,12 +42,12 @@ const CommentInput = ({ commentRef, comment, setComment }) => {
         <div className=''>
           <img
             className='w-[48px] h-[48px] rounded-3xl'
-            src={data[0].comment[0].profile}
+            src={datas[0].comment[0].profile}
             alt='Profile'
           />
         </div>
         <div className='flex-col content-center'>
-          <div className='h-[20px] font-semibold'>{data[0].comment[0].name}</div>
+          <div className='h-[20px] font-semibold'>{datas[0].comment[0].name}</div>
           {/* 위는 어드민이 아니고 json에서 프로필 사진 가져왔던거 처럼 comment[0] 이름 가져와서 뿌려주기  */}
         </div>
       </div>
@@ -63,20 +63,45 @@ const CommentInput = ({ commentRef, comment, setComment }) => {
   )
 }
 
-const StarAndComment = ({ setIsopen }) => {
+const StarAndComment = ({ setIsopen, datas, setDatas }) => {
   const [rate, setRate] = useState(0)
   const [comment, setComment] = useState('')
+  const [data, setData] = useState([])
   //  json 에 코멘트의 1번회원 프로필사진, 이름 상태 추가  해야함
   const commentRef = useRef()
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const commentValue = commentRef.current.value
-    // api 요청 할 부분
-    console.log('Rate:', rate)
-    console.log('Comment:', commentValue)
-    // console.log(CommentInput 컴포넌트에 있는 프로필사진 props 혹은 context 이용해서 이 부분에 띄워주기)
-    // console.log(이름도 위 콘솔로그 처럼 가져와서 여기에 띄워주기)
-    // 유저 ID, 지역, 날짜
+
+    const requestBody = {
+      userId: 1,
+      rate: rate,
+      date: new Date().toISOString().split('T')[0], // 현재 날짜
+      msg: commentValue,
+    }
+
+    try {
+      const res = await fetch('/example.json', {
+        method: 'POST', // POST 요청으로 변경
+        headers: {
+          'Content-Type': 'application/json', // JSON 형식의 데이터 전송
+        },
+        body: JSON.stringify(requestBody), // 요청 본문에 JSON 데이터 포함
+      })
+      console.log(requestBody)
+      console.log(res)
+      if (!res.ok) {
+        throw new Error(`Error: ${res.status}`)
+      }
+
+      const postdata = await res.json()
+
+      setData(postdata)
+      console.log('sssssss', setDatas)
+    } catch (error) {
+      console.error('Fetch error:', error)
+    }
+
     setComment('')
     setIsopen(false)
   }
@@ -84,8 +109,13 @@ const StarAndComment = ({ setIsopen }) => {
   return (
     <>
       <StarRating rate={rate} setRate={setRate} />
-      <CommentInput commentRef={commentRef} comment={comment} setComment={setComment} />
-      <button onClick={handleSubmit} className='btn'>
+      <CommentInput
+        commentRef={commentRef}
+        comment={comment}
+        setComment={setComment}
+        datas={datas}
+      />
+      <button onClick={() => handleSubmit()} className='btn'>
         제출
       </button>
     </>
@@ -112,7 +142,9 @@ function dateCalculate(dateString) {
 }
 
 //게스트 선호일 때 컴포넌트
-const GuestPrefer = () => {
+const GuestPrefer = ({ dataSeg }) => {
+  console.log('daasdf', dataSeg)
+
   return (
     <div className='fr1 w-full max-w-[960px] h-[214px]  mt-4 mb-16 flex flex-col justify-center items-center'>
       <div className='fr1-1 flex  w-[380px] h-[132px]'>
@@ -123,7 +155,7 @@ const GuestPrefer = () => {
           />
         </div>
         <div className='Average w-[194.6px] h-[100px] flex justify-center items-center text-8xl font-bold'>
-          {data[0].average}
+          {dataSeg?.average}
         </div>
         <div className='wingR w-auto'>
           <img
@@ -146,15 +178,12 @@ const GuestPrefer = () => {
     </div>
   )
 }
-//후기 3개이상 있을때 컴포넌트
-
-//후기 3개 미만일때 컴포넌트
 
 //후기 없을 때
 const NoReview = () => {
   return (
     <div className='fr1 w-full h-[150px]'>
-      <div className='flex justify-first items-center text-[22px] font-semibold py-12'>
+      <div className='flex justify-start items-center text-[22px] font-semibold py-12 border-b border-solid border-customGray'>
         후기 (아직) 없음
       </div>
     </div>
@@ -162,8 +191,30 @@ const NoReview = () => {
 }
 
 const Comment = ({ id }) => {
+  const [datas, setDatas] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/comment.json')
+        console.log(res)
+        if (!res.ok) {
+          throw new Error(`Error: ${res.status}`)
+        }
+
+        const jsondata = await res.json()
+        console.log(jsondata)
+        setDatas(jsondata)
+      } catch (error) {
+        console.error('Fetch error:', error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  const [length, setLength] = useState(false)
   const [isOpen, setIsopen] = useState(false)
-  const dataSeg = data.find((each) => each.id == id)
+  const dataSeg = datas.find((each) => each.id == id)
   const [show, setShow] = useState(false)
 
   const handleButtonChange = () => {
@@ -182,9 +233,15 @@ const Comment = ({ id }) => {
   return (
     <div className='all w-full bg-white flex justify-center items-center flex-col box-border'>
       {/*그 밑에 전체 평점, 청결도, 정확도 etc.. */}
-      <GuestPrefer />
+      {dataSeg?.comment === undefined || dataSeg?.comment === null ? (
+        <NoReview />
+      ) : (
+        <GuestPrefer dataSeg={dataSeg} />
+      )}
 
-      {/*<NoReview />*/}
+      {/*<GuestPrefer datas={datas} /> */}
+      {/* <NoReview /> */}
+
       <div className='flex justify-center items-center'>
         <div className='fr3 w-full mx-2 flex flex-wrap justify-center  grid grid-cols-2  '>
           {/* 최대 6개만 출력하게 하기 JSON 파일에  댓글이 없어서 빈값이 있을 수도 있어서 */}
@@ -221,7 +278,8 @@ const Comment = ({ id }) => {
                   </div>
 
                   <div className='fr3-3 '>
-                    <span className=''>{each.msg}</span>
+                    <div className='mb-5'>{each.msg.substring(0, 114)}</div>
+                    <button onClick={showModal}>더보기...</button>
                   </div>
                 </div>
               </div>
@@ -251,7 +309,9 @@ const Comment = ({ id }) => {
           </button>
         </div>
       </div>
-      <div>{isOpen && <StarAndComment setIsopen={setIsopen} />}</div>
+      <div>
+        {isOpen && <StarAndComment datas={datas} setIsopen={setIsopen} setDatas={setDatas} />}
+      </div>
     </div>
   )
 }
