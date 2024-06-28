@@ -20,11 +20,11 @@ const Bedroom = () => {
       {categories.map((category, index) => (
         <div className='mb-4' key={index}>
           <h3 className='text-sm mb-2'>{category}</h3>
-          <div className='flex space-x-2'>
+          <div className='flex justify-between space-x-4'>
             {options.map((option, idx) => (
               <button
                 key={idx}
-                className={`text-xs py-2 px-4 rounded-full ${
+                className={`text-xs py-2 px-4 rounded-full flex-grow  ${
                   filters.bedrooms[category] === option
                     ? 'bg-black text-white'
                     : 'border border-gray-400'
