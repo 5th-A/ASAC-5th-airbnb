@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import RoomType from './RoomType'
 import PriceRange from './PriceRangeModal'
 import Bedroom from './Bedroom'
-// import Facilities from './Facilities'
+import { FilterContext } from './FilterContext'
+import { useRouter, usePathname } from 'next/navigation'
 
 const FilterModalComponent = ({ isOpen, onClose }) => {
-  const [selectedButton, setSelectedButton] = useState('all') // 초기값을 'all'로 설정
+  // const { filters, handleResetFilters, applyFilters } = useContext(FilterContext)
+  // const router = useRouter() // useRouter 훅 사용
+  // const pathname = usePathname() // 현재 경로 가져오기
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -28,11 +31,39 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
+  const handleApplyFilters = () => {
+    const filteredData = applyFilters() // 필터링된 데이터 얻기
+    console.log(filteredData) // 필터링된 데이터 콘솔에 출력
 
-  const handleButtonClick = (button) => {
-    setSelectedButton(button)
+    // 1. URL QueryString 쓰기
+    // 2. <Link> 써서 덕용님한테 보내기.
+    // <Link href={`/s${selectedCity}?${queryString}`>
+    // </Link>
+
+    // Logic 짜야 할 순서
+    // 1. usePathname();// 현재 내 URL 판단한다. /s/가 있는지 없는지 판단해서 분기 설정(있으면 덕용님, 없으면 희정 형님 또는 내가 렌더링)
+    // 2. /s/ 있으면 URL QueryString 만들어서 내가 가지고 있는 상태값들 다 넣기
+    // 3. <Link>써서 더굥님한테 보내기, 없으면 희정형님한테 보낸다.
+
+    // // 1. URL QueryString 쓰기
+    // const queryString = new URLSearchParams({
+    //   roomType: filters.roomType,
+    //   minPrice: filters.priceRange.min,
+    //   maxPrice: filters.priceRange.max,
+    //   bedRooms: filters.bedrooms['침실'],
+    //   beds: filters.bedrooms['침대'],
+    //   bathRooms: filters.bedrooms['욕실'],
+    // }).toString()
+
+    // // 2. 현재 경로에 따라 분기 처리
+    // if (pathname.includes('/s/')) {
+    //   router.push(`/s/?${queryString}`) // /s 경로가 있으면 덕용님 페이지로 이동
+    // }
+
+    onClose() // 모달 닫기
   }
+
+  if (!isOpen) return null
 
   return (
     <section>
@@ -52,18 +83,22 @@ const FilterModalComponent = ({ isOpen, onClose }) => {
 
           {/* 모달 내용 - 스크롤 가능 영역 */}
           <div className='flex-1 overflow-y-auto mb-4'>
-            <RoomType selectedButton={selectedButton} handleButtonClick={handleButtonClick} />
+            <RoomType />
             <PriceRange />
             <Bedroom />
-            {/* <Facilities /> */}
           </div>
 
           {/* 모달 하단 - 버튼 영역 */}
           <footer className='flex border-t-2 justify-between items-center border-t-2 border-solid border-gray-200 p-3'>
-            <button className='hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 rounded'>
+            <button
+              className='hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300 rounded'
+              onClick={handleResetFilters}
+            >
               전체 해제
             </button>
-            <button className='p-2 bg-black text-white rounded'>숙소 925개 보기</button>
+            <button className='p-2 bg-black text-white rounded' onClick={handleApplyFilters}>
+              숙소 {filters.filteredData.length}개 보기
+            </button>
           </footer>
         </div>
       </div>

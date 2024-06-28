@@ -8,7 +8,10 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
+
 import FilterModalComponent from '../Filter/FilterModal'
+import { FilterProvider } from '../Filter/FilterContext'
+
 function ButtonComponent({ button, setSelectedCategoryId }) {
   return (
     <li style={{ listStyleType: 'none', height: '90px', margin: '0' }}>
@@ -130,7 +133,9 @@ const Category = ({ id, setSelectedCategoryId }) => {
           <div className='text-xs'>필터</div>
         </button>
       </div>
+      {/* <FilterProvider> */}
       <FilterModalComponent isOpen={isModalOpen} onClose={handleCloseModal} />
+      {/* </FilterProvider> */}
     </div>
   )
 }
