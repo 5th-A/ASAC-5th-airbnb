@@ -65,7 +65,7 @@ const Category = ({ id, setSelectedCategoryId }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:3000/Category.json')
+      const response = await fetch('/Category.json')
       const data = await response.json()
       setButtonInfo(data)
     }
