@@ -11,6 +11,7 @@ export default function MainPageWrapper() {
   const [roomDetail, setRoomDetail] = useState([])
   const [initRoom, setInitRoom] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
+  const [selectedCategoryId, setSelectedCategoryId] = useState(1)
 
   const { adults, teens, kids, pets } = useSelector((state) => state.guestCount)
   const { selectedStartDate, selectedEndDate } = useSelector((state) => state.setCalendar)
@@ -28,11 +29,11 @@ export default function MainPageWrapper() {
       setError(e.message)
     }
   }
-
+  console.log('category ID', selectedCategoryId)
   useEffect(() => {
     async function fetchRoomData() {
       try {
-        const response = await fetch('/RoomList.json') //GET
+        const response = await fetch('/RoomList.json') // GET
         if (!response.ok) {
           throw new Error(`숙소 목록을 불러오지 못했습니다. : ${response.status}`)
         }
@@ -45,6 +46,7 @@ export default function MainPageWrapper() {
     }
     fetchRoomData()
   }, [])
+
 
   useEffect(() => {
     async function updateQuery() {
@@ -68,7 +70,9 @@ export default function MainPageWrapper() {
   return (
     <>
       <Header searchQuery={searchQuery} />
-      <Category />
+      {selectedCategoryId && (
+        <Category id={selectedCategoryId} setSelectedCategoryId={setSelectedCategoryId} />
+      )}
       <RoomList roomDetail={roomDetail} initRoom={initRoom} />
     </>
   )
