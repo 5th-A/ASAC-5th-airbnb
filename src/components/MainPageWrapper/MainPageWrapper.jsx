@@ -47,7 +47,6 @@ export default function MainPageWrapper() {
     fetchRoomData()
   }, [])
 
-
   useEffect(() => {
     async function updateQuery() {
       try {
@@ -65,7 +64,6 @@ export default function MainPageWrapper() {
         setError(e.message)
       }
     }
-    fetchRoomData()
   }, [filters, selectedStartDate, selectedEndDate, adults, teens, kids, pets])
   return (
     <>

@@ -67,9 +67,10 @@ function HostInfo({ hostInfo }) {
 }
 
 export default async function DetailRoomInfo({ id }) {
-  const resRoom = await fetch('http://localhost:3000/RoomInfo.json')
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || ''
+  const resRoom = await fetch(`${baseURL}/RoomInfo.json`)
   const roomDetailData = await resRoom.json()
-  const resHost = await fetch('http://localhost:3000/HostInfo.json')
+  const resHost = await fetch(`${baseURL}/HostInfo.json`)
   const hostInfo = await resHost.json()
 
   const ROOM_ID = id // 추후 api 요청시 쿼리에 담아보내야함
@@ -103,10 +104,10 @@ export default async function DetailRoomInfo({ id }) {
                   <Image src={guestPrefer_Right} width={23} height={36} alt='guestPrefer_Right' />
                 </div>
                 <div
-                  className='overflow-hidden whitespace-normal font-semibold'
+                  className='overflow-hidden whitespace-normal font-semibold flex items-center'
                   style={{ maxHeight: '48px' }}
                 >
-                  에어비앤비 게스트에게 가장 사랑받는 숙소
+                  <p>에어비앤비 게스트에게 가장 사랑받는 숙소</p>
                 </div>
               </div>
               <div

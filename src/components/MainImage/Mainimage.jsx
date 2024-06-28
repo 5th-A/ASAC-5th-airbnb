@@ -46,7 +46,7 @@ const MainImage = ({ id }) => {
                   alt={`Room ${index}`}
                   layout='fill'
                   objectFit='cover'
-                  className='rounded'
+                  className='rounded ease-in-out hover:brightness-75'
                 />
               </button>
             </div>
