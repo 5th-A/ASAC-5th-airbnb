@@ -2,6 +2,7 @@ import AccommodationDetails from '@/components/AccommodationDetails/Accommodatio
 import Calculator from '@/components/DetailRoomInfo/Calculator'
 
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
 function FilterInfo({ filter }) {
   const filterInfo = Object.entries(filter)
@@ -67,10 +68,17 @@ function HostInfo({ hostInfo }) {
 }
 
 export default async function DetailRoomInfo({ id }) {
+  const testStatus = 404
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL || ''
   const resRoom = await fetch(`${baseURL}/RoomInfo.json`)
+  if (resRoom.status !== 200) {
+    redirect(`/error/${resRoom.status}`)
+  }
   const roomDetailData = await resRoom.json()
   const resHost = await fetch(`${baseURL}/HostInfo.json`)
+  if (resHost.status !== 200) {
+    redirect(`/error/${resRoom.status}`)
+  }
   const hostInfo = await resHost.json()
 
   const ROOM_ID = id // 추후 api 요청시 쿼리에 담아보내야함

@@ -1,0 +1,26 @@
+{
+  "RoomName": "나인 하우스",
+  "isLike": false,
+  "RoomImages": [
+    {
+      "id": 1,
+      "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+    },
+    {
+      "id": 2,
+      "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+    },
+    {
+      "id": 3,
+      "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+    },
+    {
+      "id": 4,
+      "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+    },
+    {
+      "id": 5,
+      "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+    }
+  ]
+}
