@@ -27,7 +27,7 @@
     ],
     "isLike": false,
     "address": "Hwachon-myeon, Hongcheon-gun",
-    "roomType": "전체",
+    "roomType": "all",
     "filter": {
       "maximum": 3,
       "beds": 1,
@@ -105,7 +105,7 @@
     ],
     "isLike": false,
     "address": "양평군",
-    "roomType": "한국의 별장 전체",
+    "roomType": "all",
     "filter": {
       "maximum": 6,
       "beds": 2,
@@ -183,7 +183,7 @@
     ],
     "isLike": false,
     "address": "가평군",
-    "roomType": "한국의 저택 전체",
+    "roomType": "all",
     "filter": {
       "maximum": 8,
       "beds": 0,
@@ -261,7 +261,7 @@
     ],
     "isLike": false,
     "address": "홍천",
-    "roomType": "한국의 집 전체",
+    "roomType": "all",
     "filter": {
       "maximum": 6,
       "beds": 2,
@@ -334,7 +334,7 @@
     ],
     "isLike": false,
     "address": "홍천",
-    "roomType": "한국의 집 전체",
+    "roomType": "room",
     "filter": {
       "maximum": 10,
       "beds": 5,
@@ -407,7 +407,7 @@
     ],
     "isLike": false,
     "address": "Angseong-myeon, Cheongju",
-    "roomType": "한국의 별장 전체",
+    "roomType": "house",
     "filter": {
       "maximum": 10,
       "beds": 1,
@@ -485,7 +485,7 @@
     ],
     "isLike": false,
     "address": "Gapyeong-eup, Gapyeong-gun",
-    "roomType": "한국의 돔하우스의 개인실",
+    "roomType": "house",
     "filter": {
       "maximum": 4,
       "beds": 1,

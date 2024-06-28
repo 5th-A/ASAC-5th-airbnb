@@ -1,11 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import roomDetail from '../roomDetail.json'
 import Link from 'next/link'
 import RoomCard from './RoomCard'
 
-export default function InfiniteList() {
+export default function InfiniteList({ roomDetail }) {
   const [handleInfinite, setHandleInfinite] = useState(false)
   const [roomLists, setRoomLists] = useState([])
   const [page, setPage] = useState(2)

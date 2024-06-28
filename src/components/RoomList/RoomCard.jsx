@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
@@ -10,7 +10,7 @@ import 'swiper/css/pagination'
 import './RoomCard.css'
 import Image from 'next/image'
 
-export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
+export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer, date }) {
   const emptyHeart = '/assets/likeButton_empty.svg'
   const fullHeart = '/assets/likeButton_full.svg'
   const nextArrow = '/assets/nextArrow.svg'
@@ -91,7 +91,7 @@ export default function RoomCard({ imgSrc, price, roomAddress, guestPrefer }) {
             <div className='text-sm font-semibold text-gray-700'>★ 5.00</div>
           </div>
           <div className='text-gray-700 text-base'>겁나 멀어요</div>
-          <div className='text-gray-700 text-base'>여기는 기간</div>
+          <div className='text-gray-700 text-base'>{date}</div>
         </div>
 
         {/*Room cost*/}

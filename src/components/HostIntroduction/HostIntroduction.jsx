@@ -124,7 +124,7 @@ const HostDetails = () => {
 const HostIntroduction = () => {
   return (
     <HostProvider>
-      <div className='mx-auto bg-[#f0efe9] rounded-xl shadow-md p-6 flex space-x-6 w-4/5'>
+      <div className='mx-auto mb-6 bg-[#f0efe9] rounded-xl shadow-md p-6 flex space-x-6 w-4/5'>
         <div className='flex flex-col p-6'>
           <HostProfile />
           <HostIntroductionText />
