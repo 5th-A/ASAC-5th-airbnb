@@ -1,560 +1,562 @@
-[
-  {
-    "id": 1,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 2,
-    "address": "서울, 공덕",
-    "price": 200000,
-    "date": "7월 8일 ~12일",
-    "RoomImages": [
-      {
-        "id": 6,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
-      },
-      {
-        "id": 7,
-        "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
-      },
-      {
-        "id": 8,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
-      },
-      {
-        "id": 9,
-        "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
-      },
-      {
-        "id": 10,
-        "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 3
-  },
-  {
-    "id": 3,
-    "address": "경기도, 안산",
-    "price": 300000,
-    "date": "7월 9일 ~12일",
-    "RoomImages": [
-      {
-        "id": 11,
-        "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
-      },
-      {
-        "id": 12,
-        "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
-      },
-      {
-        "id": 13,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
-      },
-      {
-        "id": 14,
-        "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
-      },
-      {
-        "id": 15,
-        "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 2
-  },
-  {
-    "id": 4,
-    "address": "경기도, 양평",
-    "price": 120000,
-    "date": "8월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 5,
-    "address": "경기도, 안산",
-    "price": 300000,
-    "date": "7월 9일 ~12일",
-    "RoomImages": [
-      {
-        "id": 11,
-        "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
-      },
-      {
-        "id": 12,
-        "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
-      },
-      {
-        "id": 13,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
-      },
-      {
-        "id": 14,
-        "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
-      },
-      {
-        "id": 15,
-        "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 2
-  },
-  {
-    "id": 6,
-    "address": "서울, 공덕",
-    "price": 200000,
-    "date": "7월 8일 ~12일",
-    "RoomImages": [
-      {
-        "id": 6,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
-      },
-      {
-        "id": 7,
-        "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
-      },
-      {
-        "id": 8,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
-      },
-      {
-        "id": 9,
-        "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
-      },
-      {
-        "id": 10,
-        "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 3
-  },
-  {
-    "id": 7,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 8,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 9,
-    "address": "경기도, 안산",
-    "price": 300000,
-    "date": "7월 9일 ~12일",
-    "RoomImages": [
-      {
-        "id": 11,
-        "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
-      },
-      {
-        "id": 12,
-        "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
-      },
-      {
-        "id": 13,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
-      },
-      {
-        "id": 14,
-        "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
-      },
-      {
-        "id": 15,
-        "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 2
-  },
-  {
-    "id": 10,
-    "address": "경기도, 안산",
-    "price": 300000,
-    "date": "7월 9일 ~12일",
-    "RoomImages": [
-      {
-        "id": 11,
-        "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
-      },
-      {
-        "id": 12,
-        "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
-      },
-      {
-        "id": 13,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
-      },
-      {
-        "id": 14,
-        "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
-      },
-      {
-        "id": 15,
-        "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 2
-  },
-  {
-    "id": 11,
-    "address": "경기도, 안산",
-    "price": 300000,
-    "date": "7월 9일 ~12일",
-    "RoomImages": [
-      {
-        "id": 11,
-        "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
-      },
-      {
-        "id": 12,
-        "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
-      },
-      {
-        "id": 13,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
-      },
-      {
-        "id": 14,
-        "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
-      },
-      {
-        "id": 15,
-        "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 2
-  },
-  {
-    "id": 12,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 13,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 14,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 15,
-    "address": "Hwachon-myeon, Hongcheon-gun",
-    "price": 100000,
-    "date": "7월 7일 ~12일",
-    "RoomImages": [
-      {
-        "id": 1,
-        "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
-      },
-      {
-        "id": 2,
-        "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
-      },
-      {
-        "id": 3,
-        "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
-      },
-      {
-        "id": 4,
-        "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
-      },
-      {
-        "id": 5,
-        "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
-      }
-    ],
-    "isLike": false,
-    "guestPrefer": true,
-    "rate": 4
-  },
-  {
-    "id": 16,
-    "address": "서울, 공덕",
-    "price": 200000,
-    "date": "7월 8일 ~12일",
-    "RoomImages": [
-      {
-        "id": 6,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
-      },
-      {
-        "id": 7,
-        "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
-      },
-      {
-        "id": 8,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
-      },
-      {
-        "id": 9,
-        "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
-      },
-      {
-        "id": 10,
-        "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 3
-  },
-  {
-    "id": 17,
-    "address": "서울, 공덕",
-    "price": 200000,
-    "date": "7월 8일 ~12일",
-    "RoomImages": [
-      {
-        "id": 6,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
-      },
-      {
-        "id": 7,
-        "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
-      },
-      {
-        "id": 8,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
-      },
-      {
-        "id": 9,
-        "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
-      },
-      {
-        "id": 10,
-        "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 3
-  },
-  {
-    "id": 18,
-    "address": "서울, 공덕",
-    "price": 200000,
-    "date": "7월 8일 ~12일",
-    "RoomImages": [
-      {
-        "id": 6,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
-      },
-      {
-        "id": 7,
-        "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
-      },
-      {
-        "id": 8,
-        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
-      },
-      {
-        "id": 9,
-        "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
-      },
-      {
-        "id": 10,
-        "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
-      }
-    ],
-    "isLike": true,
-    "guestPrefer": false,
-    "rate": 3
-  }
-]
+{
+  "list": [
+    {
+      "id": 1,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 2,
+      "address": "서울, 공덕",
+      "price": 200000,
+      "date": "7월 8일 ~12일",
+      "RoomImages": [
+        {
+          "id": 6,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
+        },
+        {
+          "id": 7,
+          "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
+        },
+        {
+          "id": 8,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
+        },
+        {
+          "id": 9,
+          "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
+        },
+        {
+          "id": 10,
+          "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 3
+    },
+    {
+      "id": 3,
+      "address": "경기도, 안산",
+      "price": 300000,
+      "date": "7월 9일 ~12일",
+      "RoomImages": [
+        {
+          "id": 11,
+          "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
+        },
+        {
+          "id": 12,
+          "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
+        },
+        {
+          "id": 13,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
+        },
+        {
+          "id": 14,
+          "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
+        },
+        {
+          "id": 15,
+          "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 2
+    },
+    {
+      "id": 4,
+      "address": "경기도, 양평",
+      "price": 120000,
+      "date": "8월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 5,
+      "address": "경기도, 안산",
+      "price": 300000,
+      "date": "7월 9일 ~12일",
+      "RoomImages": [
+        {
+          "id": 11,
+          "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
+        },
+        {
+          "id": 12,
+          "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
+        },
+        {
+          "id": 13,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
+        },
+        {
+          "id": 14,
+          "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
+        },
+        {
+          "id": 15,
+          "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 2
+    },
+    {
+      "id": 6,
+      "address": "서울, 공덕",
+      "price": 200000,
+      "date": "7월 8일 ~12일",
+      "RoomImages": [
+        {
+          "id": 6,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
+        },
+        {
+          "id": 7,
+          "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
+        },
+        {
+          "id": 8,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
+        },
+        {
+          "id": 9,
+          "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
+        },
+        {
+          "id": 10,
+          "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 3
+    },
+    {
+      "id": 7,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 8,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 9,
+      "address": "경기도, 안산",
+      "price": 300000,
+      "date": "7월 9일 ~12일",
+      "RoomImages": [
+        {
+          "id": 11,
+          "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
+        },
+        {
+          "id": 12,
+          "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
+        },
+        {
+          "id": 13,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
+        },
+        {
+          "id": 14,
+          "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
+        },
+        {
+          "id": 15,
+          "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 2
+    },
+    {
+      "id": 10,
+      "address": "경기도, 안산",
+      "price": 300000,
+      "date": "7월 9일 ~12일",
+      "RoomImages": [
+        {
+          "id": 11,
+          "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
+        },
+        {
+          "id": 12,
+          "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
+        },
+        {
+          "id": 13,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
+        },
+        {
+          "id": 14,
+          "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
+        },
+        {
+          "id": 15,
+          "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 2
+    },
+    {
+      "id": 11,
+      "address": "경기도, 안산",
+      "price": 300000,
+      "date": "7월 9일 ~12일",
+      "RoomImages": [
+        {
+          "id": 11,
+          "url": "https://a0.muscache.com/im/pictures/1119661c-3f2c-4279-ba56-577849f1580a.jpg?im_w=1200"
+        },
+        {
+          "id": 12,
+          "url": "https://a0.muscache.com/im/pictures/4fcee4b7-121e-4a2c-b590-a194bb3bc32f.jpg?im_w=720"
+        },
+        {
+          "id": 13,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-1056405101715590821/original/fefefdc5-3a97-4da5-be3d-663026b35954.jpeg?im_w=720"
+        },
+        {
+          "id": 14,
+          "url": "https://a0.muscache.com/im/pictures/5aa244da-e54f-4aa4-99ab-f5093814c521.jpg?im_w=720"
+        },
+        {
+          "id": 15,
+          "url": "https://a0.muscache.com/im/pictures/625362e9-edba-4d44-9381-c72739b1453d.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 2
+    },
+    {
+      "id": 12,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 13,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 14,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 15,
+      "address": "Hwachon-myeon, Hongcheon-gun",
+      "price": 100000,
+      "date": "7월 7일 ~12일",
+      "RoomImages": [
+        {
+          "id": 1,
+          "url": "https://a0.muscache.com/im/pictures/aa715257-38ff-45ff-8bb7-3a7e321cf385.jpg?im_w=1200"
+        },
+        {
+          "id": 2,
+          "url": "https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720"
+        },
+        {
+          "id": 3,
+          "url": "https://a0.muscache.com/im/pictures/898f6291-769e-4911-a6ee-b0fed8eed80b.jpg?im_w=720"
+        },
+        {
+          "id": 4,
+          "url": "https://a0.muscache.com/im/pictures/378e285b-9fcf-400e-88fd-44c01beb25f9.jpg?im_w=720"
+        },
+        {
+          "id": 5,
+          "url": "https://a0.muscache.com/im/pictures/7a07b9ea-3d21-4e2f-a728-bff97837ef37.jpg?im_w=720"
+        }
+      ],
+      "isLike": false,
+      "guestPrefer": true,
+      "rate": 4
+    },
+    {
+      "id": 16,
+      "address": "서울, 공덕",
+      "price": 200000,
+      "date": "7월 8일 ~12일",
+      "RoomImages": [
+        {
+          "id": 6,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
+        },
+        {
+          "id": 7,
+          "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
+        },
+        {
+          "id": 8,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
+        },
+        {
+          "id": 9,
+          "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
+        },
+        {
+          "id": 10,
+          "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 3
+    },
+    {
+      "id": 17,
+      "address": "서울, 공덕",
+      "price": 200000,
+      "date": "7월 8일 ~12일",
+      "RoomImages": [
+        {
+          "id": 6,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
+        },
+        {
+          "id": 7,
+          "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
+        },
+        {
+          "id": 8,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
+        },
+        {
+          "id": 9,
+          "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
+        },
+        {
+          "id": 10,
+          "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 3
+    },
+    {
+      "id": 18,
+      "address": "서울, 공덕",
+      "price": 200000,
+      "date": "7월 8일 ~12일",
+      "RoomImages": [
+        {
+          "id": 6,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/241a9728-36b6-4c6b-9277-e6d05745cea6.jpeg?im_w=1200"
+        },
+        {
+          "id": 7,
+          "url": "https://a0.muscache.com/im/pictures/0907271d-a709-4059-8c0a-e5323882db77.jpg?im_w=720"
+        },
+        {
+          "id": 8,
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-962166410706461229/original/97ac86c6-2d7f-4c8a-b05e-6d8547e11c5a.jpeg?im_w=720"
+        },
+        {
+          "id": 9,
+          "url": "https://a0.muscache.com/im/pictures/0b5024a1-55e1-483c-aa1f-94244ad2281b.jpg?im_w=720"
+        },
+        {
+          "id": 10,
+          "url": "https://a0.muscache.com/im/pictures/467e138b-fd68-4ba6-94b1-29dce718e32f.jpg?im_w=720"
+        }
+      ],
+      "isLike": true,
+      "guestPrefer": false,
+      "rate": 3
+    }
+  ]
+}

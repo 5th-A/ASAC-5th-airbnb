@@ -23,10 +23,10 @@ export default function MainPageWrapper() {
         throw new Error(`숙소 목록을 불러오지 못했습니다. : ${response.status}`)
       }
       const data = await response.json()
-      setRoomDetail(data)
+      setRoomDetail(data.list)
       setInitRoom(data.slice(0, 6))
     } catch (e) {
-      setError(e.message)
+      console.log(e.message)
     }
   }
   console.log('category ID', selectedCategoryId)
@@ -38,10 +38,10 @@ export default function MainPageWrapper() {
           throw new Error(`숙소 목록을 불러오지 못했습니다. : ${response.status}`)
         }
         const data = await response.json()
-        setRoomDetail(data)
-        setInitRoom(data.slice(0, 6))
+        setRoomDetail(data.list)
+        setInitRoom(data.list.slice(0, 6))
       } catch (e) {
-        setError(e.message)
+        console.log(e.message)
       }
     }
     fetchRoomData()
@@ -61,7 +61,7 @@ export default function MainPageWrapper() {
         // setRoomDetail(data)
         // setInitRoom(data.slice(0, 6))
       } catch (e) {
-        setError(e.message)
+        console.log(e.message)
       }
     }
   }, [filters, selectedStartDate, selectedEndDate, adults, teens, kids, pets])
