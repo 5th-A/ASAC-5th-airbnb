@@ -3,7 +3,7 @@ import DetailPageCalendarDisplay from '@/components/Calendar/DetailPageCalendarD
 import Comment from '@/components/Comment/Comment'
 import DetailRoomInfo from '@/components/DetailRoomInfo/DetailRoomInfo'
 import SmallHeader from '@/components/Header/SmallHeader'
-import HostIntroduction from '@/components/HostIntroduction/HostIntroduction'
+import GetHostInfo from '@/app/api/GetHostInfo'
 import MainImage from '@/components/MainImage/Mainimage'
 import Providers from '@/redux/Providers'
 
@@ -23,8 +23,8 @@ export default function roomDetail({ params }) {
               <DetailRoomInfo id={id} />
               <Comment id={id} />
               <Amenities />
+              <GetHostInfo id={id} />
               <DetailPageCalendarDisplay />
-              <HostIntroduction />
             </Providers>
           </div>
         </div>
