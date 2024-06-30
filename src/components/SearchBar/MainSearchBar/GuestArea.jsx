@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchButtonArea from '@/components/SearchBar/MainSearchBar/SearchButtonArea'
+import Link from 'next/link'
 
 function showCurrentGuest(guestCounts) {
   const { adults, teens, kids, pets } = guestCounts
@@ -26,7 +27,8 @@ function totalGuest(guestCounts) {
   return sum
 }
 
-const GuestArea = ({ onClick, isActive, onSearch, guestCounts }) => {
+const GuestArea = ({ onClick, isActive, guestCounts, selectedCity, searchParams }) => {
+  const queryString = new URLSearchParams(searchParams).toString()
   return (
     <>
       <div
@@ -38,8 +40,14 @@ const GuestArea = ({ onClick, isActive, onSearch, guestCounts }) => {
             {totalGuest(guestCounts) ? showCurrentGuest(guestCounts) : '게스트 추가'}
           </div>
         </div>
-        <div className='min-w-[70px] min-h-[56px]' onClick={onSearch}>
-          <SearchButtonArea />
+        <div className='min-w-[70px] min-h-[56px]'>
+          {selectedCity ? (
+            <Link href={`/s/${selectedCity}?${queryString}`}>
+              <SearchButtonArea />
+            </Link>
+          ) : (
+            <SearchButtonArea />
+          )}
         </div>
       </div>
     </>
