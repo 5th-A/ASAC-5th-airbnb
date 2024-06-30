@@ -1,14 +1,12 @@
 'use client'
+
 import React, { createContext, useContext, useState } from 'react'
-import superHostBadge from '/public/assets/hosts/superHost.svg'
-import superHostBadgeRed from '/public/assets/hosts/superHostRed.svg'
-import badge from '/public/assets/hosts/badge.svg'
-import data from '@/data/RoomInfo.json'
+import Image from 'next/image'
 
 const HostContext = createContext()
 
-const HostProvider = ({ children }) => {
-  const { host, introduction } = data
+const HostProvider = ({ children, hostData }) => {
+  const { user: host, introduction } = hostData
   const currentYear = new Date().getFullYear()
   const hostingYears = currentYear - host.year < 1 ? '1년 미만' : `${currentYear - host.year}년`
   const isSuperHost = host.type === '슈퍼호스트'
@@ -36,17 +34,25 @@ const HostInfo = () => {
       <div className='flex flex-col items-center'>
         <img className='w-28 h-28 rounded-full' src={host.profile} alt={host.name} />
         {isSuperHost && (
-          <img
+          <Image
             className='w-6 h-6 absolute bottom-0 right-[60px] top-[90px]'
-            src={superHostBadgeRed.src}
-            alt='Superhost Badge'
+            src='/assets/hosts/superHostRed.svg'
+            width={20}
+            height={20}
+            alt=''
           />
         )}
         <div className='mt-2 text-center'>
           <div className='text-3xl font-medium text-black'>{host.name}</div>
           <div className='text-gray-500 text-xs flex items-center'>
             {isSuperHost && (
-              <img src={superHostBadge.src} className='w-4 h-4 mr-1' alt='Superhost Badge' />
+              <Image
+                className='w-4 h-4 mr-1'
+                src='/assets/hosts/superHost.svg'
+                width={20}
+                height={20}
+                alt=''
+              />
             )}
             {host.type}
           </div>
@@ -111,7 +117,7 @@ const HostDetails = () => {
       </div>
       <div className='flex border-solid border-slate-300 border-t-[1px] mt-10'>
         <div className='mt-5'>
-          <img src={badge.src} alt='Safety Badge' />
+          <Image src='/assets/hosts/badge.svg' width={40} height={20} alt='' />
         </div>
         <span className='text-xs mt-7 pl-4'>
           안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요.
@@ -121,9 +127,9 @@ const HostDetails = () => {
   )
 }
 
-const HostIntroduction = () => {
+const HostIntroduction = ({ hostData }) => {
   return (
-    <HostProvider>
+    <HostProvider hostData={hostData}>
       <div className='mx-auto mb-6 bg-[#f0efe9] rounded-xl shadow-md p-6 flex space-x-6 w-4/5'>
         <div className='flex flex-col p-6'>
           <HostProfile />
