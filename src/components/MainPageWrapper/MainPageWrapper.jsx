@@ -64,6 +64,7 @@ export default function MainPageWrapper() {
         console.log(e.message)
       }
     }
+    updateQuery()
   }, [filters, selectedStartDate, selectedEndDate, adults, teens, kids, pets])
   return (
     <>
